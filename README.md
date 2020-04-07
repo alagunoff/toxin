@@ -1,6 +1,5 @@
 # Toxin
 ***
-Демо проекта - [посмотреть](https://madnessjs.github.io/toxin)
 
 ### Клонирование репозитория
 * ssh ```git@github.com:madnessJs/toxin.git```
