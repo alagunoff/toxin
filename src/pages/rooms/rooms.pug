@@ -1,0 +1,20 @@
+extends ../../templates/template-base
+
+include ../../components/header/header
+include ../../components/rooms-page/rooms-page
+include ../../components/footer/footer
+
+block description
+  meta(name="description" content="Мы подобрали для вас самые подходящие номера под ваши требования, вам осталось лишь выбрать.")
+
+block keywords
+  meta(name="keywords" content="подобрать номера отель toxin, выбрать номер в отеле toxin")
+
+block title
+  title Отель Toxin | Поиск номеров
+
+block content
+  +header
+  +rooms-page
+  +footer
+  

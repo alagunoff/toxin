@@ -1,0 +1,20 @@
+extends ../../templates/template-base
+
+include ../../components/header/header
+include ../../components/registration-page/registration-page
+include ../../components/footer/footer
+
+block description
+  meta(name="description" content="Зарегистрируйтесь на сайте, чтобы иметь возможность бронировать номера, оставлять отзывы об отелях.")
+
+block keywords
+  meta(name="keywords" content="toxin зарегистрироваться, зарегистрировать аккаунт toxin")
+
+block title
+  title Отель Toxin | Регистрация аккаунта
+
+block content
+  +header
+  +registration-page
+  +footer
+  

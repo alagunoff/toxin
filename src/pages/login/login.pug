@@ -1,0 +1,19 @@
+extends ../../templates/template-base
+
+include ../../components/header/header
+include ../../components/login-page/login-page
+include ../../components/footer/footer
+
+block description
+  meta(name="description" content="Войдите на сайт, чтобы забронировать номер.")
+
+block keywords
+  meta(name="keywords" content="toxin войти, войти на сайт toxin")
+
+block title
+  title Отель Toxin | Вход
+
+block content
+  +header
+  +login-page
+  +footer

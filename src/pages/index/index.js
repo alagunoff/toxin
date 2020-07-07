@@ -1,8 +1,10 @@
-import '../../utilities/jquery-global';
-import '../../utilities/polyfills';
-import Header from '../../components/header/header';
-import Calendar from '../../components/calendar/calendar';
-import DropdownGuests from '../../components/dropdown/dropdown-guests';
+import 'utilities/jquery-global';
+import 'utilities/polyfills';
+import Header from 'components/header/header';
+import Calendar from 'components/calendar/calendar';
+import DropdownGuests from 'components/dropdown/dropdown-guests';
+
+import './index.scss';
 
 const headers = document.querySelectorAll('.js-header');
 headers.forEach((header) => new Header(header));
