@@ -1,5 +1,3 @@
-import 'utilities/jquery-global';
-import 'utilities/polyfills';
 import Header from 'components/header/header';
 
 import './registration.scss';

@@ -3,7 +3,7 @@
  * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php) license.
  * Version: 1.0.0
  * Dependencies: jQuery 1.4.2+
-*/
+ */
 (function ($) {
   const _renderPie = function (canvas, settings) {
     // Resize canvas to settings' max radius * 2.
@@ -23,7 +23,15 @@
       if (settings.gap < settings.slices[j].radians) {
         context.fillStyle = settings.slices[j].color;
         context.beginPath();
-        context.arc(settings._maxRadius, settings._maxRadius, (j == settings.sliceIndex ? settings.selectedRadius : settings._minRadius), angle, endAngle - settings.gap);
+        context.arc(
+          settings._maxRadius,
+          settings._maxRadius,
+          j == settings.sliceIndex
+            ? settings.selectedRadius
+            : settings._minRadius,
+          angle,
+          endAngle - settings.gap,
+        );
         context.lineTo(settings._maxRadius, settings._maxRadius); // (Center canvas x,y equals settings._maxRadius)
         context.closePath();
         context.fill();
@@ -31,15 +39,23 @@
 
       angle = endAngle;
       j++;
-      if (j >= settings.slices.length) // wrap around.
-      { j = 0; }
+      if (j >= settings.slices.length) {
+        // wrap around.
+        j = 0;
+      }
     }
 
     // Render inner circle.
     if (settings.innerRadius > 0) {
       context.fillStyle = settings.innerColor;
       context.beginPath();
-      context.arc(settings._maxRadius, settings._maxRadius, settings.innerRadius, 0, 2 * Math.PI);
+      context.arc(
+        settings._maxRadius,
+        settings._maxRadius,
+        settings.innerRadius,
+        0,
+        2 * Math.PI,
+      );
       context.closePath();
       context.fill();
     }
@@ -52,11 +68,21 @@
     for (var i = 0; i < settings.slices.length; i++) {
       var endAngle = angle + settings.slices[j].radians;
 
-      if (settings.gap < settings.slices[j].radians
-                && j == settings.sliceIndex) {
+      if (
+        settings.gap < settings.slices[j].radians
+        && j == settings.sliceIndex
+      ) {
         context.fillStyle = settings.slices[j].color;
         context.beginPath();
-        context.arc(settings._maxRadius, settings._maxRadius, (j == settings.sliceIndex ? settings.selectedRadius : settings._minRadius), angle, endAngle - settings.gap);
+        context.arc(
+          settings._maxRadius,
+          settings._maxRadius,
+          j == settings.sliceIndex
+            ? settings.selectedRadius
+            : settings._minRadius,
+          angle,
+          endAngle - settings.gap,
+        );
         context.lineTo(settings._maxRadius, settings._maxRadius); // (Center canvas x,y equals settings._maxRadius)
         context.closePath();
         context.fill();
@@ -64,8 +90,10 @@
 
       angle = endAngle;
       j++;
-      if (j >= settings.slices.length) // wrap around.
-      { j = 0; }
+      if (j >= settings.slices.length) {
+        // wrap around.
+        j = 0;
+      }
     }
 
     // rerender small inner circle
@@ -73,7 +101,13 @@
     if (settings.minInnerRadius > 0) {
       context.fillStyle = settings.innerColor;
       context.beginPath();
-      context.arc(settings._maxRadius, settings._maxRadius, settings.minInnerRadius, 0, 2 * Math.PI);
+      context.arc(
+        settings._maxRadius,
+        settings._maxRadius,
+        settings.minInnerRadius,
+        0,
+        2 * Math.PI,
+      );
       context.closePath();
       context.fill();
     }
@@ -86,7 +120,9 @@
       context.fillStyle = slice.fontColor || slice.color;
 
       const bigFont = `${settings.fontWeight} ${settings.fontSize}px ${settings.fontFamily}`;
-      const smallFont = `${settings.fontWeight} ${0.5 * settings.fontSize}px ${settings.fontFamily}`;
+      const smallFont = `${settings.fontWeight} ${0.5 * settings.fontSize}px ${
+        settings.fontFamily
+      }`;
 
       /*
             var whole = Math.floor(settings.percentage);
@@ -101,10 +137,18 @@
 
       context.font = 'bold 24px  sans-serif';
 
-      context.fillText(whole, settings._maxRadius - 0.5 * context.measureText(whole).width, settings._maxRadius - 8);
+      context.fillText(
+        whole,
+        settings._maxRadius - 0.5 * context.measureText(whole).width,
+        settings._maxRadius - 8,
+      );
 
       context.font = 'bold 12px  sans-serif';
-      context.fillText(slice.unit, settings._maxRadius - 0.5 * context.measureText(slice.unit).width, settings._maxRadius + 16);
+      context.fillText(
+        slice.unit,
+        settings._maxRadius - 0.5 * context.measureText(slice.unit).width,
+        settings._maxRadius + 16,
+      );
 
       /*
             if (fraction == 0)
@@ -140,7 +184,11 @@
 
     // Callback.
     if (settings.beforeAnimate) {
-      const returnVal = settings.beforeAnimate.call(canvas, sliceIndex, settings);
+      const returnVal = settings.beforeAnimate.call(
+        canvas,
+        sliceIndex,
+        settings,
+      );
       if (returnVal === false) return false; // If user returns false, cancel animation.
     }
 
@@ -155,8 +203,8 @@
       tempIndex++;
       if (tempIndex >= settings.slices.length) tempIndex = 0; // wrap sliceIndex around.
       angle
-                    += tempIndex == sliceIndex // end index?
-        /* 0.5 * settings.slices[tempIndex].radians */ ? 0 // Half of end angle.
+        += tempIndex == sliceIndex // end index?
+          ? /* 0.5 * settings.slices[tempIndex].radians */ 0 // Half of end angle.
           : settings.slices[tempIndex].radians;
     }
 
@@ -168,10 +216,10 @@
     let deltaInnerRadius;
     let deltaFontSize;
     let deltaPercentage;
-    const rotateClockwise = true;// sliceIndex > settings.sliceIndex;
+    const rotateClockwise = true; // sliceIndex > settings.sliceIndex;
 
-    if (rotateClockwise) // Rotate clockwise.
-    {
+    if (rotateClockwise) {
+      // Rotate clockwise.
       endAngle = settings.angle + (2 * Math.PI - angle);
       deltaAngle = settings.deltaAngle;
       fraction = settings.deltaAngle / (2 * Math.PI - angle);
@@ -184,63 +232,82 @@
     deltaRadius = fraction * (settings._maxRadius - settings._minRadius);
     deltaInnerRadius = fraction * (settings._maxInnerRadius - settings._minInnerRadius);
     deltaFontSize = fraction * (settings._maxFontSize - settings._minFontSize);
-    deltaPercentage = fraction * (endPercentage - settings.slices[settings.sliceIndex].percentage);
+    deltaPercentage = fraction
+      * (endPercentage - settings.slices[settings.sliceIndex].percentage);
 
     let firstPart = true;
     var animatePie = function () {
-      if (firstPart) // Rotation required.
-      {
+      if (firstPart) {
+        // Rotation required.
         // Animate currently selected slice from big to small while rotating.
         settings.selectedRadius -= deltaRadius;
-        if (settings.selectedRadius <= settings._minRadius) { settings.selectedRadius = settings._minRadius; } // Cap at min radius.
+        if (settings.selectedRadius <= settings._minRadius) {
+          settings.selectedRadius = settings._minRadius;
+        } // Cap at min radius.
 
         // Animate inner circle smaller.
         settings.innerRadius -= deltaInnerRadius;
-        if (settings.innerRadius <= settings._minInnerRadius) { settings.innerRadius = settings._minInnerRadius; } // Cap at min inner radius.
+        if (settings.innerRadius <= settings._minInnerRadius) {
+          settings.innerRadius = settings._minInnerRadius;
+        } // Cap at min inner radius.
 
         // Animate fontsize smaller.
         settings.fontSize -= deltaFontSize;
-        if (settings.fontSize <= settings._minFontSize) { settings.fontSize = settings._minFontSize; } // Cap at min fontsize.
+        if (settings.fontSize <= settings._minFontSize) {
+          settings.fontSize = settings._minFontSize;
+        } // Cap at min fontsize.
 
         // Animate percentage number.
         settings.percentage += deltaPercentage;
-        if ((deltaPercentage > 0 && settings.percentage >= endPercentage) || (deltaPercentage < 0 && settings.percentage <= endPercentage)) { settings.percentage = endPercentage; } // Cap percentage.
+        if (
+          (deltaPercentage > 0 && settings.percentage >= endPercentage)
+          || (deltaPercentage < 0 && settings.percentage <= endPercentage)
+        ) {
+          settings.percentage = endPercentage;
+        } // Cap percentage.
 
         // Rotate.
         if (settings.sliceIndex != sliceIndex) {
           settings.angle += deltaAngle;
-          if (rotateClockwise && settings.angle >= endAngle || (!rotateClockwise && settings.angle <= endAngle)) // Cap angle.
-          {
+          if (
+            (rotateClockwise && settings.angle >= endAngle)
+            || (!rotateClockwise && settings.angle <= endAngle)
+          ) {
+            // Cap angle.
             settings.sliceIndex = sliceIndex;
             settings.angle = -0.5 * Math.PI;
           }
         }
 
-        if (settings.selectedRadius == settings._minRadius
-                    && settings.innerRadius == settings._minInnerRadius
-                    && settings.fontSize == settings._minFontSize
-                    && settings.sliceIndex == sliceIndex
-                    && settings.percentage == endPercentage) {
+        if (
+          settings.selectedRadius == settings._minRadius
+          && settings.innerRadius == settings._minInnerRadius
+          && settings.fontSize == settings._minFontSize
+          && settings.sliceIndex == sliceIndex
+          && settings.percentage == endPercentage
+        ) {
           firstPart = false;
         }
-      } else // After rotation.
-      {
+      } // After rotation.
+      else {
         // Animate currently selected slice from small to big.
         settings.selectedRadius += deltaRadius;
-        if (settings.selectedRadius >= settings._maxRadius) settings.selectedRadius = settings._maxRadius; // Cap at max radius.
+        if (settings.selectedRadius >= settings._maxRadius) { settings.selectedRadius = settings._maxRadius; } // Cap at max radius.
 
         // Animate inner circle bigger.
         settings.innerRadius += deltaInnerRadius;
-        if (settings.innerRadius >= settings._maxInnerRadius) settings.innerRadius = settings._maxInnerRadius; // Cap at max inner radius.
+        if (settings.innerRadius >= settings._maxInnerRadius) { settings.innerRadius = settings._maxInnerRadius; } // Cap at max inner radius.
 
         // Animate fontsize bigger.
         settings.fontSize += deltaFontSize;
-        if (settings.fontSize >= settings._maxFontSize) settings.fontSize = settings._maxFontSize; // Cap at max fontsize.
+        if (settings.fontSize >= settings._maxFontSize) { settings.fontSize = settings._maxFontSize; } // Cap at max fontsize.
 
-        if (settings.selectedRadius == settings._maxRadius
-                    && settings.innerRadius == settings._maxInnerRadius
-                    && settings.fontSize == settings._maxFontSize) // Animation complete.
-        {
+        if (
+          settings.selectedRadius == settings._maxRadius
+          && settings.innerRadius == settings._maxInnerRadius
+          && settings.fontSize == settings._maxFontSize
+        ) {
+          // Animation complete.
           _renderPie(canvas, settings);
           settings.animating = false;
 
@@ -272,9 +339,9 @@
     let alpha = Math.atan(Math.abs(y) / Math.abs(x));
 
     if (x > 0) {
-      alpha = y > 0 ? (0.5 * Math.PI - alpha) : (0.5 * Math.PI + alpha);
+      alpha = y > 0 ? 0.5 * Math.PI - alpha : 0.5 * Math.PI + alpha;
     } else {
-      alpha = y > 0 ? (1.5 * Math.PI + alpha) : (1.5 * Math.PI - alpha);
+      alpha = y > 0 ? 1.5 * Math.PI + alpha : 1.5 * Math.PI - alpha;
     }
     // console.log(alpha);
     let index = settings.sliceIndex;
@@ -291,30 +358,38 @@
   // If value is percentage convert to absolute pixel value of containerWidth.
   const _getDimension = function (containerWidth, value) {
     const percentage = value.toString();
-    if (percentage.substring(value.length - 1) == '%') return Math.round(containerWidth * parseFloat(percentage) / 100);
+    if (percentage.substring(value.length - 1) == '%') { return Math.round((containerWidth * parseFloat(percentage)) / 100); }
     return value;
   };
 
   const _setDefaults = function (canvas, settings) {
     let totalSumm = 0;
-    for (var i = 0; i < settings.slices.length; i++) totalSumm += settings.slices[i].amount;
+    for (var i = 0; i < settings.slices.length; i++) { totalSumm += settings.slices[i].amount; }
 
     for (var i = 0; i < settings.slices.length; i++) {
       // convert amount to percentage.
-      settings.slices[i].percentage = settings.slices[i].amount * 100 / totalSumm;
+      settings.slices[i].percentage = (settings.slices[i].amount * 100) / totalSumm;
       // Convert slice percentages to radians.
-      settings.slices[i].radians = settings.slices[i].percentage / 100 * 2 * Math.PI;
+      settings.slices[i].radians = (settings.slices[i].percentage / 100) * 2 * Math.PI;
 
       // If no color provided, set to transparant.
-      if (!settings.slices[i].color) { settings.slices[i].color = 'rgba(0, 0, 0, 0)'; }
+      if (!settings.slices[i].color) {
+        settings.slices[i].color = 'rgba(0, 0, 0, 0)';
+      }
     }
 
     // Convert percentage dimensions to pixel values.
     const containerWidth = canvas.parent().width();
     settings._maxRadius = _getDimension(containerWidth, settings.maxRadius);
     settings._minRadius = _getDimension(containerWidth, settings.minRadius);
-    settings._maxInnerRadius = _getDimension(containerWidth, settings.maxInnerRadius);
-    settings._minInnerRadius = _getDimension(containerWidth, settings.minInnerRadius);
+    settings._maxInnerRadius = _getDimension(
+      containerWidth,
+      settings.maxInnerRadius,
+    );
+    settings._minInnerRadius = _getDimension(
+      containerWidth,
+      settings.minInnerRadius,
+    );
     settings._maxFontSize = _getDimension(containerWidth, settings.maxFontSize);
     settings._minFontSize = _getDimension(containerWidth, settings.minFontSize);
     settings._fontYOffset = _getDimension(containerWidth, settings.fontYOffset);
@@ -323,11 +398,14 @@
     settings.innerRadius = settings._maxInnerRadius; // Set the radius of the inner circle to the maximum inner radius.
     settings.fontSize = settings._maxFontSize; // Set the fontsize to the maximum font size.
     settings.percentage = settings.slices[settings.sliceIndex].percentage; // Set the current percentage to the selected slice's percentage.
-    settings.angle = -0.5 * Math.PI; /* - 0.5 * settings.slices[settings.sliceIndex].radians; */ // Set the start angle.
+    settings.angle = -0.5
+      * Math.PI; /* - 0.5 * settings.slices[settings.sliceIndex].radians; */ // Set the start angle.
 
     // If settings.clickable a user can select a different percentage by clicking on the canvas.
     canvas.unbind();
-    if (settings.clickable) { canvas.click(_pieClick); }
+    if (settings.clickable) {
+      canvas.click(_pieClick);
+    }
   };
 
   $.fn.rotapie = function (options) {
@@ -337,28 +415,31 @@
       const container = $(this);
 
       // Create default settings.
-      const settings = $.extend({
-        slices: [
-          { color: '#006673', percentage: 10 }, // If color not set, slice will be transparant.
-          { color: '#0294a8', percentage: 30 }, // Font color to render percentage defaults to 'color' but can be overriden by setting 'fontColor'.
-          { color: '#77ccd1', percentage: 60 },
-        ],
-        sliceIndex: 0, // Start index selected slice.
-        deltaAngle: 0.2, // The rotation angle in radians between frames, smaller number equals slower animation.
-        gap: 0.05, // gap betwin sectors in radians;
-        minRadius: 60, // Radius of unselected slices, can be set to percentage of container width i.e. '50%'
-        maxRadius: 60, // Radius of selected slice, can be set to percentage of container width i.e. '45%'
-        minInnerRadius: 50, // Smallest radius inner circle when animated, set to 0 to disable inner circle, can be set to percentage of container width i.e. '35%'
-        maxInnerRadius: 55, // Normal radius inner circle, set to 0 to disable inner circle, can be set to percentage of container width i.e. '30%'
-        innerColor: '#fff', // Background color inner circle.
-        minFontSize: 30, // Smallest fontsize percentage when animated, set to 0 to disable percentage display, can be set to percentage of container width i.e. '20%'
-        maxFontSize: 40, // Normal fontsize percentage, set to 0 to disable percentage display, can be set to percentage of container width i.e. '10%'
-        fontYOffset: 0, // Vertically offset the percentage display with this value, can be set to percentage of container width i.e. '-10%'
-        fontFamily: 'Times New Roman', // FontFamily percentage display.
-        fontWeight: 'bold', // FontWeight percentage display.
-        decimalPoint: '.', // Can be set to comma or other symbol.
-        clickable: true, // If set to true a user can select a different slice by clicking on it.
-      }, options || {});
+      const settings = $.extend(
+        {
+          slices: [
+            { color: '#006673', percentage: 10 }, // If color not set, slice will be transparant.
+            { color: '#0294a8', percentage: 30 }, // Font color to render percentage defaults to 'color' but can be overriden by setting 'fontColor'.
+            { color: '#77ccd1', percentage: 60 },
+          ],
+          sliceIndex: 0, // Start index selected slice.
+          deltaAngle: 0.2, // The rotation angle in radians between frames, smaller number equals slower animation.
+          gap: 0.05, // gap betwin sectors in radians;
+          minRadius: 60, // Radius of unselected slices, can be set to percentage of container width i.e. '50%'
+          maxRadius: 60, // Radius of selected slice, can be set to percentage of container width i.e. '45%'
+          minInnerRadius: 50, // Smallest radius inner circle when animated, set to 0 to disable inner circle, can be set to percentage of container width i.e. '35%'
+          maxInnerRadius: 55, // Normal radius inner circle, set to 0 to disable inner circle, can be set to percentage of container width i.e. '30%'
+          innerColor: '#fff', // Background color inner circle.
+          minFontSize: 30, // Smallest fontsize percentage when animated, set to 0 to disable percentage display, can be set to percentage of container width i.e. '20%'
+          maxFontSize: 40, // Normal fontsize percentage, set to 0 to disable percentage display, can be set to percentage of container width i.e. '10%'
+          fontYOffset: 0, // Vertically offset the percentage display with this value, can be set to percentage of container width i.e. '-10%'
+          fontFamily: 'Times New Roman', // FontFamily percentage display.
+          fontWeight: 'bold', // FontWeight percentage display.
+          decimalPoint: '.', // Can be set to comma or other symbol.
+          clickable: true, // If set to true a user can select a different slice by clicking on it.
+        },
+        options || {},
+      );
 
       // Create a canvas element in container to draw pie on.
       let canvas = container.find('canvas.rotapie');
@@ -374,14 +455,16 @@
       canvas.data('settings', settings);
 
       // Single global window resize event updates all pie dimensions on page for all pies that use percentages.
-      $(window).unbind('resize.rotapie').bind('resize.rotapie', (e) => {
-        $('canvas.rotapie').each(function () {
-          const canvas = $(this);
-          const settings = canvas.data('settings');
-          _setDefaults(canvas, settings);
-          _renderPie(canvas, settings);
+      $(window)
+        .unbind('resize.rotapie')
+        .bind('resize.rotapie', (e) => {
+          $('canvas.rotapie').each(function () {
+            const canvas = $(this);
+            const settings = canvas.data('settings');
+            _setDefaults(canvas, settings);
+            _renderPie(canvas, settings);
+          });
         });
-      });
 
       // Render pie.
       _renderPie(canvas, settings);
@@ -390,8 +473,8 @@
     // Return public API.
     return {
       animate(index, pieIndex) {
-        if (pieIndex === undefined) // Animate every pie in wrapped set if pie index not specified.
-        {
+        if (pieIndex === undefined) {
+          // Animate every pie in wrapped set if pie index not specified.
           wrapped.each(function () {
             _rotatePie($(this).find('canvas.rotapie'), index);
           });
@@ -400,8 +483,8 @@
         }
       },
       repaint(pieIndex) {
-        if (pieIndex === undefined) // Repaint every pie in wrapped set if index not specified.
-        {
+        if (pieIndex === undefined) {
+          // Repaint every pie in wrapped set if index not specified.
           wrapped.each(function () {
             const canvas = $(this).find('canvas.rotapie');
             const settings = canvas.data('settings');
@@ -416,8 +499,8 @@
         }
       },
       getSettings(pieIndex) {
-        if (pieIndex === undefined && wrapped.length > 1) // Return all pie settings in wrapped set if index not specified.
-        {
+        if (pieIndex === undefined && wrapped.length > 1) {
+          // Return all pie settings in wrapped set if index not specified.
           const settings = [];
           wrapped.each(function () {
             settings.push($(this).find('canvas.rotapie').data('settings'));

@@ -1,4 +1,5 @@
 import 'ion-rangeslider';
+
 import DEFAULT_RANGE_SLIDER_PARAMETERS from './constants';
 
 class RangeSlider {

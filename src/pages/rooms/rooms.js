@@ -1,11 +1,9 @@
-import 'utilities/jquery-global';
-import 'utilities/polyfills';
 import Header from 'components/header/header';
 import CheckboxExpandable from 'components/checkbox-expandable/checkbox-expandable';
 import DropdownComfort from 'components/dropdown/dropdown-comfort';
 import RangeSlider from 'components/range-slider/range-slider';
-import RoomsFilter from 'utilities/rooms-filter';
 
+import RoomsFilter from './rooms-filter';
 import './rooms.scss';
 
 const headers = document.querySelectorAll('.js-header');

@@ -1,4 +1,5 @@
 import 'air-datepicker';
+
 import DEFAULT_CALENDAR_PARAMETRS from './constants';
 
 class Calendar {

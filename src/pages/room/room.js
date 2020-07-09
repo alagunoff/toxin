@@ -1,5 +1,3 @@
-import 'utilities/jquery-global';
-import 'utilities/polyfills';
 import Header from 'components/header/header';
 import ButtonLike from 'components/button-like/button-like';
 import Donut from 'components/donut/donut';

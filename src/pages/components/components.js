@@ -1,5 +1,3 @@
-import 'utilities/jquery-global';
-import 'utilities/polyfills';
 import 'components/calendar/calendar';
 import RangeSlider from 'components/range-slider/range-slider';
 import ButtonLike from 'components/button-like/button-like';

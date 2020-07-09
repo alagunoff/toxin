@@ -1,4 +1,4 @@
-import '../../utilities/jquery.rotapie';
+import './jquery.rotapie';
 
 class Donut {
   constructor($donut) {
@@ -17,7 +17,6 @@ class Donut {
       unit: that.getWordForm(Number($(el).attr('data-amount'))),
     }));
 
-
     this.$donut.rotapie({ slices: data });
   }
 
@@ -28,7 +27,9 @@ class Donut {
   getWordForm(num, words = ['голос', 'голоса', 'голосов']) {
     const correctedNum = Math.abs(num % 100) > 20 ? num % 10 : num;
 
-    return words[(correctedNum > 4 || correctedNum === 0) + (correctedNum !== 1)];
+    return words[
+      (correctedNum > 4 || correctedNum === 0) + (correctedNum !== 1)
+    ];
   }
 }
 
