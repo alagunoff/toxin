@@ -1,17 +1,14 @@
 const { merge } = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const { PATHS } = require('./constants');
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
+const config = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: PATHS.dist,
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
-    }),
-  ],
 });
+
+module.exports = config;

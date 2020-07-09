@@ -1,6 +1,7 @@
-import '../../utilities/jquery-global';
-import '../../utilities/polyfills';
-import Header from '../../components/header/header';
+import 'utilities/jquery-global';
+import 'utilities/polyfills';
+import Header from 'components/header/header';
+
 import './registration.scss';
 
 const headers = document.querySelectorAll('.js-header');

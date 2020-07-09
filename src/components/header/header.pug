@@ -5,8 +5,8 @@ mixin header({theme = ""} = {})
 
   header.header.js-header(class= className)
     .header__container
-      a.header__logo(href="index.html")
-        img.header__logo-image(src="../../images/logo.svg" alt="Отель Toxin")
+      a.header__logo(href="/index.html")
+        img.header__logo-image(src=require("../../images/logo.svg") alt="Отель Toxin")
       button.header__burger-button.js-header__burger-button(aria-label="Показать меню")
       nav.header__navigation.js-header__navigation
         ul.header__site-navigation
