@@ -429,14 +429,14 @@
         }
       }
 
-      #{$root}__button-account-action-item {
+      #{$root}__button-border-gradient-item {
         margin-bottom: 1.8rem;
       }
 
-      #{$root}__button-account-action-subitem {
+      #{$root}__button-border-gradient-subitem {
         display: inline-block;
 
-        + #{$root}__button-account-action-subitem {
+        + #{$root}__button-border-gradient-subitem {
           margin-left: 1.2rem;
         }
       }

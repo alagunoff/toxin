@@ -8,6 +8,7 @@ const { PATHS, ENTRIES, LOADERS } = require('./constants');
 const config = {
   entry: {
     index: ENTRIES.index,
+    main: ENTRIES.main,
     login: ENTRIES.login,
     registration: ENTRIES.registration,
     rooms: ENTRIES.rooms,
@@ -20,6 +21,10 @@ const config = {
   },
   resolve: {
     modules: [PATHS.src, PATHS.nodeModules],
+    alias: {
+      '@root': PATHS.src,
+      '@components': PATHS.components,
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),

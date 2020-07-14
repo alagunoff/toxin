@@ -1,19 +1,9 @@
-extends /shared/layouts/base
+extends ~@root/shared/layouts/base
 
-include /components/header/header
-include /components/main-page/main-page
-include /components/footer/footer
-
-block description
-  meta(name="description" content="Наш отель является лучшим отелем 2019 года по версии независимой организации. Вы можете найти у нас номера от бюджетных до люксовых. Вам определенно понравится у нас")
-
-block keywords
-  meta(name="keywords" content="лучший отель 2019, бюджетный отель, отель toxin, забронировать номер в отеле")
+include ~@components/index-page/index-page
 
 block title
-  title Отель Toxin | Лучший отель 2019 года по версии ассоциации «Отельные взгляды»
+  title Отель Toxin | Список страниц
 
 block content
-  +header
-  +main-page
-  +footer
+  +index-page

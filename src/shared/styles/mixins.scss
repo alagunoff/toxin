@@ -1,0 +1,16 @@
+@mixin visually-hidden {
+  position: absolute;
+  visibility: hidden;
+}
+
+@mixin normalized-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin container {
+  max-width: 82.8571rem;
+  margin: 0 auto;
+  padding: 0 0.7143rem;
+}

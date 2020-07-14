@@ -1,20 +1,20 @@
 import 'air-datepicker';
 
-import DEFAULT_CALENDAR_PARAMETRS from './constants';
+import DEFAULT_PARAMETERS from './constants';
 
 class Calendar {
-  constructor($calendar, index) {
+  constructor($calendar) {
     this.$calendar = $calendar;
 
-    this.init(index);
+    this.init();
   }
 
-  init(index) {
+  init() {
     this.findDomElements();
-    this.addEventListeners(index);
+    this.addEventListeners();
 
     this.$fieldInit.datepicker({
-      ...DEFAULT_CALENDAR_PARAMETRS,
+      ...DEFAULT_PARAMETERS,
       onSelect: this.handleCalendarSelectedData.bind(this),
     });
 
@@ -31,12 +31,10 @@ class Calendar {
     this.$clearButton = this.$calendar.find('.js-calendar__button_type_clear');
   }
 
-  addEventListeners(index) {
-    const namespace = `calendar.calendar-${index}`;
-
-    this.$tick.on(`click.${namespace}`, this.handleTickClick.bind(this));
-    this.$applyButton.on(`click.${namespace}`, this.handleApplyButtonClick.bind(this));
-    this.$clearButton.on(`click.${namespace}`, this.handleClearButtonClick.bind(this));
+  addEventListeners() {
+    this.$tick.on('click', this.handleTickClick.bind(this));
+    this.$applyButton.on('click', this.handleApplyButtonClick.bind(this));
+    this.$clearButton.on('click', this.handleClearButtonClick.bind(this));
   }
 
   handleTickClick() {
@@ -52,10 +50,10 @@ class Calendar {
   }
 
   handleCalendarSelectedData(formattedDate) {
-    const arrDates = formattedDate.split('-');
+    const [dateFrom, dateTo] = formattedDate.split('-');
 
-    this.$fieldFrom.val(arrDates[0]);
-    this.$fieldTo.val(arrDates[1]);
+    this.$fieldFrom.val(dateFrom);
+    this.$fieldTo.val(dateTo);
   }
 
   toggleCalendar() {

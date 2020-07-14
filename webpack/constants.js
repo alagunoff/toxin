@@ -8,11 +8,13 @@ const PATHS = {
   src: path.join(ROOT, 'src'),
   dist: path.join(ROOT, 'dist'),
   pages: path.join(ROOT, 'src/pages'),
+  components: path.join(ROOT, 'src/components'),
   nodeModules: path.join(ROOT, 'node_modules'),
 };
 
 const ENTRIES = {
   index: path.join(PATHS.src, 'pages/index/index.js'),
+  main: path.join(PATHS.src, 'pages/main/main.js'),
   login: path.join(PATHS.src, 'pages/login/login.js'),
   registration: path.join(PATHS.src, 'pages/registration/registration.js'),
   rooms: path.join(PATHS.src, 'pages/rooms/rooms.js'),
@@ -28,9 +30,6 @@ const LOADERS = {
   },
   pug: {
     loader: 'pug-loader',
-    options: {
-      root: PATHS.src,
-    },
   },
   css: {
     loader: 'css-loader',

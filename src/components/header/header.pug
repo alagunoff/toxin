@@ -1,35 +1,31 @@
-include ../button/button
+include ~@components/button/button
 
-mixin header({theme = ""} = {})
-  - const className = theme ? `header_theme_${theme}` : "";
+mixin header({ theme } = {})
+  - const headerTheme = theme ? `header_theme_${theme}` : "";
 
-  header.header.js-header(class= className)
+  header.header.js-header(class= headerTheme)
     .header__container
       a.header__logo(href="/index.html")
-        img.header__logo-image(src=require("../../images/logo.svg") alt="Отель Toxin")
+        img.header__logo-image(src=require("@root/images/logo.svg") alt="Отель Toxin")
+        // +button({ text: 'Показать меню'})
       button.header__burger-button.js-header__burger-button(aria-label="Показать меню")
       nav.header__navigation.js-header__navigation
         ul.header__site-navigation
-          -
-            const items =
-            [
-              {"title": "Компоненты", "theme": "bold", "link": "../components-page/components-page.pug"},
-              {"title": "О нас", "link": "/mock-address/change-me"},
-              {"title": "Услуги", "theme": "has-submenu", "link": "/mock-address/change-me"},
-              {"title": "Вакансии", "link": "/mock-address/change-me"},
-              {"title": "Новости", "link": "/mock-address/change-me"},
-              {"title": "Соглашения", "theme": "has-submenu", "link": "/mock-address/change-me"}
-            ];
-          each item in items
-            - const className = "theme" in item ? `header__item_theme_${item.theme}` : "";
 
-            li.header__item(class= className)
-              a.header__link(href= item.link)= item.title
+          - const { pages } = require('@components/header/data.json');
+
+          each page in pages
+            - const { title, link, modifier } = page;
+            - const itemModifier = modifier ? `header__item_${modifier}` : "";
+
+            li.header__item(class = itemModifier)
+              a.header__link(href = link)= title
+
         ul.header__user-navigation
           li.header__item
-            +button({"text": "войти", "theme": "account-action", "size": "small", "isLink": true, "href": "../login-page/login-page.pug"})
+            +button({"text": "войти", "theme": "border-gradient", "size": "small", "isLink": true, "href": "../login-page/login-page.pug"})
           li.header__item
             +button({"text": "зарегистрироваться", "theme": "registration", "size": "small", "isLink": true, "href": "../registration-page/registration-page.pug"})
         ul.header__user-menu
           li.header__item
-            a.header__link(href="/mock-address/change-me") Артём Лагунов
+            a.header__link(href="/mock-address") Артём Лагунов

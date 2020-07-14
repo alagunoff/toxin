@@ -1,0 +1,28 @@
+{
+  "pages": [
+    {
+      "href": "components.html",
+      "title": "Components page"
+    },
+    {
+      "href": "main.html",
+      "title": "Landing page"
+    },
+    {
+      "href": "login.html",
+      "title": "Login page"
+    },
+    {
+      "href": "registration.html",
+      "title": "Registration page"
+    },
+    {
+      "href": "rooms.html",
+      "title": "Search room page"
+    },
+    {
+      "href": "room.html",
+      "title": "Room page"
+    }
+  ]
+}

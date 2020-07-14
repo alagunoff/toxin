@@ -1,0 +1,12 @@
+mixin index-page
+  main.index-page
+    h1.index-page__title
+    ul.index-page__list
+
+      - const { pages } = require('@components/index-page/data.json');
+      
+      each page in pages
+        - const { href, title } = page;
+
+        li.index-page__item
+          a.index-page__link(href = href target="_blank")= title

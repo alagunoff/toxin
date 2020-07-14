@@ -1,14 +1,11 @@
 @import './fonts';
 @import './variables';
-
-* {
-  margin: 0;
-}
+@import './mixins';
 
 html {
   font: $root-font;
   color: $primary-color-75;
-  background-color: $root-background-color;
+  background: $root-background;
 }
 
 body {

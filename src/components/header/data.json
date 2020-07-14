@@ -1,0 +1,17 @@
+{
+  "pages": [
+    { "title": "О нас", "link": "/mock-address" },
+    {
+      "title": "Услуги",
+      "modifier": "has-submenu",
+      "link": "/mock-address"
+    },
+    { "title": "Вакансии", "link": "/mock-address" },
+    { "title": "Новости", "link": "/mock-address" },
+    {
+      "title": "Соглашения",
+      "modifier": "has-submenu",
+      "link": "/mock-address"
+    }
+  ]
+}

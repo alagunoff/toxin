@@ -5,15 +5,25 @@ class DropdownGuests extends Dropdown {
   findDomElements() {
     super.findDomElements();
 
-    this.buttonClear = this.dropdown.querySelector('.js-dropdown__button_type_clear');
-    this.buttonApply = this.dropdown.querySelector('.js-dropdown__button_type_apply');
+    this.buttonClear = this.dropdown.querySelector(
+      '.js-dropdown__button_type_clear',
+    );
+    this.buttonApply = this.dropdown.querySelector(
+      '.js-dropdown__button_type_apply',
+    );
   }
 
   addEventListeners() {
     super.addEventListeners();
 
-    this.buttonClear.addEventListener('click', this.handleButtonClearClick.bind(this));
-    this.buttonApply.addEventListener('click', this.handleButtonApplyClick.bind(this));
+    this.buttonClear.addEventListener(
+      'click',
+      this.handleButtonClearClick.bind(this),
+    );
+    this.buttonApply.addEventListener(
+      'click',
+      this.handleButtonApplyClick.bind(this),
+    );
   }
 
   handleDecreaseButtonClick(evt) {
@@ -54,7 +64,10 @@ class DropdownGuests extends Dropdown {
       { guest: 'гостей', baby: 'младенцев' },
     ];
 
-    const guestsAmount = this.counterFields.reduce((acc, it) => Number(it.textContent) + acc, 0);
+    const guestsAmount = this.counterFields.reduce(
+      (acc, it) => Number(it.textContent) + acc,
+      0,
+    );
     const amountBabies = this.counterFields[2].textContent;
 
     this.input.value = counters.reduce((acc, it, i) => {
@@ -69,7 +82,9 @@ class DropdownGuests extends Dropdown {
   }
 
   isCounterFieldsEmpty() {
-    return this.counterFields.every((field) => Number(field.textContent) === COUNTER_NUMBER_MIN);
+    return this.counterFields.every(
+      (field) => Number(field.textContent) === COUNTER_NUMBER_MIN,
+    );
   }
 }
 

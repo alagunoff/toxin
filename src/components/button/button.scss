@@ -1,68 +1,57 @@
 .button {
   $root: &;
 
+  box-sizing: border-box;
   display: inline-block;
   width: 100%;
   padding: 0;
+  color: $purple-color-100;
   font: inherit;
   font-weight: bold;
   font-size: 0.8571rem;
   line-height: 1.0714rem;
-  border: none;
-  border-radius: 1.5714rem;
+  border: 0;
+  background: none;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
 
-  &__text {
-    box-sizing: border-box;
-    display: inline-block;
-    width: 100%;
+  &:hover {
+    color: $primary-color-50;
+  }
+
+  &_theme_border-gradient {
+    padding: 0.8571rem 1.4286rem;
+    border: 0.1429rem solid transparent;
     border-radius: 1.5714rem;
-  }
-
-  &_theme_bold {
-    color: $purple-color-100;
+    background: linear-gradient($white-color-100, $white-color-100) padding-box,
+      linear-gradient($purple-color-100 0%, $aqua-color-light-100 100%) border-box;
 
     &:hover {
-      color: $primary-color-50;
-    }
-  }
-
-  &_theme_account-action {
-    min-width: 3.1429rem;
-    padding: 0.1429rem;
-    color: $purple-color-100;
-    background-image: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
-
-    &:hover {
-      background-image: linear-gradient(180deg, $purple-color-50 0%, $aqua-color-light-50 100%);
-    }
-
-    #{$root}__text {
-      padding: 0.9286rem 1.2857rem;
-      background-color: $white-color-100;
+      color: $purple-color-100;
+      background: linear-gradient($white-color-100, $white-color-100) padding-box,
+        linear-gradient($purple-color-50 0%, $aqua-color-light-50 100%) border-box;
     }
   }
 
   &_theme_registration {
-    min-width: 3.1429rem;
+    padding: 0.8571rem 1.4286rem;
     color: $white-color-100;
-    background-image: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
+    border-radius: 1.5714rem;
+    background-image: linear-gradient($purple-color-100 0%, $aqua-color-light-100 100%);
 
     &:hover {
-      background-image: linear-gradient(180deg, $purple-color-50 0%, $aqua-color-light-50 100%);
-    }
-
-    #{$root}__text {
-      padding: 1.0714rem 1.4286rem;
+      color: $white-color-100;
+      background-image: linear-gradient($purple-color-50 0%, $aqua-color-light-50 100%);
     }
   }
 
   &_theme_submit {
     position: relative;
+    padding: 1.0714rem 2.5rem;
     color: $white-color-100;
+    border-radius: 1.5714rem;
     background-image: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
 
     &::before {
@@ -88,21 +77,13 @@
       border-bottom: none;
       transform: translateY(-50%) rotate(45deg);
     }
-
-    #{$root}__text {
-      padding: 1.0714rem 2.5rem;
-    }
   }
 
-  &_size_small#{$root}_theme_account-action {
-    #{$root}__text {
-      padding: 0.5714rem 1.2857rem;
-    }
+  &_size_small#{$root}_theme_border-gradient {
+    padding: 0.5714rem 1.2857rem;
   }
 
   &_size_small#{$root}_theme_registration {
-    #{$root}__text {
-      padding: 0.7143rem 1.4286rem;
-    }
+    padding: 0.7143rem 1.4286rem;
   }
 }
