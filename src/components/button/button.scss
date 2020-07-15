@@ -5,7 +5,6 @@
   display: inline-block;
   width: 100%;
   padding: 0;
-  color: $purple-color-100;
   font: inherit;
   font-weight: bold;
   font-size: 0.8571rem;
@@ -16,74 +15,72 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  word-break: break-all;
 
-  &:hover {
-    color: $primary-color-50;
+  &_theme_default {
+    color: $purple-color-100;
+
+    &:hover {
+      color: $primary-color-50;
+    }
   }
 
   &_theme_border-gradient {
-    padding: 0.8571rem 1.4286rem;
+    padding: 0.9286rem 1.2857rem;
     border: 0.1429rem solid transparent;
+    color: $purple-color-100;
     border-radius: 1.5714rem;
     background: linear-gradient($white-color-100, $white-color-100) padding-box,
-      linear-gradient($purple-color-100 0%, $aqua-color-light-100 100%) border-box;
+      linear-gradient($purple-color-100, $aqua-color-light-100) border-box;
 
     &:hover {
-      color: $purple-color-100;
       background: linear-gradient($white-color-100, $white-color-100) padding-box,
-        linear-gradient($purple-color-50 0%, $aqua-color-light-50 100%) border-box;
+        linear-gradient($purple-color-50, $aqua-color-light-50) border-box;
     }
   }
 
-  &_theme_registration {
-    padding: 0.8571rem 1.4286rem;
+  &_theme_gradient {
+    padding: 1.0714rem 1.4286rem;
     color: $white-color-100;
     border-radius: 1.5714rem;
-    background-image: linear-gradient($purple-color-100 0%, $aqua-color-light-100 100%);
+    background-image: linear-gradient($purple-color-100, $aqua-color-light-100);
 
     &:hover {
-      color: $white-color-100;
-      background-image: linear-gradient($purple-color-50 0%, $aqua-color-light-50 100%);
+      opacity: 0.5;
     }
   }
 
-  &_theme_submit {
+  &_theme_with-arrow {
     position: relative;
     padding: 1.0714rem 2.5rem;
     color: $white-color-100;
     border-radius: 1.5714rem;
-    background-image: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
+    background-image: linear-gradient($purple-color-100, $aqua-color-light-100);
 
     &::before {
-      content: '';
-      position: absolute;
+      @include arrow-angle;
+
       top: 50%;
       right: 0.9286rem;
-      width: 1.1429rem;
-      height: 0.1429rem;
-      background-color: $white-color-100;
-      transform: translateY(-50%);
+      transform: translateY(-50%) rotate(45deg);
     }
 
     &::after {
-      content: '';
-      position: absolute;
+      @include arrow-line;
+
       top: 50%;
-      right: 1.0714rem;
-      width: 0.6429rem;
-      height: 0.6429rem;
-      border: 0.1429rem solid $white-color-100;
-      border-left: none;
-      border-bottom: none;
-      transform: translateY(-50%) rotate(45deg);
+      right: 0.8571rem;
+      transform: translateY(-50%);
     }
   }
 
   &_size_small#{$root}_theme_border-gradient {
-    padding: 0.5714rem 1.2857rem;
+    padding-top: 0.5714rem;
+    padding-bottom: 0.5714rem;
   }
 
-  &_size_small#{$root}_theme_registration {
-    padding: 0.7143rem 1.4286rem;
+  &_size_small#{$root}_theme_gradient {
+    padding-top: 0.7143rem;
+    padding-bottom: 0.7143rem;
   }
 }

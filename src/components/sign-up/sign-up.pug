@@ -38,7 +38,7 @@ mixin sign-up({title = "Регистрация аккаунта"} = {})
       .sign-up__group
         +checkbox-input({"id": "field-newsletter", "title": "Получать спецпредложения", "theme": "toggle"})(name="newsletter")
       p.sign-up__group
-        +button({"text": "перейти к оплате", "theme": "submit", "type": "submit"})
+        +button({"text": "перейти к оплате", "theme": "with-arrow", "type": "submit"})
     .sign-up__login
       span.sign-up__text Уже есть аккаунт на Toxin?
       span.sign-up__login-button
