@@ -14,21 +14,3 @@
   padding: 0;
   list-style-type: none;
 }
-
-@mixin arrow-angle {
-  content: '';
-  position: absolute;
-  width: 0.6429rem;
-  height: 0.6429rem;
-  border: 0.1429rem solid $white-color-100;
-  border-left: 0;
-  border-bottom: 0;
-}
-
-@mixin arrow-line {
-  content: '';
-  position: absolute;
-  width: 1.1429rem;
-  height: 0.1429rem;
-  background-color: $white-color-100;
-}

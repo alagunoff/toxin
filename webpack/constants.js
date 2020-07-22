@@ -22,7 +22,7 @@ const ENTRIES = {
 };
 
 const LOADERS = {
-  js: {
+  babel: {
     loader: 'babel-loader',
     options: {
       presets: ['@babel/preset-env'],
@@ -60,14 +60,14 @@ const LOADERS = {
   img: {
     loader: 'file-loader',
     options: {
-      name: 'images/[name].[ext]',
+      name: 'images/[name].[contenthash].[ext]',
       esModule: false,
     },
   },
   fonts: {
     loader: 'file-loader',
     options: {
-      name: 'fonts/[name].[ext]',
+      name: 'fonts/[name].[contenthash].[ext]',
     },
   },
 };

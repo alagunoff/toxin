@@ -6,7 +6,7 @@ mixin index-page
       - const { pages } = require('@components/index-page/data.json');
       
       each page in pages
-        - const { href, title } = page;
+        - const { link, title } = page;
 
         li.index-page__item
-          a.index-page__link(href = href target="_blank")= title
+          a.index-page__link(href = link target="_blank")= title

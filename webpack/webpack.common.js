@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { PATHS, ENTRIES, LOADERS } = require('./constants');
 
@@ -14,40 +13,11 @@ const config = {
     rooms: ENTRIES.rooms,
     room: ENTRIES.room,
   },
-  output: {
-    filename: 'js/[name].js',
-    path: PATHS.dist,
-    publicPath: '/',
-  },
-  resolve: {
-    modules: [PATHS.src, PATHS.nodeModules],
-    alias: {
-      '@root': PATHS.src,
-      '@components': PATHS.components,
-    },
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
-    }),
-    ...Object.keys(ENTRIES).map(
-      (entry) => new HtmlWebpackPlugin({
-        chunks: [entry],
-        filename: `${entry}.html`,
-        template: `${PATHS.pages}/${entry}/${entry}.pug`,
-      }),
-    ),
-  ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: [LOADERS.js],
+        use: [LOADERS.babel],
       },
       {
         test: /\.pug$/,
@@ -70,6 +40,34 @@ const config = {
         use: [LOADERS.fonts],
       },
     ],
+  },
+  resolve: {
+    modules: [PATHS.src, PATHS.nodeModules],
+    alias: {
+      '@root': PATHS.src,
+      '@components': PATHS.components,
+    },
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
+    ...Object.keys(ENTRIES).map(
+      (entry) => new HtmlWebpackPlugin({
+        chunks: [entry],
+        filename: `${entry}.html`,
+        template: `${PATHS.pages}/${entry}/${entry}.pug`,
+      }),
+    ),
+  ],
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      minChunks: 2,
+    },
   },
 };
 

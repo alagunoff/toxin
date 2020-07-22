@@ -1,4 +1,4 @@
-mixin text-input({theme = "", type = "text"} = {})
+mixin text-input({ theme, type = "text" } = {})
   - const className = theme ? `text-input_theme_${theme}` : "";
 
   span.text-input(class= className)

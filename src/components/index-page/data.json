@@ -1,28 +1,28 @@
 {
   "pages": [
     {
-      "href": "/components.html",
-      "title": "Components page"
+      "title": "Components page",
+      "link": "/components.html"
     },
     {
-      "href": "/main.html",
-      "title": "Landing page"
+      "title": "Landing page",
+      "link": "/main.html"
     },
     {
-      "href": "/login.html",
-      "title": "Login page"
+      "title": "Login page",
+      "link": "/login.html"
     },
     {
-      "href": "/registration.html",
-      "title": "Registration page"
+      "title": "Registration page",
+      "link": "/registration.html"
     },
     {
-      "href": "/rooms.html",
-      "title": "Search room page"
+      "title": "Search room page",
+      "link": "/rooms.html"
     },
     {
-      "href": "/room.html",
-      "title": "Room page"
+      "title": "Room page",
+      "link": "/room.html"
     }
   ]
 }

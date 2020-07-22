@@ -1,6 +1,4 @@
 .button {
-  $root: &;
-
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
@@ -39,6 +37,11 @@
     }
   }
 
+  &_theme_border-gradient#{&}_size_small {
+    padding-top: 0.5714rem;
+    padding-bottom: 0.5714rem;
+  }
+
   &_theme_gradient {
     padding: 1.0714rem 1.4286rem;
     color: $white-color-100;
@@ -50,6 +53,11 @@
     }
   }
 
+  &_theme_gradient#{&}_size_small {
+    padding-top: 0.7143rem;
+    padding-bottom: 0.7143rem;
+  }
+
   &_theme_with-arrow {
     position: relative;
     padding: 1.0714rem 2.5rem;
@@ -58,29 +66,27 @@
     background-image: linear-gradient($purple-color-100, $aqua-color-light-100);
 
     &::before {
-      @include arrow-angle;
-
+      content: '';
+      position: absolute;
       top: 50%;
       right: 0.9286rem;
+      width: 0.6429rem;
+      height: 0.6429rem;
+      border: 0.1429rem solid $white-color-100;
+      border-left: 0;
+      border-bottom: 0;
       transform: translateY(-50%) rotate(45deg);
     }
 
     &::after {
-      @include arrow-line;
-
+      content: '';
+      position: absolute;
       top: 50%;
       right: 0.8571rem;
+      width: 1.1429rem;
+      height: 0.1429rem;
+      background-color: $white-color-100;
       transform: translateY(-50%);
     }
-  }
-
-  &_size_small#{$root}_theme_border-gradient {
-    padding-top: 0.5714rem;
-    padding-bottom: 0.5714rem;
-  }
-
-  &_size_small#{$root}_theme_gradient {
-    padding-top: 0.7143rem;
-    padding-bottom: 0.7143rem;
   }
 }

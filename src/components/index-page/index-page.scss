@@ -1,6 +1,4 @@
 .index-page {
-  $root: &;
-
   padding-top: 7.1429rem;
   text-align: center;
 
@@ -17,8 +15,13 @@
   }
 
   &__link {
+    font-weight: bold;
     font-size: 1.2857rem;
     color: $purple-color-100;
     text-decoration: none;
+
+    &:hover {
+      color: $purple-color-50;
+    }
   }
 }
