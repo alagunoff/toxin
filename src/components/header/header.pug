@@ -1,14 +1,15 @@
+include ~@components/logo/logo
 include ~@components/button/button
 
 mixin header({ user = null } = {})
   header.header.js-header
-    a.header__logo(href="/index.html")
-      img.header__logo-image(src = require("@root/images/logo.svg") alt="Отель Toxin")
+    .header__logo
+      +logo
     button.header__burger-button.js-header__burger-button(type="button" aria-label="Показать меню")
     nav.header__navigation.js-header__navigation
       ul.header__site-navigation
 
-        - const { pages } = require('@components/header/data.json');
+        - const { pages } = require('@components/header/data');
 
         each page in pages
           - const { title, link, theme } = page;
@@ -25,7 +26,7 @@ mixin header({ user = null } = {})
       else
         ul.header__user-navigation
           li.header__item
-            +button({"text": "войти", "theme": "border-gradient", "size": "small", "isLink": true, "href": "/login.html"})
+            +button({text: "войти", theme: "border-gradient", size: "small", isLink: true, link: "/login.html"})
           li.header__item
-            +button({"text": "зарегистрироваться", "theme": "gradient", "size": "small", "isLink": true, "href": "/registration.html"})
+            +button({text: "зарегистрироваться", theme: "gradient", size: "small", isLink: true, link: "/registration.html"})
           

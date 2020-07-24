@@ -1,20 +1,12 @@
 @import 'components/room-search/room-search';
 
 .main-page {
-  background: url('~@components/main-page/images/background-1.jpg') no-repeat
-    center/cover;
+  position: relative;
+  padding: 5rem 9.7% 27.4714rem;
+  background: url('~@components/main-page/images/background-1.jpg') no-repeat center/cover;
 
-  &__container {
-    @include container;
-
-    position: relative;
-    padding-top: 5rem;
-    padding-bottom: 27.4714rem;
-
-    @media screen and (max-width: 1057px) {
-      padding-top: 2.1429rem;
-      padding-bottom: 2.1429rem;
-    }
+  @media screen and (max-width: 1000px) {
+    padding: 2.1429rem 10px;
   }
 
   &__title {
@@ -24,12 +16,15 @@
   &__info {
     position: absolute;
     bottom: 1.5rem;
-    right: 0.7143rem;
+    right: 9.7%;
     width: 21.4286rem;
-    margin: 0;
     text-align: right;
 
-    @media screen and (max-width: 1057px) {
+    @media screen and (max-width: 1300px) {
+      right: 0.7143rem;
+    }
+
+    @media screen and (max-width: 1000px) {
       display: none;
     }
   }
@@ -37,11 +32,11 @@
   &__form {
     width: 27.1429rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       margin: 0 auto;
     }
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 420px) {
       width: 100%;
     }
   }

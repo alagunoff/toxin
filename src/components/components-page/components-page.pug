@@ -248,19 +248,11 @@ mixin components-page
       h2.components-page__heading Хедеры и футеры
       -
         const headers =
-        [
-          {},
-          {"modifier": "logged"},
-        ];
+        [, {user: {name: 'Артём Лагунов'}}];
+
       each header in headers
         .components-page__headers-footers-item
           +header(header)
-      -
-        const footers =
-        [
-          {"theme": ""},
-          {"theme": "poor"},
-        ];
-      each footer in footers
-        .components-page__headers-footers-item
-          +footer(footer)
+
+      .components-page__headers-footers-item
+        +footer(footer)

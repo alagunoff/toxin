@@ -1,0 +1,12 @@
+{
+  "pages": [
+    { "title": "Навигация", "subItems": ["О нас", "Новости", "Служба поддержки", "Услуги"] },
+    { "title": "О нас", "subItems": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"] },
+    { "title": "Служба поддержки", "subItems": ["Соглашения", "Сообщества", "Связь с нами"] }
+  ],
+  "socialLinks": [
+    { "theme": "twitter", "label": "Твиттер", "link": "/mock-address" },
+    { "theme": "facebook", "label": "Фейсбук", "link": "/mock-address" },
+    { "theme": "instagram", "label": "Инстаграм", "link": "/mock-address" }
+  ]
+}

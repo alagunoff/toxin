@@ -76,7 +76,7 @@
     font-size: 1.1429rem;
     color: $white-color-100;
     text-align: center;
-    border: none;
+    border: 0;
     background: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
     cursor: pointer;
     -webkit-appearance: none;
@@ -94,7 +94,7 @@
     width: 2.8571rem;
     height: 2.8571rem;
     background: $primary-color-75;
-    border: none;
+    border: 0;
     border-radius: 0 0 0 0.3571rem;
     cursor: pointer;
     -webkit-appearance: none;
@@ -125,7 +125,7 @@
 
   &__group {
     padding: 0;
-    border: none;
+    border: 0;
 
     &:nth-child(1) {
       margin-bottom: 1.1714rem;

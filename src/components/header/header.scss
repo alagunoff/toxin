@@ -4,21 +4,20 @@
   $root: &;
 
   display: grid;
-  grid:
-    ' ...  logo navigation ...'
-    / 9.7% auto auto 9.7%;
-  padding: 1.0714rem 0;
+  grid-template-areas: 'logo navigation';
+  padding: 1.0714rem 9.7%;
   background: $white-color-100;
-  box-shadow: 0rem 0.7143rem 1.4286rem $primary-color-5;
+  box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
 
   @media screen and (max-width: 1300px) {
-    grid-template-columns: 10px auto auto 10px;
+    padding-left: 0.7143rem;
+    padding-right: 0.7143rem;
   }
 
   @media screen and (max-width: 1000px) {
     grid-template-areas:
-      '... logo navigation ...'
-      '... content content ...';
+      'logo burger'
+      'navigation navigation';
   }
 
   &__logo {
@@ -29,14 +28,14 @@
   }
 
   &__burger-button {
-    grid-area: navigation;
+    grid-area: burger;
     justify-self: end;
     position: relative;
     display: none;
     width: 2.8571rem;
     height: 2.8571rem;
     background: linear-gradient($purple-color-100, $aqua-color-light-100);
-    border: none;
+    border: 0;
     border-radius: 50%;
     cursor: pointer;
 
@@ -83,7 +82,6 @@
     flex-wrap: wrap;
 
     @media screen and (max-width: 1000px) {
-      grid-area: content;
       justify-self: stretch;
       display: none;
       margin-top: 0.7143rem;
@@ -151,7 +149,7 @@
           border: 0.1429rem solid $primary-color-50;
           border-top: 0;
           border-left: 0;
-          transform: translateY(-2px) rotate(45deg);
+          transform: translateY(-0.1429rem) rotate(45deg);
         }
 
         + #{$root}__item {
@@ -169,6 +167,7 @@
     @include normalized-list;
 
     display: flex;
+    flex-wrap: wrap;
 
     @media screen and (max-width: 1000px) {
       flex-direction: column;
@@ -188,15 +187,14 @@
   }
 
   &__user-menu {
-    padding: 0;
     padding-left: 2.1429rem;
-    list-style-type: none;
     border-left: 0.0714rem solid $primary-color-10;
 
-    @media screen and (max-width: 1057px) {
-      padding: 0.7143rem 0 0;
+    @media screen and (max-width: 1000px) {
+      padding-left: 0;
+      padding-top: 0.7143rem;
       border-left: none;
-      border-top: 0.2143rem solid $primary-color-50;
+      border-top: 0.1429rem solid $primary-color-30;
     }
   }
 }

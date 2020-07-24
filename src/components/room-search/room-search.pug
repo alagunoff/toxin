@@ -8,8 +8,8 @@ mixin room-search({title = "Найдём номера под ваши пожел
     form.room-search__form(action="https://echo.htmlacademy.ru" method="post")
       .room-search__group
         +calendar
-      p.room-search__group
+      .room-search__group
         label.room-search__label(for="field-amount-guests") Гости
         +dropdown({"type": "guests", "items": ["Взрослые", "Дети", "Младенцы"], "id": "field-amount-guests", "name": "guests", "placeholder": "Сколько гостей"})
-      p.room-search__group
+      .room-search__group
         +button({"text": "подобрать номер", "theme": "with-arrow", "isLink": true, "href": "../../pages/rooms-page/rooms-page.pug"})

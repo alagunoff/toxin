@@ -115,7 +115,7 @@
     color: $primary-color-50;
     text-transform: uppercase;
     cursor: pointer;
-    border: none;
+    border: 0;
     background-color: transparent;
 
     &_theme_purple {
@@ -131,7 +131,7 @@
   width: 100%;
   font: inherit;
   background-color: transparent;
-  border: none;
+  border: 0;
 
   &--nav {
     align-items: center;
@@ -222,7 +222,7 @@
 
     &.-range-to-,
     &.-range-from- {
-      border: none;
+      border: 0;
     }
 
     &.-focus-:not(.-disabled-):not(.-current-):not(.-in-range-),

@@ -1,4 +1,4 @@
-mixin button({ text, theme, size, isLink, type = "button", href = "/mock-address" } = {})
+mixin button({ text, theme, size, isLink, type = "button", link = "/mock-address" } = {})
   - const buttonTheme = theme ? `button_theme_${theme}` : "";
   - const buttonSize = size ? `button_size_${size}` : "";
   - const tagName = isLink ? "a" : "button";
@@ -6,5 +6,5 @@ mixin button({ text, theme, size, isLink, type = "button", href = "/mock-address
   #{tagName}.button(
     class = [buttonTheme, buttonSize]
     type = tagName === "button" ? type : false
-    href = tagName === "a" ? href : false)&attributes(attributes)
+    href = tagName === "a" ? link : false)&attributes(attributes)
     = text

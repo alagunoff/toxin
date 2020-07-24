@@ -1,13 +1,10 @@
 .text-input {
   $root: &;
 
-  display: inline-block;
-  width: 100%;
-
   &__field {
     box-sizing: border-box;
     display: inline-block;
-    padding: 0.8571rem 1.0714rem;
+    padding: 0.9286rem 1.0714rem;
     width: 100%;
     font: inherit;
     line-height: 1.2857rem;
@@ -19,10 +16,8 @@
       color: $primary-color-25;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       border: 0.0714rem solid $primary-color-50;
-      outline: none;
     }
   }
 
@@ -30,11 +25,7 @@
     position: relative;
 
     #{$root}__field {
-      padding: 0.9143rem 2.3714rem 0.9143rem 1.0714rem;
-
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        min-height: 3.2857rem;
-      }
+      padding-right: 2.8571rem;
     }
 
     #{$root}__submit-button {
@@ -43,20 +34,10 @@
       right: 0.9286rem;
       width: 1.2857rem;
       height: 1.2857rem;
-      padding: 0;
+      border: 0;
+      background: transparent url('~@components/text-input/images/arrow-gradient.svg');
       transform: translateY(-50%);
-      border: none;
-      background-color: transparent;
-      background: transparent url('../../components/text-input/images/arrow-gradient.svg') no-repeat center;
       cursor: pointer;
-    }
-  }
-
-  &_theme_masked {
-    #{$root}__field {
-      &::placeholder {
-        text-transform: uppercase;
-      }
     }
   }
 }
