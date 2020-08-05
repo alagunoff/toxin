@@ -50,6 +50,7 @@
     display: grid;
     grid-template-columns: 34% 1fr 29%;
     grid-gap: 2%;
+    padding-top: 0.3571rem;
 
     @media screen and (max-width: 1300px) {
       grid-template-columns: repeat(3, 1fr);
@@ -58,10 +59,6 @@
     @media screen and (max-width: 1000px) {
       display: none;
     }
-  }
-
-  &__navigation-item {
-    padding-top: 0.3571rem;
   }
 
   &__title {
@@ -98,10 +95,10 @@
     @media screen and (max-width: 1000px) {
       display: none;
     }
-  }
 
-  &__text-input {
-    margin-top: 1.4286rem;
+    #{$root}__text {
+      margin-bottom: 1.4286rem;
+    }
   }
 
   &__other-info {

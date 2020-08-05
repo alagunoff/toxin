@@ -17,10 +17,6 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: [LOADERS.babel],
-      },
-      {
         test: /\.pug$/,
         use: [LOADERS.pug],
       },

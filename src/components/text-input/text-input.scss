@@ -25,19 +25,42 @@
     position: relative;
 
     #{$root}__field {
-      padding-right: 2.8571rem;
+      padding-right: 3.1429rem;
     }
 
     #{$root}__submit-button {
       position: absolute;
-      top: 50%;
-      right: 0.9286rem;
-      width: 1.2857rem;
-      height: 1.2857rem;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 3.1429rem;
       border: 0;
-      background: transparent url('~@components/text-input/images/arrow-gradient.svg');
-      transform: translateY(-50%);
+      background-color: transparent;
       cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 1.1857rem;
+        width: 1.0429rem;
+        height: 0.1429rem;
+        background: linear-gradient($purple-color-100, $aqua-color-light-100);
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 1.2286rem;
+        width: 0.6429rem;
+        height: 0.6429rem;
+        border-top: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-image: linear-gradient($purple-color-100, $aqua-color-light-100) 2;
+        transform: translateY(-50%) rotate(45deg);
+      }
     }
   }
 }

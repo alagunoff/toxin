@@ -1,6 +1,6 @@
-@import '../calendar/calendar';
-@import '../dropdown/dropdown';
-@import '../button/button';
+@import 'components/date-picker/date-picker';
+@import 'components/dropdown/dropdown';
+@import 'components/button/button';
 
 .room-search {
   $root: &;

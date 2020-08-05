@@ -1,15 +1,14 @@
-include ../calendar/calendar
-include ../dropdown/dropdown
-include ../button/button
+include ~@components/date-picker/date-picker
+include ~@components/dropdown/dropdown
+include ~@components/button/button
 
-mixin room-search({title = "Найдём номера под ваши пожелания"} = {})
+mixin room-search({ title = "Найдём номера под ваши пожелания" } = {})
   article.room-search
     h2.room-search__title= title
     form.room-search__form(action="https://echo.htmlacademy.ru" method="post")
-      .room-search__group
-        +calendar
-      .room-search__group
-        label.room-search__label(for="field-amount-guests") Гости
-        +dropdown({"type": "guests", "items": ["Взрослые", "Дети", "Младенцы"], "id": "field-amount-guests", "name": "guests", "placeholder": "Сколько гостей"})
-      .room-search__group
-        +button({"text": "подобрать номер", "theme": "with-arrow", "isLink": true, "href": "../../pages/rooms-page/rooms-page.pug"})
+      .room-search__date-picker
+        +date-picker
+      .room-search__guests
+        label.room-search__label(for="field-guests") Гости
+        +dropdown({ type: "guests", id: "field-guests", items: ["Взрослые", "Дети", "Младенцы"], name: "guests", placeholder: "Сколько гостей" })
+      +button({ text: "подобрать номер", theme: "with-arrow" })

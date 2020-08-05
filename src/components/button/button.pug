@@ -4,7 +4,7 @@ mixin button({ text, theme, size, isLink, type = "button", link = "/mock-address
   - const tagName = isLink ? "a" : "button";
 
   #{tagName}.button(
-    class = [buttonTheme, buttonSize]
-    type = tagName === "button" ? type : false
+    class = [buttonTheme, buttonSize] 
+    type = tagName === "button" ? type : false 
     href = tagName === "a" ? link : false)&attributes(attributes)
     = text

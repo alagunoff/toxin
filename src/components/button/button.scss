@@ -69,24 +69,23 @@
       content: '';
       position: absolute;
       top: 50%;
-      right: 0.9286rem;
-      width: 0.6429rem;
-      height: 0.6429rem;
-      border: 0.1429rem solid $white-color-100;
-      border-left: 0;
-      border-bottom: 0;
-      transform: translateY(-50%) rotate(45deg);
+      right: 0.8571rem;
+      width: 1.1429rem;
+      height: 0.1429rem;
+      background-color: $white-color-100;
+      transform: translateY(-50%);
     }
 
     &::after {
       content: '';
       position: absolute;
       top: 50%;
-      right: 0.8571rem;
-      width: 1.1429rem;
-      height: 0.1429rem;
-      background-color: $white-color-100;
-      transform: translateY(-50%);
+      right: 0.9286rem;
+      width: 0.6429rem;
+      height: 0.6429rem;
+      border-top: 0.1429rem solid $white-color-100;
+      border-right: 0.1429rem solid $white-color-100;
+      transform: translateY(-50%) rotate(45deg);
     }
   }
 }

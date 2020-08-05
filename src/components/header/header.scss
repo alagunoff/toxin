@@ -146,10 +146,9 @@
           width: 0.4286rem;
           height: 0.4286rem;
           margin-left: 0.6429rem;
-          border: 0.1429rem solid $primary-color-50;
-          border-top: 0;
-          border-left: 0;
-          transform: translateY(-0.1429rem) rotate(45deg);
+          border-top: 0.1429rem solid $primary-color-50;
+          border-right: 0.1429rem solid $primary-color-50;
+          transform: translateY(-0.1429rem) rotate(135deg);
         }
 
         + #{$root}__item {

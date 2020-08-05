@@ -10,13 +10,20 @@
     @include normalized-list;
   }
 
+  &__item {
+    font-weight: bold;
+    font-size: 1.2143rem;
+
+    &:first-of-type {
+      font-size: 1.7857rem;
+    }
+  }
+
   &__item + &__item {
     margin-top: 1.4286rem;
   }
 
   &__link {
-    font-weight: bold;
-    font-size: 1.2857rem;
     color: $purple-color-100;
     text-decoration: none;
 

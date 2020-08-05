@@ -1,5 +1,5 @@
 import Header from 'components/header/header';
-import Calendar from 'components/calendar/calendar';
+import DatePicker from 'components/date-picker/date-picker';
 import DropdownGuests from 'components/dropdown/dropdown-guests';
 
 import './main.scss';
@@ -10,5 +10,5 @@ headers.forEach((header) => new Header(header));
 const dropdownsGuests = document.querySelectorAll('.js-dropdown_type_guests');
 dropdownsGuests.forEach((dropdown) => new DropdownGuests(dropdown));
 
-const $calendars = $('.js-calendar');
-$calendars.each((i, calendar) => new Calendar($(calendar)));
+const $datePickers = $('.js-date-picker');
+$datePickers.each((i, datePicker) => new DatePicker($(datePicker)));

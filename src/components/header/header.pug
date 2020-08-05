@@ -26,7 +26,7 @@ mixin header({ user = null } = {})
       else
         ul.header__user-navigation
           li.header__item
-            +button({text: "войти", theme: "border-gradient", size: "small", isLink: true, link: "/login.html"})
+            +button({ text: "войти", theme: "border-gradient", size: "small", isLink: true })
           li.header__item
-            +button({text: "зарегистрироваться", theme: "gradient", size: "small", isLink: true, link: "/registration.html"})
+            +button({ text: "зарегистрироваться", theme: "gradient", size: "small", isLink: true })
           

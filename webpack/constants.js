@@ -23,12 +23,6 @@ const ENTRIES = {
 };
 
 const LOADERS = {
-  babel: {
-    loader: 'babel-loader',
-    options: {
-      presets: ['@babel/preset-env'],
-    },
-  },
   pug: {
     loader: 'pug-loader',
   },

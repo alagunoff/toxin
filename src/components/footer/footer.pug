@@ -24,8 +24,7 @@ mixin footer
       form.footer__newsletter(action="https://echo.htmlacademy.ru" method="post")
         .footer__title Подписка
         .footer__text Получайте специальные предложения и новости сервиса
-        .footer__text-input
-          +text-input({ theme: "newsletter", type: "email", name: "email", placeholder: "Email" })(aria-label="Введите email")
+        +text-input({ theme: "newsletter", type: "email", name: "email", placeholder: "Email" })(aria-label="Введите email")
     section.footer__other-info
       .footer__copyright Copyright © 2019 Toxin отель. Все права зачищены.
       ul.footer__list

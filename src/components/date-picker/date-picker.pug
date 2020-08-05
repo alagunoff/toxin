@@ -1,0 +1,17 @@
+mixin date-picker
+  .date-picker.js-date-picker
+    .date-picker__group
+      .date-picker__item
+        label.date-picker__label(for="field-date-from") Прибытие
+        .date-picker__field-wrapper
+          button.date-picker__tick.js-date-picker__tick(type="button")
+          input.date-picker__field.date-picker__field_type_from.js-date-picker__field_type_from(id="field-date-from" type="text" name="from" placeholder="дд.мм.гггг" readonly)
+      .date-picker__item
+        label.date-picker__label(for="field-date-to") Выезд
+        .date-picker__field-wrapper
+          button.date-picker__tick.js-date-picker__tick(type="button")
+          input.date-picker__field.date-picker__field_type_to.js-date-picker__field_type_to(id="field-date-to" name="to" placeholder="дд.мм.гггг" readonly)
+    .date-picker__container.js-date-picker__container.date-picker__container_hidden
+      .date-picker__buttons
+        button.date-picker__button.date-picker__button_type_clear.js-date-picker__button_type_clear(type="button") Очистить
+        button.date-picker__button.date-picker__button_theme_purple.date-picker__button_type_apply.js-date-picker__button_type_apply(type="button") Применить
