@@ -8,7 +8,7 @@ mixin room-search({ title = "Найдём номера под ваши поже�
     form.room-search__form(action="https://echo.htmlacademy.ru" method="post")
       .room-search__date-picker
         +date-picker
-      .room-search__guests
+      .room-search__dropdown
         label.room-search__label(for="field-guests") Гости
         +dropdown({ type: "guests", id: "field-guests", items: ["Взрослые", "Дети", "Младенцы"], name: "guests", placeholder: "Сколько гостей" })
-      +button({ text: "подобрать номер", theme: "with-arrow" })
+      +button({ theme: "with-arrow", text: "подобрать номер", type: 'submit' })

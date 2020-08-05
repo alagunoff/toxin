@@ -11,7 +11,7 @@ class Dropdown {
   findDomElements() {
     this.input = this.dropdown.querySelector('.js-dropdown__input');
     this.tick = this.dropdown.querySelector('.js-dropdown__tick');
-    this.counterFields = this.dropdown.querySelectorAll('.js-dropdown__counter-value');
+    this.counterFields = [...this.dropdown.querySelectorAll('.js-dropdown__counter-value')];
     this.groups = this.dropdown.querySelectorAll('.js-dropdown__group');
     this.buttonsDecrease = this.dropdown.querySelectorAll('.js-dropdown__control-button_type_decrease');
     this.buttonsIncrease = this.dropdown.querySelectorAll('.js-dropdown__control-button_type_increase');

@@ -54,8 +54,8 @@
     width: 100%;
     padding: 0.3714rem 0.3571rem 0.2rem 1rem;
     border: 0.0714rem solid $primary-color-50;
-    border-top: none;
-    box-shadow: 0rem 0.7143rem 1.4286rem $primary-color-5;
+    border-top: 0;
+    box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
     background-color: $white-color-100;
   }
 

@@ -1,7 +1,7 @@
 mixin text-input({ theme, id, type = "text", name, placeholder } = {})
-  - const textInputTheme = theme ? `text-input_theme_${theme}` : "";
+  - const themeClass = theme ? `text-input_theme_${theme}` : "";
 
-  .text-input(class = textInputTheme)
+  .text-input(class = themeClass)
     input.text-input__field(
       id = id
       type = type 

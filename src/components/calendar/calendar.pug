@@ -1,18 +1,9 @@
+include ~@components/button/button
+
 mixin calendar
   .calendar.js-calendar
-    p.calendar__group
-      span.calendar__item
-        label.calendar__label(for="field-date-from") Прибытие
-        span.calendar__field-wrapper
-          button.calendar__tick.js-calendar__tick(type="button")
-          input.calendar__field.calendar__field_type_from.js-calendar__field_type_from(id="field-date-from" type="text" name="from" placeholder="дд.мм.гггг" readonly)
-      span.calendar__item
-        label.calendar__label(for="field-date-to") Выезд
-        span.calendar__field-wrapper
-          button.calendar__tick.js-calendar__tick(type="button")
-          input.calendar__field.calendar__field_type_to.js-calendar__field_type_to(id="field-date-to" name="to" placeholder="дд.мм.гггг" readonly)
-    .calendar__container.js-calendar__container.calendar__container_hidden
-      input.calendar__field.calendar__field_type_init.js-calendar__field_type_init
-      p.calendar__buttons
-        button.calendar__button.calendar__button_type_clear.js-calendar__button_type_clear(type="button") Очистить
-        button.calendar__button.calendar__button_theme_purple.calendar__button_type_apply.js-calendar__button_type_apply(type="button") Применить
+    .calendar__buttons.js-calendar__buttons
+      .calendar__button
+        +button({ theme: 'default', text: 'Очистить' })
+      .calendar__button
+        +button({ theme: 'default', text: 'Применить' })

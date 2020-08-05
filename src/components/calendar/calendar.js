@@ -1,63 +1,73 @@
 import 'air-datepicker';
 
+import Button from 'components/button/button';
+
 import DEFAULT_PARAMETERS from './constants';
 
 class Calendar {
-  constructor($calendar) {
-    this.$calendar = $calendar;
+  constructor(parameters) {
+    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
+    this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
 
-    this.init();
+    this.init(parameters);
   }
 
-  init() {
-    this.findDomElements();
-    this.addEventListeners();
+  init({ calendar, onConfirmDate }) {
+    this.$calendar = $(calendar);
+    this.onConfirmDate = onConfirmDate;
+    this.dateFormatter = new Intl.DateTimeFormat('ru');
 
-    this.$fieldInit.datepicker({
+    this.$calendar.datepicker({
       ...DEFAULT_PARAMETERS,
-      onSelect: this.handleCalendarSelectedData.bind(this),
     });
 
-    this.$calendarData = this.$fieldInit.data('datepicker');
-  }
+    calendar.append(calendar.querySelector('.js-calendar__buttons'));
 
-  findDomElements() {
-    this.$container = this.$calendar.find('.js-calendar__container');
-    this.$tick = this.$calendar.find('.js-calendar__tick');
-    this.$fieldInit = this.$calendar.find('.js-calendar__field_type_init');
-    this.$fieldFrom = this.$calendar.find('.js-calendar__field_type_from');
-    this.$fieldTo = this.$calendar.find('.js-calendar__field_type_to');
-    this.$applyButton = this.$calendar.find('.js-calendar__button_type_apply');
-    this.$clearButton = this.$calendar.find('.js-calendar__button_type_clear');
-  }
+    this.buttonClear = new Button({
+      button: calendar.querySelectorAll('.js-button')[0],
+      onClick: this.handleClearButtonClick,
+    });
 
-  addEventListeners() {
-    this.$tick.on('click', this.handleTickClick.bind(this));
-    this.$applyButton.on('click', this.handleApplyButtonClick.bind(this));
-    this.$clearButton.on('click', this.handleClearButtonClick.bind(this));
-  }
+    this.buttonApply = new Button({
+      button: calendar.querySelectorAll('.js-button')[1],
+      onClick: this.handleApplyButtonClick,
+    });
 
-  handleTickClick() {
-    this.toggleCalendar();
-  }
-
-  handleApplyButtonClick() {
-    this.toggleCalendar();
+    this.$calendarData = this.$calendar.data('datepicker');
   }
 
   handleClearButtonClick() {
     this.$calendarData.clear();
   }
 
-  handleCalendarSelectedData(formattedDate) {
-    const [dateFrom, dateTo] = formattedDate.split('-');
+  handleApplyButtonClick() {
+    const { selectedDates } = this.$calendarData;
 
-    this.$fieldFrom.val(dateFrom);
-    this.$fieldTo.val(dateTo);
-  }
+    switch (selectedDates.length) {
+      case 2: {
+        const [dateFrom, dateTo] = selectedDates.map((selectedDate) => this.dateFormatter.format(selectedDate));
 
-  toggleCalendar() {
-    this.$container.toggleClass('calendar__container_hidden');
+        this.onConfirmDate({
+          dateFrom,
+          dateTo,
+        });
+      }
+        break;
+      case 1: {
+        const dateFrom = this.dateFormatter.format(selectedDates[0]);
+
+        this.onConfirmDate({
+          dateFrom,
+          dateTo: '',
+        });
+      }
+        break;
+      default:
+        this.onConfirmDate({
+          dateFrom: '',
+          dateTo: '',
+        });
+    }
   }
 }
 

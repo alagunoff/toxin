@@ -10,5 +10,5 @@ headers.forEach((header) => new Header(header));
 const dropdownsGuests = document.querySelectorAll('.js-dropdown_type_guests');
 dropdownsGuests.forEach((dropdown) => new DropdownGuests(dropdown));
 
-const $datePickers = $('.js-date-picker');
-$datePickers.each((i, datePicker) => new DatePicker($(datePicker)));
+const datePickers = document.querySelectorAll('.js-date-picker');
+datePickers.forEach((datePicker) => new DatePicker(datePicker));

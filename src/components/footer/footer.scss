@@ -62,7 +62,7 @@
   }
 
   &__title {
-    @include h3;
+    @include h3-type;
 
     margin-bottom: 1.5rem;
   }

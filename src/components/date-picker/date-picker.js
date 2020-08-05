@@ -1,63 +1,46 @@
-import 'air-datepicker';
-
-import DEFAULT_PARAMETERS from './constants';
+import DropdownPlain from 'components/dropdown/dropdown-plain';
+import Calendar from 'components/calendar/calendar';
 
 class DatePicker {
-  constructor($datePicker) {
-    this.$datePicker = $datePicker;
+  constructor(datePicker) {
+    this.handleTickClick = this.handleTickClick.bind(this);
+    this.handleConfirmDate = this.handleConfirmDate.bind(this);
 
-    this.init();
+    this.init(datePicker);
   }
 
-  init() {
+  init(datePicker) {
+    this.datePicker = datePicker;
+
     this.findDomElements();
-    this.addEventListeners();
 
-    this.$container.datepicker({
-      ...DEFAULT_PARAMETERS,
-      onSelect: this.handledatePickerSelectedData.bind(this),
+    [this.dropdownFrom, this.dropdownTo] = [
+      ...this.datePicker.querySelectorAll('.js-dropdown'),
+    ].map((dropdown) => new DropdownPlain({ dropdown, onTickClick: this.handleTickClick }));
+
+    this.calendarElement = new Calendar({
+      calendar: datePicker.querySelector('.js-calendar'),
+      onConfirmDate: this.handleConfirmDate,
     });
-
-    this.$datePickerData = this.$container.data('datepicker');
   }
 
   findDomElements() {
-    this.$container = this.$datePicker.find('.js-date-picker__container');
-    this.$tick = this.$datePicker.find('.js-date-picker__tick');
-    this.$fieldInit = this.$datePicker.find('.js-date-picker__field_type_init');
-    this.$fieldFrom = this.$datePicker.find('.js-date-picker__field_type_from');
-    this.$fieldTo = this.$datePicker.find('.js-date-picker__field_type_to');
-    this.$applyButton = this.$datePicker.find('.js-date-picker__button_type_apply');
-    this.$clearButton = this.$datePicker.find('.js-date-picker__button_type_clear');
-  }
-
-  addEventListeners() {
-    this.$tick.on('click', this.handleTickClick.bind(this));
-    this.$applyButton.on('click', this.handleApplyButtonClick.bind(this));
-    this.$clearButton.on('click', this.handleClearButtonClick.bind(this));
+    this.calendar = this.datePicker.querySelector('.js-date-picker__calendar');
   }
 
   handleTickClick() {
-    this.toggledatePicker();
+    this.toggleDatePicker();
   }
 
-  handleApplyButtonClick() {
-    this.toggledatePicker();
+  handleConfirmDate({ dateFrom, dateTo }) {
+    this.dropdownFrom.update(dateFrom);
+    this.dropdownTo.update(dateTo);
+
+    this.toggleDatePicker();
   }
 
-  handleClearButtonClick() {
-    this.$datePickerData.clear();
-  }
-
-  handledatePickerSelectedData(formattedDate) {
-    const [dateFrom, dateTo] = formattedDate.split('-');
-
-    this.$fieldFrom.val(dateFrom);
-    this.$fieldTo.val(dateTo);
-  }
-
-  toggledatePicker() {
-    this.$container.toggleClass('date-picker__container_hidden');
+  toggleDatePicker() {
+    this.calendar.classList.toggle('date-picker__calendar_hidden');
   }
 }
 

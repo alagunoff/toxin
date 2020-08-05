@@ -21,7 +21,7 @@ mixin header({ user = null } = {})
       if user !== null
         - const { name } = user;
 
-        div.header__user-menu
+        .header__user-menu
           a.header__link(href="/mock-address")= name
       else
         ul.header__user-navigation
@@ -29,4 +29,3 @@ mixin header({ user = null } = {})
             +button({ text: "войти", theme: "border-gradient", size: "small", isLink: true })
           li.header__item
             +button({ text: "зарегистрироваться", theme: "gradient", size: "small", isLink: true })
-          
