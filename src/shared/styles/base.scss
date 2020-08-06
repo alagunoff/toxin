@@ -3,19 +3,19 @@
 @import './mixins';
 
 html {
-  font: $root-font;
-  color: $primary-color-75;
   background: $root-background;
+  color: $primary-color-75;
+  font: $root-font;
 }
 
 body {
   display: grid;
-  grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
-  min-width: 22.8571rem;
-  max-width: 137.1429rem;
-  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
   margin: 0 auto;
   padding: 0;
+  min-width: 22.8571rem;
+  min-height: 100vh;
+  max-width: 137.1429rem;
   word-break: break-word;
 }

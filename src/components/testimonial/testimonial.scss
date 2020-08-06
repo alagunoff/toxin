@@ -11,7 +11,7 @@
     margin-right: 0.7143rem;
     border: 0.1429rem solid $white-color-100;
     border-radius: 50%;
-    box-shadow: 0rem 0.7143rem 1.4286rem $primary-color-10;
+    box-shadow: 0 0.7143rem 1.4286rem $primary-color-10;
   }
 
   &__name {
@@ -21,14 +21,13 @@
   &__content {
     display: flex;
     align-items: flex-start;
-
   }
 
   &__button {
     box-sizing: border-box;
-    min-width: 40px;
     margin-right: 0.5714rem;
     padding: 0.2857rem 0.3571rem;
+    min-width: 2.8571rem;
     line-height: 0;
   }
 }

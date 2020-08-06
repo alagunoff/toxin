@@ -7,18 +7,17 @@
     position: relative;
     display: block;
     margin-bottom: 1.1429rem;
+    color: $primary-color-100;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    color: $primary-color-100;
-    text-transform: uppercase;
 
     &:hover {
       cursor: pointer;
     }
 
     &::after {
-      content: '';
       position: absolute;
       top: 50%;
       right: 1.2857rem;
@@ -27,6 +26,7 @@
       border: 0.1429rem solid $primary-color-50;
       border-top: 0;
       border-left: 0;
+      content: '';
       transform: translateY(-50%) rotate(45deg);
     }
   }

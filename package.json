@@ -4,7 +4,9 @@
     "start": "webpack-dev-server --config webpack/webpack.dev.js --open",
     "build": "webpack --config webpack/webpack.prod.js",
     "eslint": "eslint -c .eslintrc --ignore-path .eslintignore src",
-    "stylelint": "stylelint --config .stylelintrc src/**/*.scss",
+    "eslint:fix": "eslint -c .eslintrc --ignore-path .eslintignore src --fix",
+    "stylelint": "stylelint --config .stylelintrc.json src/**/*.scss",
+    "stylelint:fix": "stylelint --config .stylelintrc.json src/**/*.scss --fix",
     "puglint": "pug-lint -c .pug-lint.json src"
   },
   "devDependencies": {
@@ -28,7 +30,9 @@
     "sass-loader": "^9.0.1",
     "style-loader": "^1.2.1",
     "stylelint": "^13.6.1",
-    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",

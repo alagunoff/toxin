@@ -5,9 +5,9 @@
 
   box-sizing: border-box;
   width: 100%;
-  background: $white-color-100;
-  box-shadow: 0rem 0.7143rem 1.4286rem $primary-color-5;
   border-radius: 0.2857rem;
+  background: $white-color-100;
+  box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
 
   &__container {
     position: relative;
@@ -26,20 +26,20 @@
 
   &__slider-buttons {
     position: absolute;
-    bottom: 1.0714rem;
     right: 1.2143rem;
+    bottom: 1.0714rem;
   }
 
   &__slider-button {
     box-sizing: border-box;
+    padding: 0;
     width: 0.5rem;
     height: 0.5rem;
-    padding: 0;
-    font: inherit;
     border: 0.0714rem solid $white-color-100;
     border-radius: 50%;
     background-color: transparent;
-    box-shadow: 0rem 0.3571rem 0.3571rem $primary-color-30;
+    box-shadow: 0 0.3571rem 0.3571rem $primary-color-30;
+    font: inherit;
     cursor: pointer;
 
     &_active {
@@ -54,8 +54,8 @@
   &__slider-arrows {
     position: absolute;
     top: 50%;
-    left: 1.4286rem;
     right: 1.4286rem;
+    left: 1.4286rem;
     display: none;
     transform: translateY(-50%);
   }
@@ -63,13 +63,12 @@
   &__slider-arrow {
     position: absolute;
     padding: 0;
-    font: inherit;
     border: 0;
     background-color: transparent;
+    font: inherit;
     cursor: pointer;
 
     &::before {
-      content: '';
       position: absolute;
       box-sizing: border-box;
       width: 0.5rem;
@@ -77,6 +76,7 @@
       border: 0.1429rem solid $white-color-100;
       border-top: 0;
       border-left: 0;
+      content: '';
     }
 
     &_theme_prev {
@@ -101,15 +101,15 @@
 
   &__book-info {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding-bottom: 0.5714rem;
     border-bottom: 0.0714rem solid $primary-color-10;
   }
 
   &__number-info {
-    font-weight: bold;
     color: $primary-color-100;
+    font-weight: bold;
   }
 
   &__number {
@@ -118,16 +118,16 @@
   }
 
   &__type {
+    color: $purple-color-100;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    color: $purple-color-100;
-    text-transform: uppercase;
   }
 
   &__day-price {
-    font-size: 0.8571rem;
     color: $primary-color-50;
+    font-size: 0.8571rem;
   }
 
   &__price {
@@ -138,8 +138,8 @@
 
   &__user-experience {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding-top: 0.5rem;
   }
 

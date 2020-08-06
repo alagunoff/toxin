@@ -5,39 +5,39 @@
   $root: &;
 
   box-sizing: border-box;
-  width: 100%;
   padding: 3.3571rem 2.0714rem 2.0714rem;
-  background-color: $white-color-100;
+  width: 100%;
   border: 0.0714rem solid $black-color-12;
   border-radius: 0.2857rem;
-  box-shadow: 0rem 0rem 1.7857rem $black-color-20;
+  background-color: $white-color-100;
+  box-shadow: 0 0 1.7857rem $black-color-20;
 
   &__title {
     &_hidden {
       position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      margin: -0.0714rem;
+      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
-      margin: -0.0714rem;
       border: 0;
-      padding: 0;
       clip-path: inset(100%);
-      clip: rect(0 0 0 0);
-      overflow: hidden;
     }
   }
 
   &__room-info {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: 1.1429rem;
   }
 
   &__room {
+    color: $primary-color-100;
     font-weight: bold;
     font-size: 0.9286rem;
     line-height: 1.2143rem;
-    color: $primary-color-100;
   }
 
   &__number {
@@ -49,22 +49,22 @@
   }
 
   &__type {
-    font-size: 0.8571rem;
-    line-height: 1.0714rem;
     color: $purple-color-100;
     text-transform: uppercase;
+    font-size: 0.8571rem;
+    line-height: 1.0714rem;
   }
 
   &__day-price {
+    color: $primary-color-50;
     font-size: 0.9286rem;
     line-height: 1.5714rem;
-    color: $primary-color-50;
   }
 
   &__group {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0;
 
     &:nth-child(1) {
@@ -93,11 +93,11 @@
   }
 
   &__label {
+    color: $primary-color-100;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    color: $primary-color-100;
-    text-transform: uppercase;
   }
 
   &__book-info {
@@ -109,26 +109,26 @@
     }
 
     #{$root}__info {
-      width: 15.4286rem;
       margin-right: 0.7143rem;
+      width: 15.4286rem;
       line-height: 1.2857rem;
 
       &_theme_has-tip {
         position: relative;
 
         &::after {
-          content: 'i';
           position: absolute;
           top: 0;
           right: -1.7857rem;
           width: 1.4286rem;
           height: 1.4286rem;
-          font-weight: bold;
-          line-height: 1.4286rem;
-          color: $primary-color-25;
           border: 0.0714rem solid $primary-color-25;
           border-radius: 50%;
+          color: $primary-color-25;
+          content: 'i';
           text-align: center;
+          font-weight: bold;
+          line-height: 1.4286rem;
           cursor: help;
 
           @media screen and (max-width: 400px) {
@@ -140,23 +140,23 @@
 
     #{$root}__price {
       width: 5rem;
+      text-align: right;
       font-weight: normal;
       line-height: 1.2857rem;
-      text-align: right;
     }
   }
 
   &__total {
+    color: $primary-color-100;
     font-weight: bold;
     font-size: 1.3571rem;
-    color: $primary-color-100;
   }
 
   &__total-price {
+    color: $primary-color-100;
+    letter-spacing: -0.0286rem;
     font-weight: bold;
     font-size: 1.2857rem;
-    letter-spacing: -0.0286rem;
-    color: $primary-color-100;
   }
 
   &__spacer {

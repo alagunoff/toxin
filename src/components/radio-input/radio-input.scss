@@ -6,27 +6,27 @@
   &__label {
     position: relative;
     padding-left: 2rem;
+    color: $primary-color-50;
+    text-transform: none;
     font-weight: normal;
     font-size: 1rem;
     line-height: 1.7143rem;
-    color: $primary-color-50;
-    text-transform: none;
 
     &:hover {
       cursor: pointer;
     }
 
     &::before {
-      content: '';
       position: absolute;
       top: 0;
       left: 0;
-      box-sizing: border-box;
       display: inline-block;
+      box-sizing: border-box;
       width: 1.4286rem;
       height: 1.4286rem;
       border: 0.0714rem solid $purple-color-100;
       border-radius: 50%;
+      content: '';
     }
   }
 
@@ -36,15 +36,15 @@
     }
 
     &:checked + #{$root}__label::after {
-      content: '';
       position: absolute;
       top: 0.7rem;
       left: 0.7214rem;
       box-sizing: border-box;
       width: 0.8571rem;
       height: 0.8571rem;
-      background: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
       border-radius: 50%;
+      background: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
+      content: '';
       transform: translate(-50%, -50%);
     }
 
@@ -55,14 +55,14 @@
 
     &_hidden {
       position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      margin: -0.0714rem;
+      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
-      margin: -0.0714rem;
       border: 0;
-      padding: 0;
       clip-path: inset(100%);
-      clip: rect(0 0 0 0);
-      overflow: hidden;
     }
   }
 }

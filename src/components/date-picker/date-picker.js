@@ -3,29 +3,30 @@ import Calendar from 'components/calendar/calendar';
 
 class DatePicker {
   constructor(datePicker) {
-    this.handleTickClick = this.handleTickClick.bind(this);
-    this.handleConfirmDate = this.handleConfirmDate.bind(this);
-
     this.init(datePicker);
   }
 
   init(datePicker) {
     this.datePicker = datePicker;
 
-    this.findDomElements();
+    this.bindHandlers();
+    this.initInstancies();
+  }
 
+  bindHandlers() {
+    this.handleTickClick = this.handleTickClick.bind(this);
+    this.handleConfirmDate = this.handleConfirmDate.bind(this);
+  }
+
+  initInstancies() {
     [this.dropdownFrom, this.dropdownTo] = [
-      ...this.datePicker.querySelectorAll('.js-dropdown'),
+      ...this.datePicker.querySelectorAll('.js-dropdown_type_date'),
     ].map((dropdown) => new DropdownPlain({ dropdown, onTickClick: this.handleTickClick }));
 
     this.calendarElement = new Calendar({
-      calendar: datePicker.querySelector('.js-calendar'),
+      calendar: this.datePicker.querySelector('.js-calendar'),
       onConfirmDate: this.handleConfirmDate,
     });
-  }
-
-  findDomElements() {
-    this.calendar = this.datePicker.querySelector('.js-date-picker__calendar');
   }
 
   handleTickClick() {
@@ -40,7 +41,7 @@ class DatePicker {
   }
 
   toggleDatePicker() {
-    this.calendar.classList.toggle('date-picker__calendar_hidden');
+    this.datePicker.classList.toggle('date-picker_expanded');
   }
 }
 

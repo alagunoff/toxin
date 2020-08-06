@@ -3,5 +3,7 @@ include ~@components/button/button
 mixin calendar
   .calendar.js-calendar
     .calendar__buttons.js-calendar__buttons
-      +button({ theme: 'default', text: 'Очистить' })
-      +button({ theme: 'default', text: 'Применить' })
+      .dropdown__button
+        +button({ theme: 'default', typeModifier: 'clear', isHidden: true, text: 'Очистить' })
+      .dropdown__button
+        +button({ theme: 'default', typeModifier: 'apply', text: 'Применить' })

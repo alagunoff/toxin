@@ -15,39 +15,39 @@
 .components-page {
   $root: &;
 
-  min-height: 100vh;
   padding: 0 0.7143rem;
+  min-height: 100vh;
   background-color: $gray-color-100;
 
   &__title {
     &_hidden {
       position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      margin: -0.0714rem;
+      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
-      margin: -0.0714rem;
       border: 0;
-      padding: 0;
       clip-path: inset(100%);
-      clip: rect(0 0 0 0);
-      overflow: hidden;
     }
   }
 
   &__wrapper {
     position: relative;
     box-sizing: border-box;
-    max-width: 102.8571rem;
     margin: 3.5714rem auto;
+    max-width: 102.8571rem;
     background-color: $white-color-100;
 
     &::before {
-      content: '';
       position: absolute;
-      left: 2.4286rem;
       top: 2.4286rem;
+      left: 2.4286rem;
       width: 2.8571rem;
       height: 2.8571rem;
       background: url('../../images/logo.svg') no-repeat left center;
+      content: '';
     }
 
     &:nth-of-type(1) {
@@ -62,8 +62,8 @@
           width: 24.4%;
 
           @media screen and (max-width: 900px) {
-            width: 100%;
             margin-bottom: 2.1429rem;
+            width: 100%;
           }
         }
 
@@ -78,8 +78,8 @@
 
       #{$root}__color-item {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
 
         + #{$root}__color-item {
           margin-top: 1.4rem;
@@ -111,11 +111,11 @@
       }
 
       #{$root}__color-item-image {
-        width: 5rem;
         min-width: 5rem;
+        width: 5rem;
         height: 5rem;
-        background-color: $primary-color-100;
         border-radius: 0.4286rem;
+        background-color: $primary-color-100;
 
         @media screen and (max-width: 900px) {
           margin-right: 0.7143rem;
@@ -124,11 +124,11 @@
 
       #{$root}__color-item-name {
         width: 59.1%;
+        color: $primary-color-100;
+        text-transform: capitalize;
         font-weight: bold;
         font-size: 1.2143rem;
         line-height: 2.0714rem;
-        color: $primary-color-100;
-        text-transform: capitalize;
 
         @media screen and (max-width: 900px) {
           width: 90%;
@@ -137,14 +137,14 @@
 
       #{$root}__color-item-hex {
         display: block;
-        font-weight: normal;
         text-transform: uppercase;
+        font-weight: normal;
       }
 
       #{$root}__font-item {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
+        justify-content: space-between;
 
         &:nth-child(1) {
           margin-bottom: 3.6429rem;
@@ -162,15 +162,15 @@
           font-size: 1.7143rem;
 
           #{$root}__font-item-type {
-            line-height: 2.0714rem;
             text-transform: uppercase;
+            line-height: 2.0714rem;
           }
 
           #{$root}__font-item-example {
-            font-weight: bold;
-            line-height: 2.1429rem;
             color: $primary-color-100;
             letter-spacing: -0.0857rem;
+            font-weight: bold;
+            line-height: 2.1429rem;
           }
         }
 
@@ -178,14 +178,14 @@
           font-size: 1.3571rem;
 
           #{$root}__font-item-type {
-            line-height: 1.6429rem;
             text-transform: uppercase;
+            line-height: 1.6429rem;
           }
 
           #{$root}__font-item-example {
+            color: $primary-color-100;
             font-weight: bold;
             line-height: 1.7143rem;
-            color: $primary-color-100;
           }
         }
 
@@ -198,9 +198,9 @@
           }
 
           #{$root}__font-item-example {
-            font-weight: bold;
             color: $primary-color-100;
             text-transform: uppercase;
+            font-weight: bold;
           }
         }
       }
@@ -212,8 +212,8 @@
         text-transform: capitalize;
 
         @media screen and (max-width: 900px) {
-          width: auto;
           margin-right: 0.7143rem;
+          width: auto;
         }
       }
 
@@ -241,8 +241,8 @@
             width: 22.8571rem;
 
             @media screen and (max-width: 1353px) {
-              width: 100%;
               margin-bottom: 3.5714rem;
+              width: 100%;
             }
           }
 
@@ -326,23 +326,23 @@
 
         &:nth-child(5) {
           display: flex;
-          justify-content: space-between;
           flex-wrap: wrap;
+          justify-content: space-between;
           margin-bottom: 3.0714rem;
 
           #{$root}__text-field-subitem {
-            width: 150px;
+            width: 10.7143rem;
 
             @media screen and (max-width: 1353px) {
-              width: 100%;
               margin-bottom: 0.8714rem;
+              width: 100%;
             }
           }
         }
 
         &:nth-child(6) {
-          width: 19rem;
           margin-bottom: 2.8571rem;
+          width: 19rem;
 
           @media screen and (max-width: 1353px) {
             width: 100%;
@@ -361,14 +361,14 @@
           position: relative;
 
           &::after {
-            content: attr(data-tip);
             position: absolute;
             top: -0.2143rem;
             right: 0;
+            color: $primary-color-50;
+            content: attr(data-tip);
+            text-transform: uppercase;
             font-size: 0.8571rem;
             line-height: 1.0714rem;
-            color: $primary-color-50;
-            text-transform: uppercase;
           }
         }
       }
@@ -394,7 +394,7 @@
       }
 
       #{$root}__toggle-subitem + #{$root}__toggle-subitem {
-          margin-top: 0.9rem;
+        margin-top: 0.9rem;
       }
 
       #{$root}__button-like-item {
@@ -466,22 +466,22 @@
           position: relative;
 
           &::after {
-            content: attr(data-tip);
             position: absolute;
             top: -0.1143rem;
             right: 0;
+            color: $primary-color-50;
+            content: attr(data-tip);
+            text-transform: uppercase;
             font-size: 0.8571rem;
             line-height: 1.0714rem;
-            color: $primary-color-50;
-            text-transform: uppercase;
           }
         }
       }
 
       #{$root}__dropdown-item-alone {
         &:nth-of-type(1) {
-          width: 22.9rem;
           margin-left: 12.9rem;
+          width: 22.9rem;
 
           @media screen and (max-width: 1456px) {
             margin-left: 0;
@@ -493,8 +493,8 @@
         }
 
         &:nth-of-type(2) {
-          width: 22.6rem;
           margin-left: 5.2rem;
+          width: 22.6rem;
 
           @media screen and (max-width: 1456px) {
             margin-left: 0;
@@ -507,8 +507,8 @@
       }
 
       #{$root}__checkbox-rich-item {
-        width: 18.5rem;
         margin-bottom: 12.8rem;
+        width: 18.5rem;
 
         @media screen and (max-width: 1456px) {
           margin-bottom: 0;
@@ -528,8 +528,8 @@
       }
 
       #{$root}__bullet-list-item {
-        width: 17rem;
         margin-left: 10.9rem;
+        width: 17rem;
 
         @media screen and (max-width: 1456px) {
           margin-left: 1rem;
@@ -541,8 +541,8 @@
       }
 
       #{$root}__testimonial-item {
-        width: 51rem;
         margin-top: 0.6rem;
+        width: 51rem;
       }
     }
 
@@ -555,8 +555,8 @@
 
       #{$root}__cards-wrapper {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
+        justify-content: space-between;
       }
 
       #{$root}__cards-group {
@@ -607,9 +607,9 @@
 
       #{$root}__calendar-item {
         box-sizing: border-box;
-        width: 23rem;
         margin-bottom: 3.1rem;
         padding: 1.0714rem 1.5714rem;
+        width: 23rem;
         background-color: $white-color-100;
 
         @media screen and (max-width: 420px) {
@@ -646,26 +646,26 @@
     top: -1.7857rem;
     left: 0;
     padding: 0;
+    color: $primary-color-100;
     font-weight: bold;
     font-size: 1.3571rem;
-    color: $primary-color-100;
   }
 
   &__subheading {
     display: block;
     margin-bottom: 0.3571rem;
-    font-style: normal;
+    color: $primary-color-100;
+    text-transform: uppercase;
     font-weight: bold;
+    font-style: normal;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    text-transform: uppercase;
-    color: $primary-color-100;
   }
 
   &__group {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   &__list {

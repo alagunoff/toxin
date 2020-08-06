@@ -10,18 +10,18 @@
 }
 
 @mixin h1-type {
+  color: $primary-color-100;
+  letter-spacing: -0.0357rem;
   font-weight: bold;
   font-size: 1.7143rem;
   line-height: 2.1429rem;
-  color: $primary-color-100;
-  letter-spacing: -0.0357rem;
 }
 
 @mixin h3-type {
   display: inline-block;
+  color: $primary-color-100;
+  text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8571rem;
   line-height: 1.0714rem;
-  color: $primary-color-100;
-  text-transform: uppercase;
 }

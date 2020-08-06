@@ -1,31 +1,32 @@
 .button-like {
   $root: &;
 
-  box-sizing: border-box;
   display: inline-block;
+  box-sizing: border-box;
+  padding: 0.2143rem 0.3571rem;
+  min-width: 2.8571rem;
   width: 100%;
-  min-width: 40px;
-  padding: 3px 5px;
+  border: 0.0714rem solid $primary-color-25;
+  border-radius: 1.5714rem;
+  background: none;
+  color: $primary-color-25;
+  text-align: left;
   font: inherit;
   font-size: 0.7143rem;
   line-height: 0.8571rem;
-  color: $primary-color-25;
-  border: 1px solid $primary-color-25;
-  border-radius: 1.5714rem;
-  background: none;
-  text-align: left;
   cursor: pointer;
 
   &__icon {
-    margin-right: 8px;
+    margin-right: 0.5714rem;
     vertical-align: middle;
   }
 
   &_theme_liked {
-    color: $purple-color-100;
     border-color: transparent;
-    background: linear-gradient($white-color-100, $white-color-100) padding-box,
+    background:
+      linear-gradient($white-color-100, $white-color-100) padding-box,
       linear-gradient($purple-color-100, $aqua-color-light-100) border-box;
+    color: $purple-color-100;
 
     #{$root}__icon {
       path {

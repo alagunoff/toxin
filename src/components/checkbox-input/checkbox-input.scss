@@ -7,18 +7,17 @@
     position: relative;
     display: block;
     padding-left: 2.1429rem;
+    color: $primary-color-50;
+    text-transform: none;
     font-weight: normal;
     font-size: 1rem;
     line-height: 1.2857rem;
-    color: $primary-color-50;
-    text-transform: none;
 
     &:hover {
       cursor: pointer;
     }
 
     &::before {
-      content: '';
       position: absolute;
       top: -0.0714rem;
       left: 0;
@@ -27,18 +26,19 @@
       height: 1.4286rem;
       border: 0.0714rem solid $primary-color-25;
       border-radius: 0.2857rem;
+      content: '';
     }
   }
 
   &__field {
     &:checked + #{$root}__label::after {
-      content: '';
       position: absolute;
       top: 0.2143rem;
       left: 0.4286rem;
       width: 0.7143rem;
       height: 0.7857rem;
       background: url('../../components/checkbox-input/images/checkbox-arrow.svg') no-repeat center;
+      content: '';
     }
 
     &:focus + #{$root}__label::before {
@@ -48,39 +48,39 @@
 
     &_hidden {
       position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      margin: -0.0714rem;
+      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
-      margin: -0.0714rem;
       border: 0;
-      padding: 0;
       clip-path: inset(100%);
-      clip: rect(0 0 0 0);
-      overflow: hidden;
     }
   }
 
   &_theme_rich {
     #{$root}__label {
       margin-bottom: 0.3571rem;
-      font-weight: bold;
       color: $primary-color-75;
+      font-weight: bold;
     }
 
     #{$root}__description {
       display: block;
       padding-left: 2.1429rem;
+      color: $primary-color-50;
       font-weight: normal;
       font-size: 0.8571rem;
       line-height: 1rem;
-      color: $primary-color-50;
     }
   }
 
   &_theme_toggle {
     #{$root}__label {
       padding-left: 3.5rem;
-      line-height: 1.7143rem;
       color: $primary-color-75;
+      line-height: 1.7143rem;
 
       &::before {
         top: 0.0714rem;
@@ -91,14 +91,14 @@
       }
 
       &::after {
-        content: '';
         position: absolute;
         top: 0.8571rem;
         left: 0.2429rem;
         width: 0.8571rem;
         height: 0.8571rem;
-        background: $primary-color-25;
         border-radius: 50%;
+        background: $primary-color-25;
+        content: '';
         transform: translateY(-50%);
       }
     }

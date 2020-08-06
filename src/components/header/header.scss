@@ -9,6 +9,17 @@
   background: $white-color-100;
   box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
 
+  @media screen and (max-width: 1300px) {
+    padding-right: 0.7143rem;
+    padding-left: 0.7143rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    grid-template-areas:
+      'logo burger'
+      'navigation navigation';
+  }
+
   &__logo {
     grid-area: logo;
     justify-self: start;
@@ -17,78 +28,78 @@
   }
 
   &__burger-button {
-    grid-area: burger;
-    justify-self: end;
     position: relative;
     display: none;
     width: 2.8571rem;
     height: 2.8571rem;
-    background: linear-gradient($purple-color-100, $aqua-color-light-100);
     border: 0;
     border-radius: 50%;
+    background: linear-gradient($purple-color-100, $aqua-color-light-100);
     cursor: pointer;
+    grid-area: burger;
+    justify-self: end;
+
+    @media screen and (max-width: 1000px) {
+      display: inline-block;
+    }
 
     &::before {
-      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       width: 1.4286rem;
       height: 0.2143rem;
       background-color: $white-color-100;
-      transform: translate(-50%, -50%);
       box-shadow: 0 -0.4286rem 0 0 $white-color-100, 0 0.4286rem 0 0 $white-color-100;
+      content: '';
+      transform: translate(-50%, -50%);
     }
 
     &_theme_cross {
       &::before {
-        transform: translate(-50%, -50%) rotate(45deg);
         box-shadow: none;
+        transform: translate(-50%, -50%) rotate(45deg);
       }
 
       &::after {
-        content: '';
         position: absolute;
         top: 50%;
         left: 50%;
         width: 1.4286rem;
         height: 0.2143rem;
         background-color: $white-color-100;
+        content: '';
         transform: translate(-50%, -50%) rotate(-45deg);
       }
-    }
-
-    @media screen and (max-width: 1000px) {
-      display: inline-block;
     }
   }
 
   &__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     grid-area: navigation;
     justify-self: end;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    &_opened {
-      display: block;
-    }
 
     @media screen and (max-width: 1000px) {
-      justify-self: stretch;
       display: none;
       margin-top: 0.7143rem;
       padding: 0.3571rem 0.7143rem 0.7143rem;
       border: 0.2143rem solid $primary-color-50;
       border-radius: 0.7143rem;
+      justify-self: stretch;
+    }
+
+    &_opened {
+      display: block;
     }
   }
 
   &__link {
-    font-size: 1rem;
-    line-height: 1.2143rem;
     color: $primary-color-50;
     text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.2143rem;
 
     &:hover {
       color: $primary-color-75;
@@ -102,7 +113,18 @@
     flex-wrap: wrap;
     margin-right: 2.0143rem;
 
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      margin-right: 0;
+      margin-bottom: 0.7143rem;
+    }
+
     #{$root}__item {
+      @media screen and (max-width: 1000px) {
+        padding: 0.3571rem 0;
+        border-bottom: 0.0714rem dotted $primary-color-25;
+      }
+
       &:last-child {
         @media screen and (max-width: 1000px) {
           border-bottom: 0;
@@ -119,13 +141,13 @@
 
       &_theme_has-submenu {
         > #{$root}__link::after {
-          content: '';
           display: inline-block;
+          margin-left: 0.6429rem;
           width: 0.4286rem;
           height: 0.4286rem;
-          margin-left: 0.6429rem;
           border-top: 0.1429rem solid $primary-color-50;
           border-right: 0.1429rem solid $primary-color-50;
+          content: '';
           transform: translateY(-0.1429rem) rotate(135deg);
         }
 
@@ -137,16 +159,6 @@
           }
         }
       }
-      @media screen and (max-width: 1000px) {
-        padding: 0.3571rem 0;
-        border-bottom: 0.0714rem dotted $primary-color-25;
-      }
-    }
-
-    @media screen and (max-width: 1000px) {
-      flex-direction: column;
-      margin-right: 0;
-      margin-bottom: 0.7143rem;
     }
   }
 
@@ -156,20 +168,20 @@
     display: flex;
     flex-wrap: wrap;
 
-    #{$root}__item + #{$root}__item {
-      margin-left: 1.4714rem;
-
-      @media screen and (max-width: 1000px) {
-        margin-left: 0;
-        margin-top: 0.7143rem;
-      }
-    }
-
     @media screen and (max-width: 1000px) {
       flex-direction: column;
       align-items: start;
       padding-top: 1.0714rem;
       border-top: 0.1429rem solid $primary-color-30;
+    }
+
+    #{$root}__item + #{$root}__item {
+      margin-left: 1.4714rem;
+
+      @media screen and (max-width: 1000px) {
+        margin-top: 0.7143rem;
+        margin-left: 0;
+      }
     }
   }
 
@@ -178,21 +190,10 @@
     border-left: 0.0714rem solid $primary-color-10;
 
     @media screen and (max-width: 1000px) {
-      padding-left: 0;
       padding-top: 0.7143rem;
-      border-left: 0;
+      padding-left: 0;
       border-top: 0.1429rem solid $primary-color-30;
+      border-left: 0;
     }
-  }
-
-  @media screen and (max-width: 1300px) {
-    padding-left: 0.7143rem;
-    padding-right: 0.7143rem;
-  }
-
-  @media screen and (max-width: 1000px) {
-    grid-template-areas:
-      'logo burger'
-      'navigation navigation';
   }
 }

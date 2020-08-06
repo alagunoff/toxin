@@ -6,31 +6,31 @@
 
   &__group {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 1.4286rem;
   }
 
   &__price {
+    color: $primary-color-50;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    color: $primary-color-50;
   }
 
   &__label {
+    color: $primary-color-100;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    color: $primary-color-100;
-    text-transform: uppercase;
   }
 
   &__description {
     display: inline-block;
     margin-top: 0.7857rem;
+    color: $primary-color-50;
     font-size: 0.8571rem;
     line-height: 1rem;
-    color: $primary-color-50;
   }
 }
 
@@ -42,11 +42,11 @@
 
     #{$root}-line {
       top: 0.2143rem;
-      height: 0.4286rem;
       box-sizing: border-box;
-      background-color: $white-color-100;
+      height: 0.4286rem;
       border: 0.0714rem solid $primary-color-25;
       border-radius: 0.2143rem;
+      background-color: $white-color-100;
     }
 
     #{$root}-bar {
@@ -59,9 +59,9 @@
       top: -0.2143rem;
       width: 1.2143rem;
       height: 1.2143rem;
-      background: linear-gradient(180deg, $green-color-100 0%, $aqua-color-100 100%);
       border: 0.1429rem solid $white-color-100;
       border-radius: 50%;
+      background: linear-gradient(180deg, $green-color-100 0%, $aqua-color-100 100%);
       cursor: grab;
     }
   }

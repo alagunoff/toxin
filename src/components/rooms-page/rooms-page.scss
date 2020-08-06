@@ -11,37 +11,37 @@
   padding: 2.1429rem 0 5rem;
 
   &__container {
-    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 84.2857rem;
+    justify-content: space-between;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 0 0.7143rem;
+    max-width: 84.2857rem;
   }
 
   &__title,
   &__subtitle {
     &_hidden {
       position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      margin: -0.0714rem;
+      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
-      margin: -0.0714rem;
       border: 0;
-      padding: 0;
       clip-path: inset(100%);
-      clip: rect(0 0 0 0);
-      overflow: hidden;
     }
   }
 
   &__filter {
-    width: 19rem;
     margin-right: 1.4286rem;
+    width: 19rem;
 
     @media screen and (max-width: 1159px) {
-      width: 100%;
       margin-right: 0;
+      width: 100%;
     }
   }
 
@@ -50,14 +50,14 @@
 
     @media screen and (max-width: 1159px) {
       position: fixed;
-      z-index: 1;
       top: 0;
-      bottom: 0;
       right: 0;
+      bottom: 0;
       left: 110%;
+      z-index: 1;
+      overflow: scroll;
       padding: 0.7143rem;
       background: $white-color-100;
-      overflow: scroll;
       transition: left ease 1s;
     }
 
@@ -67,17 +67,17 @@
   }
 
   &__filter-show-button {
-    box-sizing: border-box;
     display: none;
-    width: 100%;
-    padding: 0.7143rem 1.4286rem;
+    box-sizing: border-box;
     margin-bottom: 1.4286rem;
-    font-weight: bold;
-    font-size: 1.1429rem;
-    color: $white-color-100;
-    text-align: center;
+    padding: 0.7143rem 1.4286rem;
+    width: 100%;
     border: 0;
     background: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
+    color: $white-color-100;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1429rem;
     cursor: pointer;
     -webkit-appearance: none;
 
@@ -87,15 +87,15 @@
   }
 
   &__filter-close-button {
-    display: inline-block;
     position: fixed;
-    z-index: 9;
     top: 0;
+    z-index: 9;
+    display: inline-block;
     width: 2.8571rem;
     height: 2.8571rem;
-    background: $primary-color-75;
     border: 0;
     border-radius: 0 0 0 0.3571rem;
+    background: $primary-color-75;
     cursor: pointer;
     -webkit-appearance: none;
 
@@ -105,13 +105,13 @@
 
     &::before,
     &::after {
-      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       width: 1.4286rem;
       height: 0.2143rem;
       background-color: $white-color-100;
+      content: '';
     }
 
     &::before {
@@ -179,8 +179,8 @@
 
     &:nth-child(6) {
       position: relative;
-      margin-bottom: 2.1714rem;
       z-index: 1;
+      margin-bottom: 2.1714rem;
     }
   }
 
@@ -191,20 +191,20 @@
 
   &__group-title {
     padding: 0;
+    color: $primary-color-100;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    color: $primary-color-100;
-    text-transform: uppercase;
   }
 
   &__label {
     display: inline-block;
+    color: $primary-color-100;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
-    color: $primary-color-100;
-    text-transform: uppercase;
   }
 
   &__rooms {
@@ -216,17 +216,17 @@
 
     #{$root}__subtitle {
       margin-bottom: 1.4286rem;
+      color: $primary-color-100;
+      letter-spacing: -0.0357rem;
       font-weight: bold;
       font-size: 1.7143rem;
       line-height: 2.1429rem;
-      color: $primary-color-100;
-      letter-spacing: -0.0357rem;
     }
 
     #{$root}__list {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
       margin: 0 -0.7143rem 1.5571rem 0;
 
       @media screen and (max-width: 591px) {
@@ -235,8 +235,8 @@
     }
 
     #{$root}__item {
-      width: 19.2857rem;
       margin: 0 0.7143rem 1.2857rem 0;
+      width: 19.2857rem;
 
       @media screen and (max-width: 1159px) {
         width: 32%;
@@ -247,8 +247,8 @@
       }
 
       @media screen and (max-width: 591px) {
-        width: 100%;
         margin-right: 0;
+        width: 100%;
       }
     }
   }
@@ -257,8 +257,8 @@
     margin-left: 20.7857rem;
 
     @media screen and (max-width: 1159px) {
-      width: 17.2143rem;
       margin: 0 auto;
+      width: 17.2143rem;
     }
   }
 

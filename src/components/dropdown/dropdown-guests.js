@@ -20,8 +20,8 @@ class DropdownGuests {
     this.handleTickClick = this.handleTickClick.bind(this);
     this.handleDecreaseButtonClick = this.handleDecreaseButtonClick.bind(this);
     this.handleIncreaseButtonClick = this.handleIncreaseButtonClick.bind(this);
-    this.handleButtonClearClick = this.handleButtonClearClick.bind(this);
-    this.handleButtonApplyClick = this.handleButtonApplyClick.bind(this);
+    this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
+    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
   }
 
   findDomElements() {
@@ -38,16 +38,14 @@ class DropdownGuests {
   }
 
   initInstancies() {
-    const { dropdown } = this;
-
     this.buttonClear = new Button({
-      button: dropdown.querySelector('.js-button_type_clear'),
-      onClick: this.handleButtonClearClick,
+      button: this.dropdown.querySelector('.js-button_type_clear'),
+      onClick: this.handleClearButtonClick,
     });
 
     this.buttonApply = new Button({
-      button: dropdown.querySelector('.js-button_type_apply'),
-      onClick: this.handleButtonApplyClick,
+      button: this.dropdown.querySelector('.js-button_type_apply'),
+      onClick: this.handleApplyButtonClick,
     });
   }
 
@@ -91,7 +89,7 @@ class DropdownGuests {
     this.buttonClear.show();
   }
 
-  handleButtonClearClick() {
+  handleClearButtonClick() {
     this.buttonClear.hide();
 
     this.input.value = '';
@@ -99,7 +97,7 @@ class DropdownGuests {
     this.counterFields.forEach((counterField) => counterField.textContent = COUNTER_NUMBER_MIN);
   }
 
-  handleButtonApplyClick() {
+  handleApplyButtonClick() {
     if (this.isCounterFieldsEmpty()) {
       this.input.value = '';
     } else {

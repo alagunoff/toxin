@@ -2,38 +2,37 @@
 
 .calendar {
   box-sizing: border-box;
-  width: 100%;
   padding: 1.4286rem 1.4286rem 1.3286rem;
+  width: 100%;
   border: 0.0714rem solid $primary-color-25;
-  box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
   border-radius: 0.2857rem;
   background-color: $white-color-100;
+  box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
   user-select: none;
 
   &__buttons {
     display: flex;
-    justify-content: space-between;
-    margin: 1.5rem 0 0;
+    margin-top: 1.5rem;
+  }
+
+  &__button:nth-child(2) {
+    margin-left: auto;
   }
 
   .datepicker {
     &--nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       margin-bottom: 2.9429rem;
       padding: 0;
       border-bottom: 0;
-
-      @media screen and (max-width: 375px) {
-        margin-bottom: 1.0714rem;
-      }
     }
 
     &--nav-title {
+      color: $primary-color-100;
       font-weight: bold;
       font-size: 1.3571rem;
-      color: $primary-color-100;
       cursor: pointer;
     }
 
@@ -55,27 +54,38 @@
 
     &--day-name {
       width: 14.2%;
+      color: $purple-color-100;
+      text-align: center;
       font-weight: bold;
       font-size: 0.8571rem;
       line-height: 1.0714rem;
-      color: $purple-color-100;
-      text-align: center;
     }
 
     &--cells {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     &--cell {
+      display: flex;
       flex-grow: 1;
-      width: 14%;
-      font-size: 12px;
-      line-height: 40px;
+      align-items: center;
+      justify-content: center;
+      padding: 2.9% 0;
+      width: 14.2%;
       color: $primary-color-50;
       text-align: center;
+      font-size: 0.8571rem;
       cursor: pointer;
+
+      @media screen and (max-width: 370px) {
+        padding: 2.1% 0;
+      }
+
+      @media screen and (max-width: 340px) {
+        padding: 1.1% 0;
+      }
 
       &.-other-month- {
         color: $primary-color-25;
@@ -86,39 +96,39 @@
       }
 
       &.-current- {
-        font-weight: bold;
-        color: $white-color-100;
         border-radius: 50%;
         background: linear-gradient($green-color-100, $aqua-color-100);
+        color: $white-color-100;
+        font-weight: bold;
       }
 
       &.-range-from-:not(.-disabled-),
       &.-range-to-:not(.-disabled-) {
         position: relative;
         z-index: 1;
-        font-weight: bold;
-        color: $white-color-100;
         border-radius: 50%;
         background: linear-gradient($purple-color-100, $aqua-color-light-100);
+        color: $white-color-100;
+        font-weight: bold;
 
         &::before {
-          content: '';
           position: absolute;
-          z-index: -1;
           top: 0;
           bottom: 0;
+          z-index: -1;
           background: linear-gradient($purple-color-25, $aqua-color-light-25);
+          content: '';
         }
       }
 
       &.-range-from-:not(.-disabled-)::before {
-        left: 50%;
         right: 0;
+        left: 50%;
       }
 
       &.-range-to-:not(.-disabled-)::before {
-        left: 0;
         right: 50%;
+        left: 0;
       }
 
       &.-in-range-:not(.-disabled-):not(.-current-) {

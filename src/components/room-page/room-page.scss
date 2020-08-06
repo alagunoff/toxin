@@ -14,25 +14,25 @@
   &__subtitle {
     &_hidden {
       position: absolute;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      margin: -0.0714rem;
+      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
-      margin: -0.0714rem;
       border: 0;
-      padding: 0;
       clip-path: inset(100%);
-      clip: rect(0 0 0 0);
-      overflow: hidden;
     }
   }
 
   &__container {
-    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 84.2857rem;
+    justify-content: space-between;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 5.0714rem 0.7143rem 4.4286rem;
+    max-width: 84.2857rem;
 
     @media screen and (max-width: 1138px) {
       padding-top: 2.8571rem;
@@ -41,9 +41,9 @@
 
   &__photos {
     display: flex;
-    max-width: 103rem;
     margin: 0 auto;
     padding: 0 0.7143rem;
+    max-width: 103rem;
     line-height: 0;
 
     @media screen and (max-width: 750px) {
@@ -53,13 +53,6 @@
 
   &__photos-group {
     &:nth-of-type(1) {
-      #{$root}__photos-img {
-        color: #{$root};
-        width: 70.0714rem;
-        max-width: 100%;
-        height: auto;
-      }
-
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 750px) {
         width: 68%;
         height: 100%;
@@ -68,6 +61,12 @@
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 750px) {
         width: 100%;
         height: 50%;
+      }
+      #{$root}__photos-img {
+        max-width: 100%;
+        width: 70.0714rem;
+        height: auto;
+        color: #{$root};
       }
     }
 
@@ -90,8 +89,8 @@
       }
 
       #{$root}__photos-img {
-        width: 32.7857rem;
         max-width: 100%;
+        width: 32.7857rem;
         height: auto;
 
         @media screen and (max-width: 750px) {
@@ -112,12 +111,12 @@
   }
 
   &__info {
-    width: 50.7857rem;
     margin-right: 0.7143rem;
+    width: 50.7857rem;
 
     @media screen and (max-width: 1138px) {
-      width: 100%;
       margin: 0 0 1.4286rem;
+      width: 100%;
     }
   }
 
@@ -125,8 +124,8 @@
     &:nth-of-type(1) {
       display: flex;
       justify-content: space-between;
-      width: 47.8571rem;
       margin-bottom: 1.0286rem;
+      width: 47.8571rem;
 
       @media screen and (max-width: 1138px) {
         width: 100%;
@@ -164,8 +163,8 @@
   }
 
   &__advantages {
-    width: 20rem;
     margin-right: 1.4286rem;
+    width: 20rem;
 
     @media screen and (max-width: 660px) {
       margin-bottom: 1.4286rem;
@@ -174,10 +173,10 @@
     #{$root}__advantages-title {
       margin: 0 0 1.3286rem;
       padding: 0;
-      font-weight: bold;
-      font-size: 1.3571rem;
       color: $primary-color-100;
       letter-spacing: -0.0357rem;
+      font-weight: bold;
+      font-size: 1.3571rem;
     }
 
     #{$root}__advantages-item + #{$root}__advantages-item {
@@ -196,10 +195,10 @@
     #{$root}__impression-title {
       margin-bottom: 1.5286rem;
       padding: 0;
-      font-weight: bold;
-      font-size: 1.3571rem;
       color: $primary-color-100;
       letter-spacing: -0.0357rem;
+      font-weight: bold;
+      font-size: 1.3571rem;
     }
   }
 
@@ -207,10 +206,10 @@
     #{$root}__testimonials-title {
       margin-bottom: 1.3286rem;
       padding: 0;
-      font-weight: bold;
-      font-size: 1.3571rem;
       color: $primary-color-100;
       letter-spacing: -0.0357rem;
+      font-weight: bold;
+      font-size: 1.3571rem;
     }
 
     #{$root}__testimonials-amount {
@@ -235,25 +234,25 @@
   }
 
   &__rules {
-    width: 17.1429rem;
     padding-left: 1.2857rem;
+    width: 17.1429rem;
 
     @media screen and (max-width: 1138px) {
       width: 45%;
     }
 
     @media screen and (max-width: 660px) {
-      width: 90%;
       margin-bottom: 1.0714rem;
+      width: 90%;
     }
 
     #{$root}__rules-title {
       margin-bottom: 1.3286rem;
       padding: 0;
-      font-weight: bold;
-      font-size: 1.3571rem;
       color: $primary-color-100;
       letter-spacing: -0.0357rem;
+      font-weight: bold;
+      font-size: 1.3571rem;
     }
   }
 
@@ -271,10 +270,10 @@
     #{$root}__cancel-title {
       margin-bottom: 1.3286rem;
       padding: 0;
-      font-weight: bold;
-      font-size: 1.3571rem;
       color: $primary-color-100;
       letter-spacing: -0.0357rem;
+      font-weight: bold;
+      font-size: 1.3571rem;
     }
   }
 
