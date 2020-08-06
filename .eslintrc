@@ -14,6 +14,8 @@
   "rules": {
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "class-methods-use-this": "off",
-    "no-new": "off"
+    "no-new": "off",
+    "no-return-assign": "off",
+    "no-param-reassign": "off"
   }
 }

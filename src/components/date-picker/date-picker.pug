@@ -6,9 +6,9 @@ mixin date-picker
     .date-picker__dropdowns
       .date-picker__dropdown
         label.date-picker__label(for="field-date-from") Прибытие
-        +dropdown({ id: "field-date-from", name: "date-from", placeholder: "дд.мм.гггг" })
+        +dropdown({ id: "field-date-from", name: "date-from", placeholder: "ДД.ММ.ГГГГ" })
       .date-picker__dropdown
         label.date-picker__label(for="field-date-to") Выезд
-        +dropdown({ id: "field-date-to", name: "date-to", placeholder: "дд.мм.гггг" })
+        +dropdown({ id: "field-date-to", name: "date-to", placeholder: "ДД.ММ.ГГГГ" })
     .date-picker__calendar.js-date-picker__calendar.date-picker__calendar_hidden
       +calendar

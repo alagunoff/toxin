@@ -50,7 +50,6 @@
     display: grid;
     grid-template-columns: 34% 1fr 29%;
     grid-gap: 2%;
-    padding-top: 0.3571rem;
 
     @media screen and (max-width: 1300px) {
       grid-template-columns: repeat(3, 1fr);
@@ -90,7 +89,6 @@
 
   &__newsletter {
     grid-area: newsletter;
-    padding-top: 0.3571rem;
 
     @media screen and (max-width: 1000px) {
       display: none;

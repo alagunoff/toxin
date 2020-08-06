@@ -3,7 +3,7 @@
 .calendar {
   box-sizing: border-box;
   width: 100%;
-  padding: 1.0286rem 1.4286rem 1.3286rem;
+  padding: 1.4286rem 1.4286rem 1.3286rem;
   border: 0.0714rem solid $primary-color-25;
   box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
   border-radius: 0.2857rem;
@@ -21,7 +21,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.8429rem;
+      margin-bottom: 2.9429rem;
       padding: 0;
       border-bottom: 0;
 
@@ -50,6 +50,7 @@
     &--days-names {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 0.9286rem;
     }
 
     &--day-name {
@@ -68,121 +69,61 @@
     }
 
     &--cell {
-      width: 14.2%;
+      flex-grow: 1;
+      width: 14%;
       font-size: 12px;
       line-height: 40px;
       color: $primary-color-50;
       text-align: center;
+      cursor: pointer;
+
+      &.-other-month- {
+        color: $primary-color-25;
+      }
+
+      &.-disabled- {
+        cursor: default;
+      }
+
+      &.-current- {
+        font-weight: bold;
+        color: $white-color-100;
+        border-radius: 50%;
+        background: linear-gradient($green-color-100, $aqua-color-100);
+      }
+
+      &.-range-from-:not(.-disabled-),
+      &.-range-to-:not(.-disabled-) {
+        position: relative;
+        z-index: 1;
+        font-weight: bold;
+        color: $white-color-100;
+        border-radius: 50%;
+        background: linear-gradient($purple-color-100, $aqua-color-light-100);
+
+        &::before {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          bottom: 0;
+          background: linear-gradient($purple-color-25, $aqua-color-light-25);
+        }
+      }
+
+      &.-range-from-:not(.-disabled-)::before {
+        left: 50%;
+        right: 0;
+      }
+
+      &.-range-to-:not(.-disabled-)::before {
+        left: 0;
+        right: 50%;
+      }
+
+      &.-in-range-:not(.-disabled-):not(.-current-) {
+        background: linear-gradient($purple-color-25, $aqua-color-light-25);
+      }
     }
-
-
-
-    // &--cells {
-    //   justify-content: space-between;
-    // }
-
-    // &--cell-day {
-    //   flex-grow: 1;
-    //   padding: 1.4rem 0;
-    //   font-size: 0.8571rem;
-    //   color: $primary-color-50;
-    //   border-radius: 0;
-
-    //   @media screen and (max-width: 375px) {
-    //     width: 2.5714rem;
-    //   }
-
-    //   &.-other-month- {
-    //     color: $primary-color-25;
-    //   }
-
-    //   &.-disabled- {
-    //     cursor: default;
-    //     color: $primary-color-50;
-    //   }
-
-    //   &.-disabled-.-focus- {
-    //     background-color: transparent;
-    //   }
-
-    //   &.-disabled-.-focus-.-other-month- {
-    //     color: $primary-color-25;
-    //   }
-
-    //   &.-disabled-.-other-month- {
-    //     color: $primary-color-25;
-    //   }
-
-    //   &.-in-range- {
-    //     color: $primary-color-50;
-    //   }
-
-    //   &.-in-range-.-disabled- {
-    //     background-color: transparent;
-    //   }
-
-    //   &.-range-to-,
-    //   &.-range-from- {
-    //     border: 0;
-    //   }
-
-    //   &.-focus-:not(.-disabled-):not(.-current-):not(.-in-range-),
-    //   &.-selected-,
-    //   &.-selected-.-other-month- {
-    //     font-weight: bold;
-    //     color: $white-color-100;
-    //     background: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
-    //     border-radius: 50%;
-    //   }
-
-    //   &.-current-,
-    //   &.-current-.-in-range-,
-    //   &.-current-.-focus-,
-    //   &.-current-.-selected- {
-    //     font-weight: bold;
-    //     color: $white-color-100;
-    //     background: linear-gradient(180deg, $green-color-100 0%, $aqua-color-100 100%);
-    //     border-radius: 50%;
-    //   }
-
-    //   &.-current-.-focus- {
-    //     color: $white-color-100;
-    //   }
-
-    //   &.-in-range-:not(.-disabled-):not(.-current-),
-    //   &.-in-range-.other-month- {
-    //     background: linear-gradient(180deg, $purple-color-25 0%, $aqua-color-light-25 100%);
-    //   }
-
-    //   &.-range-from-:not(.-disabled-) {
-    //     position: relative;
-
-    //     &::after {
-    //       content: '';
-    //       position: absolute;
-    //       top: 0;
-    //       right: 0;
-    //       z-index: -1;
-    //       width: 50%;
-    //       height: 100%;
-    //       background: linear-gradient(180deg, $purple-color-25 0%, $aqua-color-light-25 100%);
-    //     }
-    //   }
-
-    //   &.-range-to-:not(.-disabled-) {
-    //     position: relative;
-
-    //     &::before {
-    //       content: '';
-    //       position: absolute;
-    //       top: 0;
-    //       left: 0;
-    //       z-index: -1;
-    //       width: 50%;
-    //       height: 100%;
-    //       background: linear-gradient(180deg, $purple-color-25 0%, $aqua-color-light-25 100%);
-    //     }
-    //   }
-    // }
   }
 }

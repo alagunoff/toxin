@@ -1,7 +1,5 @@
 class DropdownPlain {
   constructor(parameters) {
-    this.handleTickClick = this.handleTickClick.bind(this);
-
     this.init(parameters);
   }
 
@@ -9,12 +7,17 @@ class DropdownPlain {
     this.dropdown = dropdown;
     this.onTickClick = onTickClick;
 
+    this.bindHandlers();
     this.findDomElements();
     this.addEventListeners();
   }
 
   update(value) {
     this.input.value = value;
+  }
+
+  bindHandlers() {
+    this.handleTickClick = this.handleTickClick.bind(this);
   }
 
   findDomElements() {

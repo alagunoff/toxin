@@ -11,4 +11,4 @@ mixin room-search({ title = "Найдём номера под ваши поже�
       .room-search__dropdown
         label.room-search__label(for="field-guests") Гости
         +dropdown({ type: "guests", id: "field-guests", items: ["Взрослые", "Дети", "Младенцы"], name: "guests", placeholder: "Сколько гостей" })
-      +button({ theme: "with-arrow", text: "подобрать номер", type: 'submit' })
+      +button({ theme: "with-arrow", isFullWidth: true, text: "подобрать номер", type: 'submit' })

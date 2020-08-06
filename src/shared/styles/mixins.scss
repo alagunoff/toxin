@@ -18,6 +18,7 @@
 }
 
 @mixin h3-type {
+  display: inline-block;
   font-weight: bold;
   font-size: 0.8571rem;
   line-height: 1.0714rem;

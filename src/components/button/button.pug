@@ -1,10 +1,13 @@
-mixin button({ text, theme, size, isLink, type = "button", link = "/mock-address" } = {})
-  - const themeClass = theme ? `button_theme_${theme}` : "";
-  - const sizeClass = size ? `button_size_${size}` : "";
+mixin button({ text, theme, size, typeModifier, isFullWidth, isHidden, isLink, type = "button", link = "/mock-address" } = {})
+  - const themeClass = theme && `button_theme_${theme}`;
+  - const sizeClass = size && `button_size_${size}`;
+  - const typeClass = typeModifier && `button_type_${typeModifier} js-button_type_${typeModifier}`;
+  - const widthClass = isFullWidth && 'button_full-width';
+  - const hiddenClass = isHidden && 'button_hidden';
   - const tagName = isLink ? "a" : "button";
 
   #{tagName}.button.js-button(
-    class = [themeClass, sizeClass] 
+    class = [themeClass, sizeClass, typeClass, widthClass, hiddenClass] 
     type = tagName === "button" ? type : false 
     href = tagName === "a" ? link : false)&attributes(attributes)
     = text
