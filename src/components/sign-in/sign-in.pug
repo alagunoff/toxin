@@ -1,20 +1,19 @@
-include ../text-input/text-input
-include ../button/button
-include ../button/button
+include ~@components/text-input/text-input
+include ~@components/button/button
+include ~@components/button/button
 
-mixin sign-in({title = "Войти"} = {})
-  article.sign-in
+mixin sign-in({ title = "Войти" } = {})
+  form.sign-in(action="https://echo.htmlacademy.ru" method="post")
     h2.sign-in__title= title
-    form.sign-in__form(action="https://echo.htmlacademy.ru" method="post")
-      p.sign-in__group
-        label.sign-in__label.sign-in__label_hidden(for="field-email") Введите email
-        +text-input({"type": "email"})(id="field-email" name="email" placeholder="Email")
-      p.sign-in__group
-        label.sign-in__label.sign-in__label_hidden(for="field-password") Введите пароль
-        +text-input({"type": "password"})(id="field-password" name="password" placeholder="Пароль")
-      p.sign-in__group
-        +button({"text": "войти", "theme": "with-arrow", "type": "submit"})
+    .sign-in__email
+      label.sign-in__label(for="field-email") Введите email
+      +text-input({ id: "field-email", type: "email", name: "email", placeholder: "Email" })
+    .sign-in__password
+      label.sign-in__label(for="field-password") Введите пароль
+      +text-input({ id: "field-password", type: "password", name: "password", placeholder: "Пароль" })
+    .sign-in__submit-button
+      +button({ text: "войти", theme: "with-arrow", isFullWidth: true, type: "submit" })
     .sign-in__registration
-      span.sign-in__text Нет аккаунта на Toxin?
-      span.sign-in__sign-in-button
-        +button({"text": "создать", "theme": "border-gradient", "isLink": true, "href": "../../pages/registration-page/registration-page.pug"})
+      .sign-in__text Нет аккаунта на Toxin?
+      .sign-in__sign-in-button
+        +button({ text: "создать", theme: "border-gradient", isLink: true })

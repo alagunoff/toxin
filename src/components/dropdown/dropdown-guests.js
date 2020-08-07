@@ -56,7 +56,7 @@ class DropdownGuests {
   }
 
   handleTickClick() {
-    this.dropdown.classList.toggle('dropdown_expanded');
+    this.dropdown.classList.add('dropdown_expanded');
   }
 
   handleDecreaseButtonClick(e) {
@@ -92,7 +92,6 @@ class DropdownGuests {
   handleClearButtonClick() {
     this.buttonClear.hide();
 
-    this.input.value = '';
     this.buttonsDecrease.forEach((button) => button.disabled = true);
     this.counterFields.forEach((counterField) => counterField.textContent = COUNTER_NUMBER_MIN);
   }

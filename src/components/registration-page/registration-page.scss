@@ -1,36 +1,24 @@
-@import '../sign-up/sign-up';
+@import 'components/sign-up/sign-up';
 
 .registration-page {
   flex-grow: 1;
-  padding: 2.1429rem 0 1.8571rem;
-  background: url('../../images/background-2.jpg') no-repeat center / cover;
+  padding: 1.4429rem 0 1.2571rem;
+  background: url('~@root/images/background-2.jpg') no-repeat center / cover;
 
-  &__container {
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0 0.7143rem;
-    max-width: 84.2857rem;
+  @media screen and (max-width: 1000px) {
+    padding-right: 0.7143rem;
+    padding-left: 0.7143rem;
   }
 
   &__title {
-    &_hidden {
-      position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      margin: -0.0714rem;
-      padding: 0;
-      width: 0.0714rem;
-      height: 0.0714rem;
-      border: 0;
-      clip-path: inset(100%);
-    }
+    @include visually-hidden;
   }
 
-  &__form {
+  &__sign-up {
     margin: 0 auto;
     width: 27.1429rem;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 420px) {
       width: 100%;
     }
   }

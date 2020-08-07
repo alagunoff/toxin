@@ -19,6 +19,12 @@
     @media screen and (max-width: 420px) {
       width: 100%;
     }
+
+    & + #{$root}__dropdown {
+      @media screen and (max-width: 420px) {
+        margin-top: 0.7143rem;
+      }
+    }
   }
 
   &__label {

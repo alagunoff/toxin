@@ -9,7 +9,7 @@ mixin header({ user = null } = {})
     nav.header__navigation.js-header__navigation
       ul.header__site-navigation
 
-        - const { pages } = require('@components/header/data');
+        - const { pages } = require("@components/header/data");
 
         each page in pages
           - const { title, link, theme } = page;

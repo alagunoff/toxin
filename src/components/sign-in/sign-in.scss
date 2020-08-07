@@ -1,54 +1,38 @@
-@import '../text-input/text-input';
-@import '../button/button';
+@import 'components/text-input/text-input';
+@import 'components/button/button';
 
 .sign-in {
-  box-sizing: border-box;
   padding: 2.8571rem 2.1429rem 2.2857rem;
-  width: 100%;
   border: 0.0714rem solid $black-color-12;
   border-radius: 0.2857rem;
-  background: $white-color-100;
+  background-color: $white-color-100;
   box-shadow: 0 0 1.7857rem $black-color-20;
 
   &__title {
-    margin-bottom: 1.4286rem;
-    color: $primary-color-100;
-    letter-spacing: -0.0357rem;
-    font-weight: bold;
-    font-size: 1.7143rem;
-    line-height: 2.1429rem;
-  }
+    @include h1-type;
 
-  &__form {
-    margin-bottom: 2.1143rem;
-  }
-
-  &__group {
-    &:nth-child(1) {
-      margin-bottom: 0.7143rem;
-    }
-
-    &:nth-child(2) {
-      margin-bottom: 1.3571rem;
-    }
+    margin: 0 0 1.4286rem;
   }
 
   &__label {
-    &_hidden {
-      position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      margin: -0.0714rem;
-      padding: 0;
-      width: 0.0714rem;
-      height: 0.0714rem;
-      border: 0;
-      clip-path: inset(100%);
-    }
+    @include visually-hidden;
+  }
+
+  &__email {
+    margin-bottom: 0.7143rem;
+  }
+
+  &__password {
+    margin-bottom: 1.3571rem;
+  }
+
+  &__submit-button {
+    margin-bottom: 2.0286rem;
   }
 
   &__registration {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }

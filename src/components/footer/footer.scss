@@ -6,7 +6,7 @@
   background: $white-color-100;
 
   @media screen and (max-width: 1000px) {
-    padding: 8.5714rem 0;
+    padding: 8.5714rem 0.7143rem;
     text-align: center;
   }
 
@@ -92,6 +92,10 @@
 
     @media screen and (max-width: 1000px) {
       display: none;
+    }
+
+    #{$root}__title {
+      margin-bottom: 1.3rem;
     }
 
     #{$root}__text {

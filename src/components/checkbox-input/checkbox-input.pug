@@ -1,8 +1,8 @@
-mixin checkbox-input({id = "", name = "", title = "", theme = "", description = "", checked = false} = {})
-  - const className = theme ? `checkbox-input_theme_${theme}` : "";
+mixin checkbox-input({ theme, id, name, title, description, checked = false } = {})
+  - const themeClass = theme ? `checkbox-input_theme_${theme}` : "";
 
-  span.checkbox-input(class= className)
-    input.checkbox-input__field.checkbox-input__field_hidden(id= id type="checkbox" name= name checked= checked)&attributes(attributes)
-    label.checkbox-input__label(for= id)= title
+  .checkbox-input(class = themeClass)
+    input.checkbox-input__field(id = id type="checkbox" name = name checked = checked)&attributes(attributes)
+    label.checkbox-input__label(for = id)= title
     if description
-      span.checkbox-input__description= description
+      .checkbox-input__description= description

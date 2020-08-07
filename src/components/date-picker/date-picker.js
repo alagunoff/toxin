@@ -30,18 +30,14 @@ class DatePicker {
   }
 
   handleTickClick() {
-    this.toggleDatePicker();
+    this.datePicker.classList.add('date-picker_expanded');
   }
 
   handleConfirmDate({ dateFrom, dateTo }) {
     this.dropdownFrom.update(dateFrom);
     this.dropdownTo.update(dateTo);
 
-    this.toggleDatePicker();
-  }
-
-  toggleDatePicker() {
-    this.datePicker.classList.toggle('date-picker_expanded');
+    this.datePicker.classList.remove('date-picker_expanded');
   }
 }
 

@@ -7,7 +7,7 @@ mixin dropdown({ state, type, id, name, value, placeholder, items = [] } = {})
   .dropdown.js-dropdown(class = [stateClass, typeClass])
     input.dropdown__input.js-dropdown__input(type="text" id = id name = name value = value placeholder = placeholder readonly tabIndex="-1")&attributes(attributes)
     button.dropdown__tick.js-dropdown__tick(type="button")
-    if type === 'guests' || type === 'comfort'
+    if type === "guests" || type === "comfort"
       .dropdown__container
         each item in items
           .dropdown__group.js-dropdown__group
@@ -16,9 +16,9 @@ mixin dropdown({ state, type, id, name, value, placeholder, items = [] } = {})
               button.dropdown__counter-button.dropdown__counter-button_disabled.dropdown__counter-button_type_decrease.js-dropdown__counter-button_type_decrease(type="button" disabled) -
               span.dropdown__counter-value.js-dropdown__counter-value 0
               button.dropdown__counter-button.dropdown__counter-button_type_increase.js-dropdown__counter-button_type_increase(type="button") +
-        if type === 'guests'
+        if type === "guests"
           .dropdown__buttons
             .dropdown__button
-              +button({ theme: 'default', typeModifier: 'clear', isHidden: true, text: 'Очистить' })
+              +button({ theme: "default", typeModifier: "clear", isHidden: true, text: "Очистить" })
             .dropdown__button
-              +button({ theme: 'default', typeModifier: 'apply', text: 'Применить' })
+              +button({ theme: "default", typeModifier: "apply", text: "Применить" })

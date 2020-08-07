@@ -1,8 +1,7 @@
-include ../sign-up/sign-up
+include ~@components/sign-up/sign-up
 
 mixin registration-page
   main.registration-page
-    h1.registration-page__title.registration-page__title_hidden Зарегистрировать аккаунт
-    .registration-page__container
-      .registration-page__form
-        +sign-up
+    h1.registration-page__title Зарегистрировать аккаунт
+    .registration-page__sign-up
+      +sign-up

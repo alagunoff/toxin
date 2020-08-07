@@ -3,7 +3,7 @@ mixin index-page
     h1.index-page__title
     ul.index-page__list
 
-      - const { pages } = require('@components/index-page/data');
+      - const { pages } = require("@components/index-page/data");
       
       each page in pages
         - const { link, title } = page;

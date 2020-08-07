@@ -1,122 +1,93 @@
-@import '../text-input/text-input';
-@import '../radio-input/radio-input';
-@import '../checkbox-input/checkbox-input';
-@import '../button/button';
+@import 'components/text-input/text-input';
+@import 'components/radio-input/radio-input';
+@import 'components/checkbox-input/checkbox-input';
+@import 'components/button/button';
 
 .sign-up {
   $root: &;
 
-  box-sizing: border-box;
   padding: 2.8571rem 2.1429rem 2.1429rem;
-  width: 100%;
   border: 0.0714rem solid $black-color-12;
   border-radius: 0.2857rem;
   background: $white-color-100;
   box-shadow: 0 0 1.7857rem $black-color-20;
 
   &__title {
-    margin: 0 0 1.4286rem -0.1429rem;
-    color: $primary-color-100;
-    letter-spacing: -0.0357rem;
-    font-weight: bold;
-    font-size: 1.7143rem;
-    line-height: 2.1429rem;
-  }
+    @include h1-type;
 
-  &__form {
-    margin-bottom: 2.1143rem;
-  }
-
-  &__group {
-    padding: 0;
-    border: 0;
-
-    &:nth-child(1) {
-      margin-bottom: 0.5143rem;
-
-      #{$root}__item:nth-child(1) {
-        margin-bottom: 0.7143rem;
-      }
-
-      #{$root}__item:nth-child(2) {
-        margin-bottom: 0.5714rem;
-      }
-    }
-
-    &:nth-child(2) {
-      margin-bottom: 1.5714rem;
-    }
-
-    &:nth-child(3) {
-      margin-bottom: 0.5286rem;
-
-      #{$root}__item:nth-of-type(1) {
-        margin-bottom: 0.7857rem;
-      }
-    }
-
-    &:nth-child(4) {
-      margin-bottom: 1.5714rem;
-    }
+    margin: 0 0 1.4286rem;
   }
 
   &__label {
-    color: $primary-color-100;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8571rem;
-    line-height: 1.0714rem;
+    @include h3-type;
 
     &_hidden {
-      position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      margin: -0.0714rem;
-      padding: 0;
-      width: 0.0714rem;
-      height: 0.0714rem;
-      border: 0;
-      clip-path: inset(100%);
+      @include visually-hidden;
     }
   }
 
-  &__group-title {
-    margin-bottom: 0.3571rem;
-    color: $primary-color-100;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8571rem;
-    line-height: 1.0714rem;
+  &__name {
+    margin-bottom: 0.5143rem;
   }
 
-  &__field {
-    padding: 0.9286rem 1.0714rem;
-    width: 100%;
+  &__surname {
+    margin-bottom: 0.3714rem;
   }
 
-  &__list {
+  &__gender-list {
     display: flex;
+    margin: 0 0 1.3143rem;
     padding: 0;
     list-style-type: none;
+  }
 
-    #{$root}__item + #{$root}__item {
-      margin-left: 1.5rem;
-    }
+  &__gender-item + &__gender-item {
+    margin-left: 1.8rem;
+  }
+
+  &__birthday {
+    margin-bottom: 1.5714rem;
+  }
+
+  &__credentials {
+    margin: 0 0 0.4714rem;
+    padding: 0;
+    border: 0;
+  }
+
+  &__legend {
+    @include h3-type;
+
+    margin-bottom: 0.3571rem;
+  }
+
+  &__email {
+    margin-bottom: 0.5714rem;
+  }
+
+  &__newsletter {
+    margin-bottom: 1.5714rem;
+  }
+
+  &__submit-button {
+    margin-bottom: 2.1714rem;
   }
 
   &__login {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
 
   &__text {
     margin-right: 0.7143rem;
+    max-width: 15.1429rem;
     color: $black-color-100;
     line-height: 1.2857rem;
   }
 
   &__login-button {
-    min-width: 7rem;
+    min-width: 7.0714rem;
   }
 }

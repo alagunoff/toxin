@@ -86,7 +86,7 @@ mixin components-page
             -
               const checkboxesPoor =
               [
-                {"id": "field-9", "title": "Можно курить"},
+                {"id": "field-9", "title": "Можно курить", theme: "default"},
                 {"id": "field-10", "title": "Можно с питомцами", "checked": true},
                 {"id": "field-11", "title": "Можно пригласить гостей (до 10 человек)", "checked": true}
               ];
@@ -248,7 +248,7 @@ mixin components-page
       h2.components-page__heading Хедеры и футеры
       -
         const headers =
-        [, {user: {name: 'Артём Лагунов'}}];
+        [, {user: {name: "Артём Лагунов"}}];
 
       each header in headers
         .components-page__headers-footers-item
