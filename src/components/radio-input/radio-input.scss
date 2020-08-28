@@ -1,16 +1,10 @@
 .radio-input {
   $root: &;
 
-  padding: 0;
-
   &__label {
     position: relative;
     padding-left: 2rem;
     color: $primary-color-50;
-    text-transform: none;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.7143rem;
 
     &:hover {
       cursor: pointer;
@@ -31,6 +25,8 @@
   }
 
   &__field {
+    @include visually-hidden;
+
     &:checked + #{$root}__label {
       color: $primary-color-75;
     }
@@ -43,26 +39,13 @@
       width: 0.8571rem;
       height: 0.8571rem;
       border-radius: 50%;
-      background: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
+      background: linear-gradient($purple-color-100, $aqua-color-light-100);
       content: '';
       transform: translate(-50%, -50%);
     }
 
     &:focus + #{$root}__label::before {
       outline: 0.3571rem auto $outline-color-100;
-      outline-offset: -0.1429rem;
-    }
-
-    &_hidden {
-      position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      margin: -0.0714rem;
-      padding: 0;
-      width: 0.0714rem;
-      height: 0.0714rem;
-      border: 0;
-      clip-path: inset(100%);
     }
   }
 }

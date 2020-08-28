@@ -1,9 +1,9 @@
-include ../rating/rating
+include ~@components/rating/rating
 
-mixin room({image = "", alt = "", number = "", lux = "", price = "", rating = "", testimonials = ""} = {})
-  div.room
-    div.room__container
-      img.room__img(src= image alt= alt)
+mixin room({ imageName, alt, number, lux, price, rating, testimonials } = {})
+  .room
+    .room__container
+      img.room__img(src = require(`@components/rooms-page/images/${imageName}.jpg`) alt = alt)
       p.room__slider-buttons
         button.room__slider-button.room__slider-button_active(type="button")
         button.room__slider-button(type="button")
@@ -12,7 +12,7 @@ mixin room({image = "", alt = "", number = "", lux = "", price = "", rating = ""
       p.room__slider-arrows
         button.room__slider-arrow.room__slider-arrow_theme_prev(type="button")
         button.room__slider-arrow.room__slider-arrow_theme_next(type="button")
-    div.room__info
+    .room__info
       p.room__book-info
         span.room__number-info
           | №

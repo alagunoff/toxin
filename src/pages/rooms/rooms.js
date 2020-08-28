@@ -12,8 +12,8 @@ headers.forEach((header) => new Header(header));
 const dropdownsComfort = document.querySelectorAll('.js-dropdown_type_comfort');
 dropdownsComfort.forEach((dropdown) => new DropdownComfort(dropdown));
 
-const checkboxes = document.querySelectorAll('.js-checkbox-expandable');
-checkboxes.forEach((checkbox) => new CheckboxExpandable(checkbox));
+const checkboxesExpandable = document.querySelectorAll('.js-checkbox-expandable');
+checkboxesExpandable.forEach((checkbox) => new CheckboxExpandable(checkbox));
 
 const $sliders = $('.js-range-slider');
 $sliders.each((i, el) => new RangeSlider($(el)));

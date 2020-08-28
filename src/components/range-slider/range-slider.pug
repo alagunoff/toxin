@@ -1,7 +1,7 @@
-mixin range-slider({id = "", title = "", description = ""} = {})
-  span.range-slider.js-range-slider
-    span.range-slider__group
-      label.range-slider__label(for= id)= title
-      span.range-slider__price.js-range-slider__price
-    input.range-slider__field.js-range-slider__field(id= id type="text")&attributes(attributes)
-    span.range-slider__description= description
+mixin range-slider({ id, title, description, name } = {})
+  .range-slider.js-range-slider
+    .range-slider__group
+      label.range-slider__label(for = id)= title
+      .range-slider__price.js-range-slider__price
+    input.range-slider__field.js-range-slider__field(id = id type="text" name = name)&attributes(attributes)
+    .range-slider__description= description

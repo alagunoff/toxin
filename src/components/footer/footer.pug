@@ -11,12 +11,14 @@ mixin footer
           +logo
         .footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       nav.footer__navigation
+
         each page in pages
           - const { title, subItems } = page;
 
           section.footer__navigation-item
             .footer__title= title
             ul.footer__list
+            
               each subItem in subItems
                 li.footer__list-item
                   a.footer__list-link(href="/mock-address")= subItem

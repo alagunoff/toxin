@@ -1,42 +1,37 @@
-@import '../../components/range-slider/range-slider';
-@import '../../components/dropdown/dropdown';
-@import '../../components/checkbox-expandable/checkbox-expandable';
-@import '../../components/room/room';
-@import '../../components/pagination/pagination';
+@import 'components/range-slider/range-slider';
+@import 'components/dropdown/dropdown';
+@import 'components/checkbox-expandable/checkbox-expandable';
+@import 'components/room/room';
+@import 'components/pagination/pagination';
 
 .rooms-page {
   $root: &;
 
+  display: flex;
   flex-grow: 1;
-  padding: 2.1429rem 0 5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 2.1429rem 9.7% 5rem;
 
-  &__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0 0.7143rem;
-    max-width: 84.2857rem;
+  &__title {
+    @include visually-hidden;
   }
 
-  &__title,
   &__subtitle {
+    margin-bottom: 1.4286rem;
+    color: $primary-color-100;
+    letter-spacing: -0.0357rem;
+    font-weight: bold;
+    font-size: 1.7143rem;
+    line-height: 2.1429rem;
+
     &_hidden {
-      position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      margin: -0.0714rem;
-      padding: 0;
-      width: 0.0714rem;
-      height: 0.0714rem;
-      border: 0;
-      clip-path: inset(100%);
+      @include visually-hidden;
     }
   }
 
   &__filter {
-    margin-right: 1.4286rem;
     width: 19rem;
 
     @media screen and (max-width: 1159px) {
@@ -212,15 +207,6 @@
 
     @media screen and (max-width: 1159px) {
       width: 100%;
-    }
-
-    #{$root}__subtitle {
-      margin-bottom: 1.4286rem;
-      color: $primary-color-100;
-      letter-spacing: -0.0357rem;
-      font-weight: bold;
-      font-size: 1.7143rem;
-      line-height: 2.1429rem;
     }
 
     #{$root}__list {
