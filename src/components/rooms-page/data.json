@@ -1,8 +1,15 @@
 {
   "checkboxesPoor": [
-    { "id": "field-smoke", "title": "Можно курить", "name": "smoke" },
-    { "id": "field-pets", "title": "Можно с питомцами", "name": "pets", "checked": true },
+    { "theme": "default", "id": "field-smoke", "title": "Можно курить", "name": "smoke" },
     {
+      "theme": "default",
+      "id": "field-pets",
+      "title": "Можно с питомцами",
+      "name": "pets",
+      "checked": true
+    },
+    {
+      "theme": "default",
       "id": "field-allow-guests",
       "title": "Можно пригласить гостей (до 10 человек)",
       "name": "allow-guests",
@@ -11,27 +18,39 @@
   ],
   "checkboxesRich": [
     {
-      "id": "field-wide-aisle",
       "theme": "rich",
+      "id": "field-wide-aisle",
       "title": "Широкий коридор",
       "description": "Ширина коридоров в номере не менее 91 см.",
       "name": "wide-aisle"
     },
     {
-      "id": "field-hepler",
       "theme": "rich",
+      "id": "field-hepler",
       "title": "Помощник для инвалидов",
       "description": "На 1 этаже вас встретит специалист  и проводит до номера.",
       "name": "helper"
     }
   ],
   "checkboxesExpandable": [
-    { "id": "field-breakfast", "title": "Завтрак", "name": "breakfast" },
-    { "id": "field-desk", "title": "Письменный стол", "name": "desk", "checked": true },
-    { "id": "field-chair", "title": "Стул для кормления", "name": "chair", "checked": true },
-    { "id": "field-bed", "title": "Кроватка", "name": "bed", "checked": true },
-    { "id": "field-tv", "title": "Телевизор", "name": "tv" },
-    { "id": "field-shampoo", "title": "Шампунь", "name": "shampoo" }
+    { "theme": "default", "id": "field-breakfast", "title": "Завтрак", "name": "breakfast" },
+    {
+      "theme": "default",
+      "id": "field-desk",
+      "title": "Письменный стол",
+      "name": "desk",
+      "checked": true
+    },
+    {
+      "theme": "default",
+      "id": "field-chair",
+      "title": "Стул для кормления",
+      "name": "chair",
+      "checked": true
+    },
+    { "theme": "default", "id": "field-bed", "title": "Кроватка", "name": "bed", "checked": true },
+    { "theme": "default", "id": "field-tv", "title": "Телевизор", "name": "tv" },
+    { "theme": "default", "id": "field-shampoo", "title": "Шампунь", "name": "shampoo" }
   ],
   "rooms": [
     {

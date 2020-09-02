@@ -1,13 +1,18 @@
 class Header {
   constructor(header) {
-    this.header = header;
-
-    this.init();
+    this.init(header);
   }
 
-  init() {
+  init(header) {
+    this.header = header;
+
+    this.bindHandlers();
     this.findDomElements();
     this.addEventListeners();
+  }
+
+  bindHandlers() {
+    this.handleBurgerButtonClick = this.handleBurgerButtonClick.bind(this);
   }
 
   findDomElements() {
@@ -16,7 +21,7 @@ class Header {
   }
 
   addEventListeners() {
-    this.burgerButton.addEventListener('click', this.handleBurgerButtonClick.bind(this));
+    this.burgerButton.addEventListener('click', this.handleBurgerButtonClick);
   }
 
   handleBurgerButtonClick() {

@@ -7,21 +7,31 @@
 .rooms-page {
   $root: &;
 
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 2.1429rem 9.7% 5rem;
+  display: grid;
+  grid-template: 'filter rooms' / 22.931% 1fr;
+  grid-gap: 0 5.172%;
+  padding: 1.8429rem 9.7% 5rem;
+
+  @media screen and (max-width: 1300px) {
+    padding-right: 0.7143rem;
+    padding-left: 0.7143rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    grid-template:
+      'filter'
+      'rooms'
+      / 1fr;
+    grid-gap: 3.5714rem 0;
+  }
 
   &__title {
     @include visually-hidden;
   }
 
   &__subtitle {
-    margin-bottom: 1.4286rem;
+    margin: 0 0 1.4286rem;
     color: $primary-color-100;
-    letter-spacing: -0.0357rem;
     font-weight: bold;
     font-size: 1.7143rem;
     line-height: 2.1429rem;
@@ -32,43 +42,17 @@
   }
 
   &__filter {
-    width: 19rem;
-
-    @media screen and (max-width: 1159px) {
-      margin-right: 0;
-      width: 100%;
-    }
-  }
-
-  &__form {
-    margin-top: -0.3571rem;
-
-    @media screen and (max-width: 1159px) {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 110%;
-      z-index: 1;
-      overflow: scroll;
-      padding: 0.7143rem;
-      background: $white-color-100;
-      transition: left ease 1s;
-    }
-
-    &_showed {
-      left: 0;
-    }
+    grid-area: filter;
   }
 
   &__filter-show-button {
     display: none;
     box-sizing: border-box;
-    margin-bottom: 1.4286rem;
+    margin: 0;
     padding: 0.7143rem 1.4286rem;
     width: 100%;
     border: 0;
-    background: linear-gradient(180deg, $purple-color-100 0%, $aqua-color-light-100 100%);
+    background: linear-gradient($purple-color-100, $aqua-color-light-100);
     color: $white-color-100;
     text-align: center;
     font-weight: bold;
@@ -76,7 +60,7 @@
     cursor: pointer;
     -webkit-appearance: none;
 
-    @media screen and (max-width: 1159px) {
+    @media screen and (max-width: 1000px) {
       display: inline-block;
     }
   }
@@ -118,137 +102,115 @@
     }
   }
 
-  &__group {
-    padding: 0;
-    border: 0;
-
-    &:nth-child(1) {
-      margin-bottom: 1.1714rem;
-    }
-
-    &:nth-child(2) {
-      margin-bottom: 2.2714rem;
-    }
-
-    &:nth-child(3) {
-      margin-bottom: 1.8571rem;
-    }
-
-    &:nth-child(4) {
-      margin-bottom: 2.1429rem;
-
-      #{$root}__group-title {
-        margin-bottom: 1.2286rem;
-      }
-
-      #{$root}__list {
-        width: 17.1429rem;
-
-        #{$root}__item + #{$root}__item {
-          margin-top: 0.4714rem;
-        }
-      }
-    }
-
-    &:nth-child(5) {
-      margin-bottom: 1.5571rem;
-
-      #{$root}__group-title {
-        margin-bottom: 1.2143rem;
-      }
-
-      #{$root}__list {
-        width: 18.2143rem;
-
-        #{$root}__item {
-          &:first-child {
-            width: 16.7857rem;
-          }
-
-          + #{$root}__item {
-            margin-top: 0.5286rem;
-          }
-        }
-      }
-    }
-
-    &:nth-child(6) {
-      position: relative;
+  &__form {
+    @media screen and (max-width: 1000px) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 110%;
       z-index: 1;
-      margin-bottom: 2.1714rem;
+      display: none;
+      overflow-y: scroll;
+      padding: 0.7143rem;
+      background: $white-color-100;
+      transition: all ease 1s;
+    }
+
+    &_showed {
+      left: 0;
+      display: block;
     }
   }
 
-  &__list {
-    padding: 0;
-    list-style-type: none;
-  }
-
-  &__group-title {
-    padding: 0;
-    color: $primary-color-100;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8571rem;
-    line-height: 1.0714rem;
+  &__dropdown-date {
+    margin-bottom: 1.1714rem;
   }
 
   &__label {
-    display: inline-block;
-    color: $primary-color-100;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8571rem;
-    line-height: 1.0714rem;
+    @include h3-type;
+
+    margin-bottom: 0.3571rem;
+  }
+
+  &__dropdown-guests {
+    margin-bottom: 2.0714rem;
+  }
+
+  &__range-slider {
+    margin-bottom: 2.2571rem;
+  }
+
+  &__checkboxes {
+    margin: 0 0 2.3429rem;
+    padding: 0;
+    border: 0;
+
+    #{$root}__checkbox-input + #{$root}__checkbox-input {
+      margin-top: 0.9714rem;
+    }
+  }
+
+  &__checkboxes-title {
+    @include h3-type;
+
+    margin-bottom: 1.2286rem;
+  }
+
+  &__checkboxes-rich {
+    margin: 0 0 1.5571rem;
+    padding: 0;
+    border: 0;
+
+    #{$root}__checkbox-input + #{$root}__checkbox-input {
+      margin-top: 0.3286rem;
+    }
+  }
+
+  &__checkboxes-rich-title {
+    @include h3-type;
+
+    margin-bottom: 1.0143rem;
+  }
+
+  &__dropdown-comfort {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2.1714rem;
+  }
+
+  &__checkbox-expandable {
+    padding-right: 1.2143rem;
+
+    @media screen and (max-width: 1300px) {
+      padding-right: 0;
+    }
   }
 
   &__rooms {
-    width: 59.6429rem;
+    grid-area: rooms;
+    padding-top: 0.3571rem;
 
-    @media screen and (max-width: 1159px) {
-      width: 100%;
+    @media screen and (max-width: 1000px) {
+      padding-top: 0;
     }
+  }
 
-    #{$root}__list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin: 0 -0.7143rem 1.5571rem 0;
-
-      @media screen and (max-width: 591px) {
-        margin-right: 0;
-      }
-    }
-
-    #{$root}__item {
-      margin: 0 0.7143rem 1.2857rem 0;
-      width: 19.2857rem;
-
-      @media screen and (max-width: 1159px) {
-        width: 32%;
-      }
-
-      @media screen and (max-width: 900px) {
-        width: 48%;
-      }
-
-      @media screen and (max-width: 591px) {
-        margin-right: 0;
-        width: 100%;
-      }
-    }
+  &__rooms-list {
+    display: grid;
+    margin: 0 0 2.7571rem;
+    padding: 0;
+    list-style-type: none;
+    grid-template-columns: repeat(auto-fit, minmax(19.2857rem, 1fr));
+    grid-gap: 1.4643rem 1.438%;
   }
 
   &__pagination {
     margin-left: 20.7857rem;
 
-    @media screen and (max-width: 1159px) {
+    @media screen and (max-width: 1300px) {
       margin: 0 auto;
       width: 17.2143rem;
     }
-  }
-
-  &__link {
-    text-decoration: none;
   }
 }

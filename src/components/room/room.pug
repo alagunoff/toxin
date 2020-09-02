@@ -4,26 +4,26 @@ mixin room({ imageName, alt, number, lux, price, rating, testimonials } = {})
   .room
     .room__container
       img.room__img(src = require(`@components/rooms-page/images/${imageName}.jpg`) alt = alt)
-      p.room__slider-buttons
+      .room__slider-buttons
         button.room__slider-button.room__slider-button_active(type="button")
         button.room__slider-button(type="button")
         button.room__slider-button(type="button")
         button.room__slider-button(type="button")
-      p.room__slider-arrows
+      .room__slider-arrows
         button.room__slider-arrow.room__slider-arrow_theme_prev(type="button")
         button.room__slider-arrow.room__slider-arrow_theme_next(type="button")
     .room__info
-      p.room__book-info
-        span.room__number-info
+      .room__book-info
+        .room__number-info
           | №
           span.room__number= ` ${number} `
           if lux === true
             span.room__type Люкс
-        span.room__day-price
+        .room__day-price
           span.room__price= `${price} `
           | в сутки
-      p.room__user-experience
+      .room__user-experience
         +rating({currentRating: rating})
-        span.room__testimonials
+        .room__testimonials
           span.room__testimonials-amount= `${testimonials} `
           | Отзывов

@@ -23,7 +23,7 @@ class DatePicker {
       ...this.datePicker.querySelectorAll('.js-dropdown_type_date'),
     ].map((dropdown) => new DropdownPlain({ dropdown, onTickClick: this.handleTickClick }));
 
-    this.calendarElement = new Calendar({
+    this.calendar = new Calendar({
       calendar: this.datePicker.querySelector('.js-calendar'),
       onConfirmDate: this.handleConfirmDate,
     });

@@ -17,23 +17,19 @@ class RoomsFilter {
     this.filterClose.addEventListener('click', this.handleCloseButtonClick.bind(this));
   }
 
-  handleShowButtonClick(evt) {
-    evt.preventDefault();
-
+  handleShowButtonClick() {
     this.filterForm.classList.add('rooms-page__form_showed');
     this.filterClose.classList.remove('rooms-page__filter-close-button_hidden');
     this.filterClose.style.left = `${document.documentElement.clientWidth - this.filterClose.offsetWidth}px`;
 
-    document.body.classList.add('scroll-none');
+    document.body.style.overflow = 'hidden';
   }
 
-  handleCloseButtonClick(evt) {
-    evt.preventDefault();
-
+  handleCloseButtonClick() {
     this.filterForm.classList.remove('rooms-page__form_showed');
     this.filterClose.classList.add('rooms-page__filter-close-button_hidden');
 
-    document.body.classList.remove('scroll-none');
+    document.body.style.overflow = '';
   }
 }
 

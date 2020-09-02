@@ -11,8 +11,8 @@ class DropdownGuests {
     this.dropdown = dropdown;
 
     this.bindHandlers();
-    this.findDomElements();
     this.initInstancies();
+    this.findDomElements();
     this.addEventListeners();
   }
 
@@ -22,6 +22,18 @@ class DropdownGuests {
     this.handleIncreaseButtonClick = this.handleIncreaseButtonClick.bind(this);
     this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
     this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
+  }
+
+  initInstancies() {
+    this.buttonClear = new Button({
+      button: this.dropdown.querySelector('.js-button_type_clear'),
+      onClick: this.handleClearButtonClick,
+    });
+
+    this.buttonApply = new Button({
+      button: this.dropdown.querySelector('.js-button_type_apply'),
+      onClick: this.handleApplyButtonClick,
+    });
   }
 
   findDomElements() {
@@ -35,18 +47,6 @@ class DropdownGuests {
     this.buttonsIncrease = this.dropdown.querySelectorAll(
       '.js-dropdown__counter-button_type_increase',
     );
-  }
-
-  initInstancies() {
-    this.buttonClear = new Button({
-      button: this.dropdown.querySelector('.js-button_type_clear'),
-      onClick: this.handleClearButtonClick,
-    });
-
-    this.buttonApply = new Button({
-      button: this.dropdown.querySelector('.js-button_type_apply'),
-      onClick: this.handleApplyButtonClick,
-    });
   }
 
   addEventListeners() {

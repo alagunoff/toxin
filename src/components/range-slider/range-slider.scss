@@ -3,9 +3,14 @@
 .range-slider {
   &__group {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1.4286rem;
+  }
+
+  &__label {
+    @include h3-type;
   }
 
   &__price {
@@ -14,16 +19,7 @@
     line-height: 1.0714rem;
   }
 
-  &__label {
-    color: $primary-color-100;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8571rem;
-    line-height: 1.0714rem;
-  }
-
   &__description {
-    display: inline-block;
     margin-top: 0.7857rem;
     color: $primary-color-50;
     font-size: 0.8571rem;

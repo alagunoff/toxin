@@ -1,17 +1,18 @@
-@import '../checkbox-input/checkbox-input';
+@import 'components/checkbox-input/checkbox-input';
 
 .checkbox-expandable {
   $root: &;
 
+  margin: 0;
+  padding: 0;
+  border: 0;
+
   &__title {
+    @include h3-type;
+
     position: relative;
-    display: block;
-    margin-bottom: 1.1429rem;
-    color: $primary-color-100;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8571rem;
-    line-height: 1.0714rem;
+    margin-bottom: 1.5429rem;
+    width: 100%;
 
     &:hover {
       cursor: pointer;
@@ -20,25 +21,23 @@
     &::after {
       position: absolute;
       top: 50%;
-      right: 1.2857rem;
+      right: 0;
+      margin-left: 2.1143rem;
       width: 0.4286rem;
       height: 0.4286rem;
-      border: 0.1429rem solid $primary-color-50;
-      border-top: 0;
-      border-left: 0;
+      border-right: 0.1429rem solid $primary-color-50;
+      border-bottom: 0.1429rem solid $primary-color-50;
       content: '';
       transform: translateY(-50%) rotate(45deg);
     }
   }
 
-  &__list {
+  &__checkboxes {
     display: none;
-    padding: 0;
-    list-style-type: none;
   }
 
-  &__item + #{$root}__item {
-    margin-top: 0.4286rem;
+  &__checkbox-input + &__checkbox-input {
+    margin-top: 0.9286rem;
   }
 
   &_expanded {
@@ -46,7 +45,7 @@
       transform: rotate(-135deg);
     }
 
-    #{$root}__list {
+    #{$root}__checkboxes {
       display: block;
     }
   }

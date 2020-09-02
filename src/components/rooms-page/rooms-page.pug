@@ -14,10 +14,10 @@ mixin rooms-page
       button.rooms-page__filter-show-button.js-rooms-page__filter-show-button(type="button") Показать фильтр
       button.rooms-page__filter-close-button.js-rooms-page__filter-close-button.rooms-page__filter-close-button_hidden(type="button" aria-label="Закрыть фильтр")
       form.rooms-page__form.js-rooms-page__form(action="https://echo.htmlacademy/ru" method="post")
-        .rooms-page__date
+        .rooms-page__dropdown-date
           label.rooms-page__label(for="field-date") Даты пребывания в отеле
           +dropdown({ id: "field-date", name: "date", value: "19 авг - 23 авг" })
-        .rooms-page__guests
+        .rooms-page__dropdown-guests
           label.rooms-page__label(for="field-guests") Гости
           +dropdown({ id: "field-guests", name: "guests", value: "3 гостя, 1 младенец" })
         .rooms-page__range-slider
@@ -25,18 +25,18 @@ mixin rooms-page
         fieldset.rooms-page__checkboxes
           legend.rooms-page__checkboxes-title Дополнительные возможности
 
-            each checkbox in checkboxesPoor
-              .rooms-page__checkbox-input
-                +checkbox-input(checkbox)
+          each checkbox in checkboxesPoor
+            .rooms-page__checkbox-input
+              +checkbox-input(checkbox)
 
         fieldset.rooms-page__checkboxes-rich
           legend.rooms-page__checkboxes-rich-title Доступность
 
-            each checkbox in checkboxesRich
-              .rooms-page__checkbox-input
-                +checkbox-input(checkbox)
+          each checkbox in checkboxesRich
+            .rooms-page__checkbox-input
+              +checkbox-input(checkbox)
 
-        .rooms-page__comfort
+        .rooms-page__dropdown-comfort
           label.rooms-page__label(for="field-comfort") Удобства номера
           +dropdown({ id: "field-comfort", type: "comfort", items: ["Спальни", "Кровати", "Ванные комнаты"], name: "comfort", placeholder: "1 спальня"})
         .rooms-page__checkbox-expandable

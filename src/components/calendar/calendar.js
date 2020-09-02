@@ -14,6 +14,7 @@ class Calendar {
     this.$calendar = $(calendar);
 
     this.bindHandlers();
+    this.initInstancies();
 
     this.$calendar.datepicker({
       ...DEFAULT_PARAMETERS,
@@ -24,8 +25,6 @@ class Calendar {
 
     this.onConfirmDate = onConfirmDate;
     this.dateFormatter = new Intl.DateTimeFormat('ru');
-
-    this.initInstancies();
   }
 
   bindHandlers() {

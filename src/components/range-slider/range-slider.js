@@ -4,24 +4,30 @@ import DEFAULT_RANGE_SLIDER_PARAMETERS from './constants';
 
 class RangeSlider {
   constructor($slider) {
+    this.init($slider);
+  }
+
+  init($slider) {
     this.$slider = $slider;
 
-    this.init();
+    this.bindHandlers();
+    this.findDomElements();
+
+    this.$sliderField.ionRangeSlider({
+      ...DEFAULT_RANGE_SLIDER_PARAMETERS,
+      onStart: this.handleSliderStart,
+      onChange: this.handleRunnerDrag,
+    });
+  }
+
+  bindHandlers() {
+    this.handleSliderStart = this.handleSliderStart.bind(this);
+    this.handleRunnerDrag = this.handleRunnerDrag.bind(this);
   }
 
   findDomElements() {
     this.$sliderField = this.$slider.find('.js-range-slider__field');
     this.$sliderPrice = this.$slider.find('.js-range-slider__price');
-  }
-
-  init() {
-    this.findDomElements();
-
-    this.$sliderField.ionRangeSlider({
-      ...DEFAULT_RANGE_SLIDER_PARAMETERS,
-      onStart: this.handleSliderStart.bind(this),
-      onChange: this.handleRunnerDrag.bind(this),
-    });
   }
 
   handleSliderStart(value) {
