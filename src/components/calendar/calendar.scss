@@ -10,9 +10,17 @@
   box-shadow: 0 0.7143rem 1.4286rem $primary-color-5;
   user-select: none;
 
+  @media screen and (max-width: 420px) {
+    padding: 1.0286rem;
+  }
+
   &__buttons {
     display: flex;
     margin-top: 1.5rem;
+
+    @media screen and (max-width: 420px) {
+      margin-top: 1rem;
+    }
   }
 
   &__button:nth-child(2) {
@@ -27,6 +35,10 @@
       margin-bottom: 2.9429rem;
       padding: 0;
       border-bottom: 0;
+
+      @media screen and (max-width: 420px) {
+        margin-bottom: 1.9429rem;
+      }
     }
 
     &--nav-title {
@@ -53,7 +65,7 @@
     }
 
     &--day-name {
-      width: 14.2%;
+      width: 14.285714286%;
       color: $purple-color-100;
       text-align: center;
       font-weight: bold;
@@ -72,20 +84,13 @@
       flex-grow: 1;
       align-items: center;
       justify-content: center;
-      padding: 2.9% 0;
-      width: 14.2%;
+      padding: 7.1% 0;
+      width: 14.285714286%;
       color: $primary-color-50;
       text-align: center;
       font-size: 0.8571rem;
+      line-height: 0;
       cursor: pointer;
-
-      @media screen and (max-width: 370px) {
-        padding: 2.1% 0;
-      }
-
-      @media screen and (max-width: 340px) {
-        padding: 1.1% 0;
-      }
 
       &.-other-month- {
         color: $primary-color-25;
