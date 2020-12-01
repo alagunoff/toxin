@@ -1,19 +1,22 @@
-include ../advantage/advantage
-include ../donut/donut
-include ../testimonial/testimonial
-include ../bullet-list/bullet-list
-include ../room-book/room-book
+include ~@components/advantage/advantage
+include ~@components/donut/donut
+include ~@components/testimonial/testimonial
+include ~@components/bullet-list/bullet-list
+include ~@components/room-book/room-book
 
 mixin room-page
   main.room-page
-    h1.room-page__title.room-page__title_hidden Люксовый номер №888
+    h1.room-page__title Люксовый номер №888
     section.room-page__photos
       h2.room-page__subtitle.room-page__subtitle_hidden Фотографии номера
+
+      - const { photos: [mainBedroom, secondBedroom, workRoom] } = require('@components/room-page/data');
+
       .room-page__photos-group
-        img.room-page__photos-img(src="../../components/room-page/images/big-picture.jpg" alt="Главная спальня")
+        img.room-page__photos-img(src = require(`@components/room-page/images/${mainBedroom.imageName}.jpg`) alt = mainBedroom.altText)
       .room-page__photos-group
-        img.room-page__photos-img(src="../../components/room-page/images/small-picture-1.jpg" alt="Вторая спальня")
-        img.room-page__photos-img(src="../../components/room-page/images/small-picture-2.jpg" alt="Комната для работы")
+        img.room-page__photos-img(src = require(`@components/room-page/images/${secondBedroom.imageName}.jpg`) alt = secondBedroom.altText)
+        img.room-page__photos-img(src =  require(`@components/room-page/images/${workRoom.imageName}.jpg`) alt = workRoom.altText)
     .room-page__container
       section.room-page__info
         h2.room-page__subtitle.room-page__subtitle_hidden Информация о номере

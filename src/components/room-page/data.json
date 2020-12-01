@@ -1,0 +1,16 @@
+{
+  "photos": [
+    {
+      "imageName": "number-888-main-bedroom",
+      "altText": "Главная спальня"
+    },
+    {
+      "imageName": "number-888-second-bedroom",
+      "altText": "Вторая спальня"
+    },
+    {
+      "imageName": "number-888-work-room",
+      "altText": "Комната для работы"
+    }
+  ]
+}

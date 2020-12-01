@@ -1,9 +1,0 @@
-{
-  "extends": "clock",
-  "validateExtensions": null,
-  "validateAttributeQuoteMarks": "\"",
-  "validateAttributeSeparator": null,
-  "disallowMultipleLineBreaks": true,
-  "disallowClassAttributeWithStaticValue": null,
-  "requireSpecificAttributes": [{ "button": ["type"] }, { "a": ["href"] }]
-}
