@@ -46,17 +46,17 @@
   }
 
   &__filter-show-button {
-    display: none;
     box-sizing: border-box;
+    display: none;
+    width: 100%;
     margin: 0;
     padding: 0.7143rem 1.4286rem;
-    width: 100%;
     border: 0;
-    background: linear-gradient($purple-color-100, $aqua-color-light-100);
     color: $white-color-100;
-    text-align: center;
     font-weight: bold;
     font-size: 1.1429rem;
+    text-align: center;
+    background: linear-gradient($purple-color-100, $aqua-color-light-100);
     cursor: pointer;
     -webkit-appearance: none;
 
@@ -84,13 +84,13 @@
 
     &::before,
     &::after {
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       width: 1.4286rem;
       height: 0.2143rem;
       background-color: $white-color-100;
-      content: '';
     }
 
     &::before {
@@ -111,8 +111,8 @@
       left: 110%;
       z-index: 1;
       display: none;
-      overflow-y: scroll;
       padding: 0.7143rem;
+      overflow-y: scroll;
       background: $white-color-100;
       transition: all ease 1s;
     }
@@ -198,19 +198,19 @@
 
   &__rooms-list {
     display: grid;
-    margin: 0 0 2.7571rem;
-    padding: 0;
     list-style-type: none;
     grid-template-columns: repeat(auto-fit, minmax(19.2857rem, 1fr));
     grid-gap: 1.4643rem 1.438%;
+    margin: 0 0 2.7571rem;
+    padding: 0;
   }
 
   &__pagination {
     margin-left: 20.7857rem;
 
     @media screen and (max-width: 1300px) {
-      margin: 0 auto;
       width: 17.2143rem;
+      margin: 0 auto;
     }
   }
 }

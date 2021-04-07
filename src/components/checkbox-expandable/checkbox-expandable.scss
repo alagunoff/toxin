@@ -11,23 +11,23 @@
     @include h3-type;
 
     position: relative;
-    margin-bottom: 1.5429rem;
     width: 100%;
+    margin-bottom: 1.5429rem;
 
     &:hover {
       cursor: pointer;
     }
 
     &::after {
+      content: '';
       position: absolute;
       top: 50%;
       right: 0;
-      margin-left: 2.1143rem;
       width: 0.4286rem;
       height: 0.4286rem;
+      margin-left: 2.1143rem;
       border-right: 0.1429rem solid $primary-color-50;
       border-bottom: 0.1429rem solid $primary-color-50;
-      content: '';
       transform: translateY(-50%) rotate(45deg);
     }
   }

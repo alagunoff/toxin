@@ -2,8 +2,8 @@
 
 .calendar {
   box-sizing: border-box;
-  padding: 1.4286rem 1.4286rem 1.3286rem;
   width: 100%;
+  padding: 1.4286rem 1.4286rem 1.3286rem;
   border: 0.0714rem solid $primary-color-25;
   border-radius: 0.2857rem;
   background-color: $white-color-100;
@@ -67,10 +67,10 @@
     &--day-name {
       width: 14.285714286%;
       color: $purple-color-100;
-      text-align: center;
       font-weight: bold;
       font-size: 0.8571rem;
       line-height: 1.0714rem;
+      text-align: center;
     }
 
     &--cells {
@@ -84,12 +84,12 @@
       flex-grow: 1;
       align-items: center;
       justify-content: center;
-      padding: 7.1% 0;
       width: 14.285714286%;
+      padding: 7.1% 0;
       color: $primary-color-50;
-      text-align: center;
       font-size: 0.8571rem;
       line-height: 0;
+      text-align: center;
       cursor: pointer;
 
       &.-other-month- {
@@ -102,9 +102,9 @@
 
       &.-current- {
         border-radius: 50%;
-        background: linear-gradient($green-color-100, $aqua-color-100);
         color: $white-color-100;
         font-weight: bold;
+        background: linear-gradient($green-color-100, $aqua-color-100);
       }
 
       &.-range-from-:not(.-disabled-),
@@ -112,17 +112,17 @@
         position: relative;
         z-index: 1;
         border-radius: 50%;
-        background: linear-gradient($purple-color-100, $aqua-color-light-100);
         color: $white-color-100;
         font-weight: bold;
+        background: linear-gradient($purple-color-100, $aqua-color-light-100);
 
         &::before {
+          content: '';
           position: absolute;
           top: 0;
           bottom: 0;
           z-index: -1;
           background: linear-gradient($purple-color-25, $aqua-color-light-25);
-          content: '';
         }
       }
 

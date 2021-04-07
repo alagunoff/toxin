@@ -5,8 +5,8 @@
   $root: &;
 
   box-sizing: border-box;
-  padding: 3.3571rem 2.0714rem 2.0714rem;
   width: 100%;
+  padding: 3.3571rem 2.0714rem 2.0714rem;
   border: 0.0714rem solid $black-color-12;
   border-radius: 0.2857rem;
   background-color: $white-color-100;
@@ -15,13 +15,13 @@
   &__title {
     &_hidden {
       position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      margin: -0.0714rem;
-      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
+      margin: -0.0714rem;
+      padding: 0;
       border: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
       clip-path: inset(100%);
     }
   }
@@ -50,9 +50,9 @@
 
   &__type {
     color: $purple-color-100;
-    text-transform: uppercase;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
+    text-transform: uppercase;
   }
 
   &__day-price {
@@ -94,10 +94,10 @@
 
   &__label {
     color: $primary-color-100;
-    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
+    text-transform: uppercase;
   }
 
   &__book-info {
@@ -109,14 +109,15 @@
     }
 
     #{$root}__info {
-      margin-right: 0.7143rem;
       width: 15.4286rem;
+      margin-right: 0.7143rem;
       line-height: 1.2857rem;
 
       &_theme_has-tip {
         position: relative;
 
         &::after {
+          content: 'i';
           position: absolute;
           top: 0;
           right: -1.7857rem;
@@ -125,10 +126,9 @@
           border: 0.0714rem solid $primary-color-25;
           border-radius: 50%;
           color: $primary-color-25;
-          content: 'i';
-          text-align: center;
           font-weight: bold;
           line-height: 1.4286rem;
+          text-align: center;
           cursor: help;
 
           @media screen and (max-width: 400px) {
@@ -140,9 +140,9 @@
 
     #{$root}__price {
       width: 5rem;
-      text-align: right;
       font-weight: normal;
       line-height: 1.2857rem;
+      text-align: right;
     }
   }
 
@@ -154,9 +154,9 @@
 
   &__total-price {
     color: $primary-color-100;
-    letter-spacing: -0.0286rem;
     font-weight: bold;
     font-size: 1.2857rem;
+    letter-spacing: -0.0286rem;
   }
 
   &__spacer {

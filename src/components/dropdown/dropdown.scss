@@ -8,52 +8,52 @@
 
   &__input {
     box-sizing: border-box;
-    padding: 0.6429rem 2.8571rem 0.6429rem 1.0714rem;
     width: 100%;
-    outline: 0;
+    padding: 0.6429rem 2.8571rem 0.6429rem 1.0714rem;
     border: 0.0714rem solid $primary-color-25;
     border-radius: 0.2857rem;
+    outline: 0;
     color: $primary-color-75;
     font: inherit;
     cursor: default;
   }
 
   &__tick {
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    padding: 0;
     width: 3.1429rem;
     height: 100%;
+    padding: 0;
     border: 0;
     background-color: transparent;
-    content: '';
 
     &:hover {
       cursor: pointer;
     }
 
     &::before {
+      content: '';
       box-sizing: border-box;
       width: 0.6429rem;
       height: 0.6429rem;
       border-top: 0.1429rem solid $primary-color-50;
       border-right: 0.1429rem solid $primary-color-50;
-      content: '';
       transform: translateY(-0.0714rem) rotate(135deg);
     }
   }
 
   &__container {
     position: absolute;
-    display: none;
     box-sizing: border-box;
-    padding: 0.4714rem 0.3571rem 0.6rem 1rem;
+    display: none;
     width: 100%;
+    padding: 0.4714rem 0.3571rem 0.6rem 1rem;
     border: 0.0714rem solid $primary-color-50;
     border-top: 0;
     border-radius: 0 0 0.2857rem 0.2857rem;
@@ -86,14 +86,14 @@
 
   &__counter-button {
     box-sizing: border-box;
-    padding: 0;
     width: 2.1429rem;
+    padding: 0;
     border: 0.0714rem solid $primary-color-50;
     border-radius: 50%;
-    background: transparent;
     color: $primary-color-50;
     font-size: 1.4286rem;
     line-height: 2.0429rem;
+    background: transparent;
     cursor: pointer;
 
     &:disabled {
@@ -103,13 +103,13 @@
   }
 
   &__counter-value {
-    margin: 0 0.4286rem;
     min-width: 1.4714rem;
-    text-align: center;
-    text-transform: uppercase;
+    margin: 0 0.4286rem;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   &__buttons {
@@ -123,8 +123,8 @@
 
   &_expanded {
     #{$root}__input {
-      border-color: $primary-color-50;
       border-radius: 0.2857rem 0.2857rem 0 0;
+      border-color: $primary-color-50;
     }
 
     #{$root}__container {

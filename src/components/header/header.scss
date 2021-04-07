@@ -30,6 +30,7 @@
   &__burger-button {
     position: relative;
     display: none;
+    justify-self: end;
     width: 2.8571rem;
     height: 2.8571rem;
     border: 0;
@@ -37,13 +38,13 @@
     background: linear-gradient($purple-color-100, $aqua-color-light-100);
     cursor: pointer;
     grid-area: burger;
-    justify-self: end;
 
     @media screen and (max-width: 1000px) {
       display: inline-block;
     }
 
     &::before {
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -51,7 +52,6 @@
       height: 0.2143rem;
       background-color: $white-color-100;
       box-shadow: 0 -0.4286rem 0 0 $white-color-100, 0 0.4286rem 0 0 $white-color-100;
-      content: '';
       transform: translate(-50%, -50%);
     }
 
@@ -62,13 +62,13 @@
       }
 
       &::after {
+        content: '';
         position: absolute;
         top: 50%;
         left: 50%;
         width: 1.4286rem;
         height: 0.2143rem;
         background-color: $white-color-100;
-        content: '';
         transform: translate(-50%, -50%) rotate(-45deg);
       }
     }
@@ -83,11 +83,11 @@
 
     @media screen and (max-width: 1000px) {
       display: none;
+      justify-self: stretch;
       margin-top: 0.7143rem;
       padding: 0.3571rem 0.7143rem 0.7143rem;
       border: 0.2143rem solid $primary-color-50;
       border-radius: 0.7143rem;
-      justify-self: stretch;
     }
 
     &_opened {
@@ -97,9 +97,9 @@
 
   &__link {
     color: $primary-color-50;
-    text-decoration: none;
     font-size: 1rem;
     line-height: 1.2143rem;
+    text-decoration: none;
 
     &:hover {
       color: $primary-color-75;
@@ -141,13 +141,13 @@
 
       &_theme_has-submenu {
         > #{$root}__link::after {
+          content: '';
           display: inline-block;
-          margin-left: 0.6429rem;
           width: 0.4286rem;
           height: 0.4286rem;
+          margin-left: 0.6429rem;
           border-top: 0.1429rem solid $primary-color-50;
           border-right: 0.1429rem solid $primary-color-50;
-          content: '';
           transform: translateY(-0.1429rem) rotate(135deg);
         }
 

@@ -36,9 +36,9 @@
 
   &__gender-list {
     display: flex;
+    list-style-type: none;
     margin: 0 0 1.3143rem;
     padding: 0;
-    list-style-type: none;
   }
 
   &__gender-item + &__gender-item {
@@ -81,8 +81,8 @@
   }
 
   &__text {
-    margin-right: 0.7143rem;
     max-width: 15.1429rem;
+    margin-right: 0.7143rem;
     color: $black-color-100;
     line-height: 1.2857rem;
   }

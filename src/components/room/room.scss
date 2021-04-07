@@ -32,14 +32,14 @@
 
   &__slider-button {
     box-sizing: border-box;
-    padding: 0;
     width: 0.5rem;
     height: 0.5rem;
+    padding: 0;
     border: 0.0714rem solid $white-color-100;
     border-radius: 50%;
+    font: inherit;
     background-color: transparent;
     box-shadow: 0 0.3571rem 0.3571rem $primary-color-30;
-    font: inherit;
     cursor: pointer;
 
     &_active {
@@ -64,11 +64,12 @@
     position: absolute;
     padding: 0;
     border: 0;
-    background-color: transparent;
     font: inherit;
+    background-color: transparent;
     cursor: pointer;
 
     &::before {
+      content: '';
       position: absolute;
       box-sizing: border-box;
       width: 0.5rem;
@@ -76,7 +77,6 @@
       border: 0.1429rem solid $white-color-100;
       border-top: 0;
       border-left: 0;
-      content: '';
     }
 
     &_theme_prev {
@@ -119,10 +119,10 @@
 
   &__type {
     color: $purple-color-100;
-    text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8571rem;
     line-height: 1.0714rem;
+    text-transform: uppercase;
   }
 
   &__day-price {

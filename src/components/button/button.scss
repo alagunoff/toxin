@@ -1,17 +1,17 @@
 .button {
-  display: inline-block;
   box-sizing: border-box;
+  display: inline-block;
   padding: 0;
   border: 0;
-  background: none;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  word-break: break-all;
   font: inherit;
   font-weight: bold;
   font-size: 0.8571rem;
   line-height: 1.0714rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  word-break: break-all;
+  background: none;
   cursor: pointer;
 
   &_full-width {
@@ -34,10 +34,10 @@
     padding: 0.9286rem 1.2857rem;
     border: 0.1429rem solid transparent;
     border-radius: 1.5714rem;
+    color: $purple-color-100;
     background:
       linear-gradient($white-color-100, $white-color-100) padding-box,
       linear-gradient($purple-color-100, $aqua-color-light-100) border-box;
-    color: $purple-color-100;
 
     &:hover {
       background:
@@ -54,8 +54,8 @@
   &_theme_gradient {
     padding: 1.0714rem 1.4286rem;
     border-radius: 1.5714rem;
-    background-image: linear-gradient($purple-color-100, $aqua-color-light-100);
     color: $white-color-100;
+    background-image: linear-gradient($purple-color-100, $aqua-color-light-100);
 
     &:hover {
       opacity: 0.5;
@@ -71,21 +71,22 @@
     position: relative;
     padding: 1.0714rem 2.5rem;
     border-radius: 1.5714rem;
-    background-image: linear-gradient($purple-color-100, $aqua-color-light-100);
     color: $white-color-100;
+    background-image: linear-gradient($purple-color-100, $aqua-color-light-100);
 
     &::before {
+      content: '';
       position: absolute;
       top: 50%;
       right: 0.8571rem;
       width: 1.1429rem;
       height: 0.1429rem;
       background-color: $white-color-100;
-      content: '';
       transform: translateY(-50%);
     }
 
     &::after {
+      content: '';
       position: absolute;
       top: 50%;
       right: 0.9286rem;
@@ -93,7 +94,6 @@
       height: 0.6429rem;
       border-top: 0.1429rem solid $white-color-100;
       border-right: 0.1429rem solid $white-color-100;
-      content: '';
       transform: translateY(-50%) rotate(45deg);
     }
   }

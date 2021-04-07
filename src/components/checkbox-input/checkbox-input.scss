@@ -10,6 +10,7 @@
       }
 
       &:checked + #{$root}__label::after {
+        content: '';
         position: absolute;
         top: 0.7143rem;
         left: 0.4714rem;
@@ -18,9 +19,8 @@
         height: 0.5714rem;
         border-right: 0.1429rem solid transparent;
         border-bottom: 0.1429rem solid transparent;
-        border-image: linear-gradient($purple-color-100, $aqua-color-light-100) 2;
-        content: '';
         transform: translateY(-50%) rotate(45deg);
+        border-image: linear-gradient($purple-color-100, $aqua-color-light-100) 2;
       }
 
       &:focus + #{$root}__label::before {
@@ -36,6 +36,7 @@
       line-height: 1.2857rem;
 
       &::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -44,7 +45,6 @@
         height: 1.4286rem;
         border: 0.0714rem solid $primary-color-25;
         border-radius: 0.2857rem;
-        content: '';
       }
 
       &:hover {
@@ -62,6 +62,7 @@
       }
 
       &:checked + #{$root}__label::after {
+        content: '';
         position: absolute;
         top: 0.7143rem;
         left: 0.4714rem;
@@ -70,9 +71,8 @@
         height: 0.5714rem;
         border-right: 0.1429rem solid transparent;
         border-bottom: 0.1429rem solid transparent;
-        border-image: linear-gradient($purple-color-100, $aqua-color-light-100) 2;
-        content: '';
         transform: translateY(-50%) rotate(45deg);
+        border-image: linear-gradient($purple-color-100, $aqua-color-light-100) 2;
       }
 
       &:focus + #{$root}__label::before {
@@ -89,6 +89,7 @@
       font-weight: bold;
 
       &::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -97,7 +98,6 @@
         height: 1.4286rem;
         border: 0.0714rem solid $primary-color-25;
         border-radius: 0.2857rem;
-        content: '';
       }
 
       &:hover {
@@ -137,6 +137,7 @@
       padding-left: 3.5rem;
 
       &::before {
+        content: '';
         position: absolute;
         top: 0.0714rem;
         left: 0;
@@ -144,10 +145,10 @@
         height: 1.4286rem;
         border: 0.0714rem solid $primary-color-25;
         border-radius: 0.7143rem;
-        content: '';
       }
 
       &::after {
+        content: '';
         position: absolute;
         top: 0.8571rem;
         left: 0.2429rem;
@@ -155,7 +156,6 @@
         height: 0.8571rem;
         border-radius: 50%;
         background: $primary-color-25;
-        content: '';
         transform: translateY(-50%);
       }
 

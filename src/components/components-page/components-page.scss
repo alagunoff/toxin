@@ -15,20 +15,20 @@
 .components-page {
   $root: &;
 
-  padding: 0 0.7143rem;
   min-height: 100vh;
+  padding: 0 0.7143rem;
   background-color: $gray-color-100;
 
   &__title {
     &_hidden {
       position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      margin: -0.0714rem;
-      padding: 0;
       width: 0.0714rem;
       height: 0.0714rem;
+      margin: -0.0714rem;
+      padding: 0;
       border: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
       clip-path: inset(100%);
     }
   }
@@ -36,18 +36,18 @@
   &__wrapper {
     position: relative;
     box-sizing: border-box;
-    margin: 3.5714rem auto;
     max-width: 102.8571rem;
+    margin: 3.5714rem auto;
     background-color: $white-color-100;
 
     &::before {
+      content: '';
       position: absolute;
       top: 2.4286rem;
       left: 2.4286rem;
       width: 2.8571rem;
       height: 2.8571rem;
       background: url('../../images/logo.svg') no-repeat left center;
-      content: '';
     }
 
     &:nth-of-type(1) {
@@ -62,8 +62,8 @@
           width: 24.4%;
 
           @media screen and (max-width: 900px) {
-            margin-bottom: 2.1429rem;
             width: 100%;
+            margin-bottom: 2.1429rem;
           }
         }
 
@@ -111,8 +111,8 @@
       }
 
       #{$root}__color-item-image {
-        min-width: 5rem;
         width: 5rem;
+        min-width: 5rem;
         height: 5rem;
         border-radius: 0.4286rem;
         background-color: $primary-color-100;
@@ -125,10 +125,10 @@
       #{$root}__color-item-name {
         width: 59.1%;
         color: $primary-color-100;
-        text-transform: capitalize;
         font-weight: bold;
         font-size: 1.2143rem;
         line-height: 2.0714rem;
+        text-transform: capitalize;
 
         @media screen and (max-width: 900px) {
           width: 90%;
@@ -137,8 +137,8 @@
 
       #{$root}__color-item-hex {
         display: block;
-        text-transform: uppercase;
         font-weight: normal;
+        text-transform: uppercase;
       }
 
       #{$root}__font-item {
@@ -162,15 +162,15 @@
           font-size: 1.7143rem;
 
           #{$root}__font-item-type {
-            text-transform: uppercase;
             line-height: 2.0714rem;
+            text-transform: uppercase;
           }
 
           #{$root}__font-item-example {
             color: $primary-color-100;
-            letter-spacing: -0.0857rem;
             font-weight: bold;
             line-height: 2.1429rem;
+            letter-spacing: -0.0857rem;
           }
         }
 
@@ -178,8 +178,8 @@
           font-size: 1.3571rem;
 
           #{$root}__font-item-type {
-            text-transform: uppercase;
             line-height: 1.6429rem;
+            text-transform: uppercase;
           }
 
           #{$root}__font-item-example {
@@ -199,8 +199,8 @@
 
           #{$root}__font-item-example {
             color: $primary-color-100;
-            text-transform: uppercase;
             font-weight: bold;
+            text-transform: uppercase;
           }
         }
       }
@@ -212,8 +212,8 @@
         text-transform: capitalize;
 
         @media screen and (max-width: 900px) {
-          margin-right: 0.7143rem;
           width: auto;
+          margin-right: 0.7143rem;
         }
       }
 
@@ -241,8 +241,8 @@
             width: 22.8571rem;
 
             @media screen and (max-width: 1353px) {
-              margin-bottom: 3.5714rem;
               width: 100%;
+              margin-bottom: 3.5714rem;
             }
           }
 
@@ -334,15 +334,15 @@
             width: 10.7143rem;
 
             @media screen and (max-width: 1353px) {
-              margin-bottom: 0.8714rem;
               width: 100%;
+              margin-bottom: 0.8714rem;
             }
           }
         }
 
         &:nth-child(6) {
-          margin-bottom: 2.8571rem;
           width: 19rem;
+          margin-bottom: 2.8571rem;
 
           @media screen and (max-width: 1353px) {
             width: 100%;
@@ -361,14 +361,14 @@
           position: relative;
 
           &::after {
+            content: attr(data-tip);
             position: absolute;
             top: -0.2143rem;
             right: 0;
             color: $primary-color-50;
-            content: attr(data-tip);
-            text-transform: uppercase;
             font-size: 0.8571rem;
             line-height: 1.0714rem;
+            text-transform: uppercase;
           }
         }
       }
@@ -466,22 +466,22 @@
           position: relative;
 
           &::after {
+            content: attr(data-tip);
             position: absolute;
             top: -0.1143rem;
             right: 0;
             color: $primary-color-50;
-            content: attr(data-tip);
-            text-transform: uppercase;
             font-size: 0.8571rem;
             line-height: 1.0714rem;
+            text-transform: uppercase;
           }
         }
       }
 
       #{$root}__dropdown-item-alone {
         &:nth-of-type(1) {
-          margin-left: 12.9rem;
           width: 22.9rem;
+          margin-left: 12.9rem;
 
           @media screen and (max-width: 1456px) {
             margin-left: 0;
@@ -493,8 +493,8 @@
         }
 
         &:nth-of-type(2) {
-          margin-left: 5.2rem;
           width: 22.6rem;
+          margin-left: 5.2rem;
 
           @media screen and (max-width: 1456px) {
             margin-left: 0;
@@ -507,8 +507,8 @@
       }
 
       #{$root}__checkbox-rich-item {
-        margin-bottom: 12.8rem;
         width: 18.5rem;
+        margin-bottom: 12.8rem;
 
         @media screen and (max-width: 1456px) {
           margin-bottom: 0;
@@ -528,8 +528,8 @@
       }
 
       #{$root}__bullet-list-item {
-        margin-left: 10.9rem;
         width: 17rem;
+        margin-left: 10.9rem;
 
         @media screen and (max-width: 1456px) {
           margin-left: 1rem;
@@ -541,8 +541,8 @@
       }
 
       #{$root}__testimonial-item {
-        margin-top: 0.6rem;
         width: 51rem;
+        margin-top: 0.6rem;
       }
     }
 
@@ -607,9 +607,9 @@
 
       #{$root}__calendar-item {
         box-sizing: border-box;
+        width: 23rem;
         margin-bottom: 3.1rem;
         padding: 1.0714rem 1.5714rem;
-        width: 23rem;
         background-color: $white-color-100;
 
         @media screen and (max-width: 420px) {
@@ -655,11 +655,11 @@
     display: block;
     margin-bottom: 0.3571rem;
     color: $primary-color-100;
-    text-transform: uppercase;
     font-weight: bold;
-    font-style: normal;
     font-size: 0.8571rem;
+    font-style: normal;
     line-height: 1.0714rem;
+    text-transform: uppercase;
   }
 
   &__group {
@@ -669,8 +669,8 @@
   }
 
   &__list {
-    padding: 0;
     list-style-type: none;
+    padding: 0;
   }
 
   &_theme_light {
