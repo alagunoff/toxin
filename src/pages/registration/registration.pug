@@ -1,7 +1,7 @@
 extends ~@root/shared/layouts/base
 
 include ~@components/header/header
-include ~@components/registration-page/registration-page
+include ~@components/sign-up/sign-up
 include ~@components/footer/footer
 
 block description
@@ -15,5 +15,8 @@ block title
 
 block content
   +header
-  +registration-page
+  main.registration-page
+    h1.registration-page__title Зарегистрировать аккаунт
+    .registration-page__sign-up
+      +sign-up
   +footer

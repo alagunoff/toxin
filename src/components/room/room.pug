@@ -3,7 +3,7 @@ include ~@components/rating/rating
 mixin room({ imageName, alt, number, lux, price, rating, testimonials } = {})
   .room
     .room__container
-      img.room__img(src = require(`@components/rooms-page/images/${imageName}.jpg`) alt = alt)
+      img.room__img(src = require(`@root/images/${imageName}.jpg`) alt = alt)
       .room__slider-buttons
         button.room__slider-button.room__slider-button_active(type="button")
         button.room__slider-button(type="button")

@@ -1,7 +1,11 @@
 extends ~@root/shared/layouts/base
 
 include ~@components/header/header
-include ~@components/rooms-page/rooms-page
+include ~@components/range-slider/range-slider
+include ~@components/dropdown/dropdown
+include ~@components/checkbox-expandable/checkbox-expandable
+include ~@components/room/room
+include ~@components/pagination/pagination
 include ~@components/footer/footer
 
 block description
@@ -15,5 +19,51 @@ block title
 
 block content
   +header
-  +rooms-page
+
+  - const { checkboxesPoor, checkboxesRich, checkboxesExpandable, rooms, pages } = require('./data');
+
+  main.rooms-page
+    h1.rooms-page__title Поиск номеров
+    section.rooms-page__filter.js-rooms-page__filter
+      h2.rooms-page__subtitle.rooms-page__subtitle_hidden Фильтр номеров
+      button.rooms-page__filter-show-button.js-rooms-page__filter-show-button(type="button") Показать фильтр
+      button.rooms-page__filter-close-button.js-rooms-page__filter-close-button.rooms-page__filter-close-button_hidden(type="button" aria-label="Закрыть фильтр")
+      form.rooms-page__form.js-rooms-page__form(action="https://echo.htmlacademy/ru" method="post")
+        .rooms-page__dropdown-date
+          label.rooms-page__label(for="field-date") Даты пребывания в отеле
+          +dropdown({ id: "field-date", name: "date", value: "19 авг - 23 авг" })
+        .rooms-page__dropdown-guests
+          label.rooms-page__label(for="field-guests") Гости
+          +dropdown({ id: "field-guests", name: "guests", value: "3 гостя, 1 младенец" })
+        .rooms-page__range-slider
+          +range-slider({ id: "field-price", title: "Диапазон цены", description: "Стоимость за сутки пребывания в номере", name: "price"})
+        fieldset.rooms-page__checkboxes
+          legend.rooms-page__checkboxes-title Дополнительные возможности
+
+          each checkbox in checkboxesPoor
+            .rooms-page__checkbox-input
+              +checkbox-input(checkbox)
+
+        fieldset.rooms-page__checkboxes-rich
+          legend.rooms-page__checkboxes-rich-title Доступность
+
+          each checkbox in checkboxesRich
+            .rooms-page__checkbox-input
+              +checkbox-input(checkbox)
+
+        .rooms-page__dropdown-comfort
+          label.rooms-page__label(for="field-comfort") Удобства номера
+          +dropdown({ id: "field-comfort", type: "comfort", items: ["Спальни", "Кровати", "Ванные комнаты"], name: "comfort", placeholder: "1 спальня"})
+        .rooms-page__checkbox-expandable
+          +checkbox-expandable({ title: "Дополнительные удобства", checkboxes: checkboxesExpandable })
+    section.rooms-page__rooms
+      h2.rooms-page__subtitle Номера, которые мы для вас подобрали
+      ul.rooms-page__rooms-list
+
+        each room in rooms
+          li.rooms-page__room
+            +room(room)
+            
+      .rooms-page__pagination
+        +pagination({ pages, description: "1 – 12 из 100+ вариантов аренды" })
   +footer

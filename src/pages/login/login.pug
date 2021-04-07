@@ -1,7 +1,7 @@
 extends ~@root/shared/layouts/base
 
 include ~@components/header/header
-include ~@components/login-page/login-page
+include ~@components/sign-in/sign-in
 include ~@components/footer/footer
 
 block description
@@ -15,5 +15,8 @@ block title
 
 block content
   +header
-  +login-page
+  main.login-page
+    h1.login-page__title Вход в систему
+    .login-page__sign-in
+      +sign-in
   +footer
