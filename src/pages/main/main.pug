@@ -1,7 +1,7 @@
 extends ~@root/shared/layouts/base
 
 include ~@components/header/header
-include ~@components/main-page/main-page
+include ~@components/room-search/room-search
 include ~@components/footer/footer
 
 block description
@@ -15,5 +15,9 @@ block title
 
 block content
   +header
-  +main-page
+  main.main-page
+    h1.main-page__title Отель Toxin
+    .main-page__form
+      +room-search
+    .main-page__info Лучшие номера для вашей работы, отдыха и просто вдохновения
   +footer
