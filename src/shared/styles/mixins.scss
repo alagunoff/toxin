@@ -1,5 +1,6 @@
 @mixin visually-hidden {
   position: absolute;
+  z-index: -1;
   opacity: 0;
 }
 
@@ -11,7 +12,7 @@
 
 @mixin h1-type {
   color: $primary-color-100;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.7143rem;
   line-height: 2.1429rem;
 }
@@ -20,7 +21,7 @@
   display: inline-block;
   padding: 0;
   color: $primary-color-100;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 0.8571rem;
   line-height: 1.0714rem;
   text-transform: uppercase;
