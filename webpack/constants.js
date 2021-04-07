@@ -19,7 +19,6 @@ const ENTRIES = {
   registration: path.join(PATHS.src, 'pages/registration/registration.js'),
   rooms: path.join(PATHS.src, 'pages/rooms/rooms.js'),
   room: path.join(PATHS.src, 'pages/room/room.js'),
-  components: path.join(PATHS.src, 'pages/components/components.js'),
 };
 
 const LOADERS = {

@@ -1,10 +1,6 @@
 {
   "pages": [
     {
-      "title": "Components page",
-      "link": "/components.html"
-    },
-    {
       "title": "Landing page",
       "link": "/main.html"
     },

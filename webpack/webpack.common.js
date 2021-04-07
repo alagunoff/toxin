@@ -12,7 +12,6 @@ const config = {
     registration: ENTRIES.registration,
     rooms: ENTRIES.rooms,
     room: ENTRIES.room,
-    components: ENTRIES.components,
   },
   module: {
     rules: [
