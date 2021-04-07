@@ -6,10 +6,10 @@
     "eslint": "eslint -c .eslintrc --ignore-path .eslintignore src",
     "eslint:fix": "eslint -c .eslintrc --ignore-path .eslintignore src --fix",
     "stylelint": "stylelint --config .stylelintrc.json src/**/*.scss",
-    "stylelint:fix": "stylelint --config .stylelintrc.json src/**/*.scss --fix",
-    "puglint": "pug-lint -c .pug-lint.json src"
+    "stylelint:fix": "stylelint --config .stylelintrc.json src/**/*.scss --fix"
   },
   "devDependencies": {
+    "@dweidner/stylelint-config-property-order": "^1.2.0",
     "autoprefixer": "^9.8.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",

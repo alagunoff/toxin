@@ -1,9 +1,17 @@
 extends ~@root/shared/layouts/base
 
-include ~@components/index-page/index-page
-
 block title
   title Отель Toxin | Список страниц
 
 block content
-  +index-page
+ - const { pages } = require("./data");
+
+  main.index-page
+    h1.index-page__title
+    ul.index-page__list
+      
+      each page in pages
+        - const { link, title } = page;
+
+        li.index-page__item
+          a.index-page__link(href = link target="_blank")= title

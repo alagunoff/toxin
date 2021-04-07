@@ -1,2 +1,36 @@
 @import 'shared/styles/base';
-@import 'components/index-page/index-page';
+
+.index-page {
+  padding-top: 7.1429rem;
+  text-align: center;
+
+  &__title {
+    @include visually-hidden;
+  }
+
+  &__list {
+    @include normalized-list;
+  }
+
+  &__item {
+    font-weight: bold;
+    font-size: 1.2143rem;
+
+    &:first-of-type {
+      font-size: 1.7857rem;
+    }
+  }
+
+  &__item + &__item {
+    margin-top: 1.4286rem;
+  }
+
+  &__link {
+    color: $purple-color-100;
+    text-decoration: none;
+
+    &:hover {
+      color: $purple-color-50;
+    }
+  }
+}

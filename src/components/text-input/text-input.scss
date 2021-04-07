@@ -2,10 +2,10 @@
   $root: &;
 
   &__field {
-    display: inline-block;
     box-sizing: border-box;
-    padding: 0.9286rem 1.0714rem;
+    display: inline-block;
     width: 100%;
+    padding: 0.9286rem 1.0714rem;
     border: 0.0714rem solid $primary-color-25;
     border-radius: 0.2857rem;
     color: $primary-color-75;
@@ -39,17 +39,18 @@
       cursor: pointer;
 
       &::before {
+        content: '';
         position: absolute;
         top: 50%;
         right: 1.1857rem;
         width: 1.0429rem;
         height: 0.1429rem;
         background: linear-gradient($purple-color-100, $aqua-color-light-100);
-        content: '';
         transform: translateY(-50%);
       }
 
       &::after {
+        content: '';
         position: absolute;
         top: 50%;
         right: 1.2286rem;
@@ -57,9 +58,8 @@
         height: 0.6429rem;
         border-top: 0.1429rem solid transparent;
         border-right: 0.1429rem solid transparent;
-        border-image: linear-gradient($purple-color-100, $aqua-color-light-100) 2;
-        content: '';
         transform: translateY(-50%) rotate(45deg);
+        border-image: linear-gradient($purple-color-100, $aqua-color-light-100) 2;
       }
     }
   }
