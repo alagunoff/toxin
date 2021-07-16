@@ -22,9 +22,6 @@ const ENTRIES = {
 };
 
 const LOADERS = {
-  pug: {
-    loader: 'pug-loader',
-  },
   css: {
     loader: 'css-loader',
     options: {
@@ -38,7 +35,9 @@ const LOADERS = {
   postCss: {
     loader: 'postcss-loader',
     options: {
-      plugins: [autoprefixer()],
+      postcssOptions: {
+        plugins: [autoprefixer()],
+      },
       sourceMap: true,
     },
   },
@@ -49,19 +48,6 @@ const LOADERS = {
       sassOptions: {
         includePaths: [PATHS.src, PATHS.nodeModules],
       },
-    },
-  },
-  img: {
-    loader: 'file-loader',
-    options: {
-      name: 'images/[name].[contenthash].[ext]',
-      esModule: false,
-    },
-  },
-  fonts: {
-    loader: 'file-loader',
-    options: {
-      name: 'fonts/[name].[contenthash].[ext]',
     },
   },
 };

@@ -17,7 +17,7 @@ const config = {
     rules: [
       {
         test: /\.pug$/,
-        use: [LOADERS.pug],
+        use: ['pug-loader'],
       },
       {
         test: /\.css$/,
@@ -29,11 +29,17 @@ const config = {
       },
       {
         test: /\.(jpe?g|png|svg)$/,
-        use: [LOADERS.img],
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext][query]',
+        },
       },
       {
         test: /\.(eot|woff|woff2|ttf)$/,
-        use: [LOADERS.fonts],
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[hash][ext][query]',
+        },
       },
     ],
   },
@@ -51,11 +57,12 @@ const config = {
       jQuery: 'jquery',
     }),
     ...Object.keys(ENTRIES).map(
-      (entry) => new HtmlWebpackPlugin({
-        chunks: [entry],
-        filename: `${entry}.html`,
-        template: `${PATHS.pages}/${entry}/${entry}.pug`,
-      }),
+      (entry) =>
+        new HtmlWebpackPlugin({
+          chunks: [entry],
+          filename: `${entry}.html`,
+          template: `${PATHS.pages}/${entry}/${entry}.pug`,
+        }),
     ),
   ],
   optimization: {
